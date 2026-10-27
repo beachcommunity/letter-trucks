@@ -4,7 +4,7 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 
 **How she likes to work:** lowercase, chill, not overly enthusiastic. Challenge weak assumptions, and say clearly what's fact, what's inference and what's speculation. Ask when something is genuinely unclear. Keep summaries short.
 
-**Published game:** https://claude.ai/artifact/Cf8gc3nNXwRqXrh7f3UHmd (version 7 = the touch changes on branch `remove-personal-name`). To update it, read that artifact and then publish to the same `url`, so she keeps the same link. If no artifact tool is available, send her `dist/letter-trucks.html`.
+**Published game:** https://claude.ai/artifact/Cf8gc3nNXwRqXrh7f3UHmd (version 8 = branch `remove-personal-name` with the glow-first change). To update it, read that artifact and then publish to the same `url`, so she keeps the same link. If no artifact tool is available, send her `dist/letter-trucks.html`.
 
 ## Layout
 - `src/template.html` — the whole game in one file: canvas side-scroller plus DOM overlays, no framework. It has the placeholders `__LINES__`, `__VOICE__`, `__PICS__` and `__CREDITS__`.
@@ -38,6 +38,6 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 
 ## Open questions / ideas she's considering
 - Playtest notes: he plays on her phone, used both arrows and tapping, and tended to pick left to right. She thinks he's guessing on everything rather than knowing the sounds. Not yet playtested: the self-driving truck and the quieter wrong pick.
-- Idea: errorless start (the right box glows from the start at lvl 0 and the hint fades as he gets them right), since he's guessing.
+- Glow-first is in (version 8), not yet playtested. Bear redesign: three styles mocked up at https://claude.ai/artifact/6zt9bsPRNM7ZZMhCgRPqC4 (plush, storybook, sticker), waiting on her pick.
 - Deliver boxes stay uppercase for now (one new thing at a time: the sound, on a letter he already knows); tow mode does upper to lower.
 - Possible next features: a "first sounds" game (which box does the picture start with?), an installable offline app (PWA), and a grown-up progress page.
