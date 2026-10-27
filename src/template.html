@@ -186,9 +186,9 @@ body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus)
       <p>Changes save on this computer and apply from the next game.</p>
 
       <h3>How it works</h3>
-      <p><b>Bear deliveries</b> teaches letter sounds with the big letters he knows. A bear asks for a letter, the truck stops at the loading dock, and he parks under a box and presses the button to load it. At first the bear says the letter's name and its sound ("I need the letter S! s-s-sun!"). After he picks it right on the first try twice, the bear only says the sound ("I need s-s-sun!").</p>
+      <p><b>Bear deliveries</b> teaches letter sounds with the big letters he knows. A bear asks for a letter, the truck stops at the loading dock, and he taps a box to load it (with keys or a controller he parks under it and presses the button). The first few times he sees a letter, its box glows after the bear asks, so he gets it right and hears it; the glow fades over the next few times. At first the bear says the letter's name and its sound ("I need the letter S! s-s-sun!"). After he picks it right on the first try twice without a glow, the bear only says the sound ("I need s-s-sun!").</p>
       <p><b>Tow truck</b> brings in the little letters. A bear in a big "B" truck needs its little "b" trailer. Color hints show at first and go away as he gets it right.</p>
-      <p>A wrong pick pops open, shows its picture and says what it is, then goes back. After two misses the right one starts to glow. Letters he misses come back more often. Each game is a few stops, then it ends with a party.</p>
+      <p>A wrong pick just wobbles and says what it is. After two misses the right one starts to glow. Letters he misses come back more often. Each game is a few stops, then it ends with a party.</p>
       <p>Extras: he picks his truck before each game (each one has its own silly horn), and tapping the sun, clouds, trees, flowers, birds, cones and puddles makes them do something.</p>
 
       <h3>What he's learning</h3>
@@ -262,11 +262,16 @@ try { const p = JSON.parse(localStorage.getItem("letter-trucks-progress") || "nu
 function saveSettings() { try { localStorage.setItem("letter-trucks-v3", JSON.stringify(settings)); } catch (e) {} }
 function saveProgress() { try { localStorage.setItem("letter-trucks-progress", JSON.stringify(progress)); } catch (e) {} }
 function activeLetters() { const a = ORDER.filter(l => settings.letters.includes(l)); return a.length ? a : SETS[0].letters.split(""); }
-const prog = (m, l) => (progress[m][l] = progress[m][l] || { lvl: 0, streak: 0, seen: 0, first: 0 });
-function record(m, l, firstTry) {
+const prog = (m, l) => (progress[m][l] = progress[m][l] || { lvl: 0, streak: 0, seen: 0, first: 0, helped: 0 });
+// new letters start with the right box glowing, so he gets it right and hears it right; the glow fades
+// over the next few (full, half, faint, gone). Only picks without a glow count toward leveling up.
+const GUIDE = [1, 0.55, 0.25];
+const guideFor = (m, p) => m === "deliver" && p.lvl === 0 ? GUIDE[p.helped || 0] || 0 : 0;
+function record(m, l, firstTry, guided) {
   const p = prog(m, l); p.seen++;
-  if (firstTry) { p.first++; p.streak++; if (p.streak >= 2) { p.lvl = Math.min(2, p.lvl + 1); p.streak = 0; } }
-  else { p.streak = 0; p.lvl = Math.max(0, p.lvl - 1); }
+  if (guided && firstTry) p.helped = (p.helped || 0) + 1;
+  else if (firstTry) { p.first++; p.streak++; if (p.streak >= 2) { p.lvl = Math.min(2, p.lvl + 1); p.streak = 0; } }
+  else { p.streak = 0; p.lvl = Math.max(0, p.lvl - 1); p.helped = Math.max(0, (p.helped || 0) - 1); }
   saveProgress();
 }
 
@@ -564,7 +569,7 @@ function startRun(m) {
     const p = prog(m, l), lvl = p.lvl;
     const k = lvl === 0 ? 2 : Math.min(3, settings.boxes);
     const choices = shuffle([l, ...distractors(m, l, k, lvl)]);
-    const s = { i, m, l, lvl, x, choices, misses: 0, first: true, active: false, busy: false, done: false, gateA: 0, lastAsk: 0, hint: false };
+    const s = { i, m, l, lvl, x, choices, misses: 0, first: true, active: false, busy: false, done: false, gateA: 0, lastAsk: 0, hint: false, guide: 0 };
     if (m === "deliver") {
       s.items = choices.map((c, j) => ({ l: c, x: x + j * BOXGAP, state: "dock", t: 0, ox: 0, oy: 0, wob: 0 }));
       const last = x + (choices.length - 1) * BOXGAP;
@@ -599,11 +604,11 @@ function startRun(m) {
 }
 const orderKey = s => s.m === "deliver" ? (s.lvl === 0 ? "order0_" : "order1_") + s.l : "where_" + s.l;
 function activate(s) {
-  s.active = true; st = s; s.lastAsk = tNow + 99;
+  s.active = true; st = s; s.lastAsk = tNow + 99; s.guide = guideFor(s.m, prog(s.m, s.l));
   // roll the truck up to the dock first, so the bear is on screen when it asks
   P.auto = { x: Math.max(P.x, s.dockA - 40), force: true, then: () => {
     if (s.m === "deliver") { s.bear.mood = "wave"; s.bear.t = 0; sfx.doorbell(); } else { s.big.honk = 0.5; sfx.horn(); s.big.mood = "wave"; s.big.t = 0; }
-    s.lastAsk = tNow; chain(s.m === "deliver" ? 700 : 350, orderKey(s));
+    s.lastAsk = tNow; chain(s.m === "deliver" ? 700 : 350, orderKey(s)).then(() => { s.heard = true; });
   } };
 }
 function ask(s) { s.lastAsk = tNow; if (s.m === "deliver") { s.bear.mood = "wave"; s.bear.t = 0; } else { s.big.mood = "wave"; s.big.t = 0; } chain(orderKey(s)); }
@@ -649,7 +654,7 @@ function choose(s, it) {
 }
 function finishStation(s) {
   if (!run || !run.stations.includes(s) || s.done) return;
-  record(s.m, s.l, s.first);
+  record(s.m, s.l, s.first, s.guide > 0);
   s.done = true; s.doneT = tNow; s.busy = false; run.got++; sfx.gate(); sfx.sparkle(); locked = 0;
   if (s.m === "tow") s.big.state = "leave";
   st = null;
@@ -943,7 +948,8 @@ function glyph(ch, cx, cy, size, color) {
   ctx.fillText(ch, cx, cy + (a - d) / 2);
 }
 function crateBox(x, y, s, ch, o = {}) {
-  if (o.glow) { ctx.save(); ctx.shadowColor = "rgba(255,214,40,1)"; ctx.shadowBlur = 40 + Math.sin(tNow * 8) * 14; rr(x - s / 2, y - s / 2, s, s, s * 0.12, "#fff6dc"); ctx.restore(); }
+  // glow: true, or 0..1 for a fading guide glow
+  if (o.glow) { const g = o.glow === true ? 1 : o.glow; ctx.save(); ctx.shadowColor = `rgba(255,214,40,${0.45 + 0.55 * g})`; ctx.shadowBlur = (16 + 24 * g) + Math.sin(tNow * 8) * 14 * g; rr(x - s / 2, y - s / 2, s, s, s * 0.12, "#fff6dc"); ctx.restore(); }
   rr(x - s / 2, y - s / 2, s, s, s * 0.12, "#fff6dc", o.sel ? "#ffb31f" : "#e3c27f", s * (o.sel ? 0.1 : 0.075));
   circle(x - s * 0.33, y - s * 0.33, s * 0.035, "#e3c27f"); circle(x + s * 0.33, y - s * 0.33, s * 0.035, "#e3c27f");
   if (ch) glyph(ch, x, y, s * (o.fs || 0.66), o.color);
@@ -1333,7 +1339,7 @@ function render() {
       for (const it of s.items) if (it.state === "dock") {
         const nk = tNow - (it.nope ?? -9), wob = nk < 0.6 ? Math.sin(nk * 38) * 16 * (1 - nk / 0.6) : 0;
         const bob = ready ? -Math.abs(Math.sin(tNow * 2.6 + it.x * 0.013)) * 9 : 0;
-        crateBox((it.px ?? it.x) + wob, (it.py ?? dockY(s) - 62) + bob, 120, it.l.toUpperCase(), { glow: s.hint && it.l === s.l, sel: it === sel && !s.busy && !showTouch });
+        crateBox((it.px ?? it.x) + wob, (it.py ?? dockY(s) - 62) + bob, 120, it.l.toUpperCase(), { glow: it.l === s.l && (s.hint || (s.guide && s.heard && !speaking ? s.guide : 0)), sel: it === sel && !s.busy && !showTouch });
       }
       drawOrder(s);
     } else {

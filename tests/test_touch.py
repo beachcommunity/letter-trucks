@@ -48,4 +48,5 @@ async def main():
             print(f'stop {n}: right tap {s["l"]} -> done {done}')
         print('run ended:', await T.wait_for(pg, '__lt.mode === "end"', 30000))
         print('errors', errs); await b.close()
-asyncio.run(main())
+if __name__ == '__main__':
+    asyncio.run(main())
