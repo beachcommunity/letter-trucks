@@ -11,20 +11,20 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 - `src/pics/` — one picture per letter: Twemoji SVGs (CC BY 4.0), plus `igloo.svg`, which was drawn for this game.
 - `voice/` — every spoken line and the tools that made it (see "Voice" below).
 - `build.py` → `dist/letter-trucks.html`, about 5.5 MB because everything is embedded. Then run `node --check build/check.js`.
-- `tests/` — Playwright (Python) tests. Run `python3 tests/mktest.py` first, which wraps the build with local fonts. Screenshots go to `tests/out/t/`. Tests: `test_v3.py` (full deliver and tow runs plus phone), `test_hint.py`, `test_buttons.py` (only usable buttons are shown), `test_poke.py`, `test_portrait.py` (390×844 and phone landscape), `test_padpick.py` (truck picker with a fake controller). The game exposes `window.__lt` when the URL ends in `#debug`.
+- `tests/` — Playwright (Python) tests. Run `python3 tests/mktest.py` first, which wraps the build with local fonts. Screenshots go to `tests/out/t/`. Tests: `test_v3.py` (full deliver and tow runs plus phone), `test_hint.py`, `test_touch.py` (touch play: the truck drives itself, a run is played only by tapping), `test_poke.py`, `test_portrait.py` (390×844 and phone landscape), `test_padpick.py` (truck picker with a fake controller). The game exposes `window.__lt` when the URL ends in `#debug`.
 - **The repo is meant to be public: never put the kid's name (or other personal details) in code, docs, commits or voice lines.**
 - Always look at the screenshots, not just the pass/fail output.
 
 ## Game design (decided with her; keep these)
 - Two modes. **Bear deliveries:** a bear orders by picture and sound, and a crane drops the chosen box into the truck. **Tow truck:** hook the little-letter trailer whose big letter is waiting on the big truck. A run has a few stops, then ends with a party (deliver) or a parade (tow).
-- Each stop is one deliberate choice: the truck stops and he has to pick. A wrong pick says what it is (the box pops open and shows its picture, or the trailer hops), then goes back. After 2 misses the right one glows.
+- Each stop is one deliberate choice: the truck stops and he has to pick. A wrong pick is kept short and plain so guessing isn't rewarding: the box wobbles "nope" where it sits (or the trailer hops) and says what it is, with no picture reveal. After 2 misses the right one glows.
 - Per-letter levels: lvl 0 = name + sound, 2 choices; lvl ≥ 1 = sound only, up to 3 choices. Promote after 2 first-try correct answers; demote on a first-try miss. Letters he misses come back more often. Saved in localStorage (`letter-trucks-v3`, `letter-trucks-progress`).
 - Letter sets, in order: Easy 1 (b d t p), Easy 2 (k j v z), Sound at end (s m n r l f), Tricky (h y g c w), Short vowels (a e i o u), Last (x q). Basis: Treiman's letter-name research. The default is Easy 1; letters can be toggled one by one in the grown-up panel.
 - Two-story a/g font (Fraunces). Uppercase is shown next to lowercase so he sees they're the same letter.
 - **No faces on trucks** ("just trucks"). Customers are cute bears.
 - **Don't personalize with the kid's name, and no animal-pup mascot character.** She said this explicitly ("that's weird").
 - Progress is shown as collecting (slots that fill with what he delivered), never as lives.
-- Only show buttons he can actually use right now. The grown-up panel opens with a 1.5 s hold on the gear and has "Back to home screen".
+- **Touch has no on-screen controls** (she saw him get confused by having both arrows and tapping). The truck drives itself between stops once nobody's talking; at a stop he taps the box or trailer, and boxes bob gently when it's time to pick. Tapping the truck honks. Keyboard and controller still drive and pick by hand. The grown-up panel opens with a 1.5 s hold on the gear and has "Back to home screen".
 - Works with touch, keyboard and controller (PS5/Steam). Portrait phone: the camera stays close on the choices, a card in the sky shows the customer and what they want (tap it to hear the order again), and the camera pans to the customer for the payoff. Landscape: the whole stop fits on screen.
 - Extras: pick a truck before each game (yellow=quack, red=ahooga, blue=moo, green=toot; all synthesized), music (can be turned off), things to poke (sun, clouds, trees, bushes, flowers, birds, cones, puddles, bears at finished stops), box reveals with bear reactions, hats and houses, a bird that lands on the parked truck.
 
@@ -37,6 +37,7 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 - The listener models can't judge vowel quality well. Formant checking (`voice/pick_vowels.py`, `voice/ana/`) is unreliable for the bear voice. A human should spot-check A/E/I/O/U.
 
 ## Open questions / ideas she's considering
-- Not yet playtested with him: truck picker, horns, poking things, wrong-box reveals, the portrait card. Ask her how those went before building lots more.
-- Risk: the wrong-box reveal might tempt him to pick wrong on purpose. If it does, make the wrong reveal quieter.
+- Playtest notes: he plays on her phone, used both arrows and tapping, and tended to pick left to right. She thinks he's guessing on everything rather than knowing the sounds. Not yet playtested: the self-driving truck and the quieter wrong pick.
+- Idea: errorless start (the right box glows from the start at lvl 0 and the hint fades as he gets them right), since he's guessing.
+- Deliver boxes stay uppercase for now (one new thing at a time: the sound, on a letter he already knows); tow mode does upper to lower.
 - Possible next features: a "first sounds" game (which box does the picture start with?), an installable offline app (PWA), and a grown-up progress page.

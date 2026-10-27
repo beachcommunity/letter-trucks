@@ -72,18 +72,6 @@ body.pad [data-nav]:focus { outline: min(1vh, 8px) solid var(--focus); outline-o
 body.pad .mode[data-nav]:focus { outline: none; animation: none; }
 body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus); outline-offset: min(.8vh, 6px); animation: bob 1.2s ease-in-out infinite; }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4%); } }
-#touch { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 16px max(16px, env(safe-area-inset-bottom, 0px)); pointer-events: none; }
-#touch[hidden] { display: none !important; }
-#touch .grp { display: flex; gap: min(2vw, 18px); pointer-events: auto; }
-.tbtn { width: clamp(64px, min(12vw, 15vh), 128px); aspect-ratio: 1; border-radius: 50%; border: min(.6vh, 5px) solid rgba(255, 255, 255, .9); background: rgba(35, 39, 47, .45); color: #fff; display: grid; place-items: center; touch-action: none; }
-.tbtn svg { width: 50%; height: 50%; }
-.tbtn.on { background: rgba(35, 39, 47, .7); transform: scale(.94); }
-.tbtn.horn { background: rgba(255, 194, 52, .85); color: var(--ink); }
-.tbtn { transition: opacity .25s ease, transform .25s cubic-bezier(.3, 1.5, .5, 1); }
-.tbtn.gone { opacity: 0; transform: scale(.4); pointer-events: none; }
-.tbtn.grab { background: rgba(47, 125, 91, .95); width: clamp(80px, min(15vw, 19vh), 160px); box-shadow: 0 0 0 0 rgba(47, 125, 91, .6); }
-.tbtn.grab:not(.gone) { animation: ring 1.4s ease-out infinite; }
-@keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(47, 125, 91, .55); } 100% { box-shadow: 0 0 0 min(3vh, 26px) rgba(47, 125, 91, 0); } }
 .gear { position: absolute; right: 12px; top: 12px; width: 52px; height: 52px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .3); color: rgba(35, 39, 47, .6); display: grid; place-items: center; z-index: 5; }
 .gear svg.cog { width: 26px; height: 26px; }
 .gear svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
@@ -135,7 +123,7 @@ body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus)
   .modes { flex-direction: column; align-items: center; top: 22%; gap: 2vh; }
   .mode .post { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .play-btn, body.pad [data-nav]:focus, body.pad .mode[data-nav]:focus .face, .tbtn.grab { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .play-btn, body.pad [data-nav]:focus, body.pad .mode[data-nav]:focus .face{ animation: none !important; } }
 </style>
 
 <div id="app">
@@ -180,18 +168,6 @@ body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus)
     </div>
   </section>
 
-
-  <div id="touch" hidden>
-    <div class="grp">
-      <button class="tbtn gone" id="t-left" aria-label="Drive back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="tbtn gone" id="t-right" aria-label="Drive forward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </div>
-    <div class="grp">
-      <button class="tbtn horn gone" id="t-honk" aria-label="Honk"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18h7l10-8v28l-10-8H8z" fill="currentColor"/><path d="M31 17c2.5 2 3.6 4.4 3.6 7s-1.1 5-3.6 7M35.5 12c4 3.2 6 7.3 6 12s-2 8.8-6 12" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></svg></button>
-      <button class="tbtn gone" id="t-jump" aria-label="Jump"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15 12 7l8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button class="tbtn grab gone" id="t-grab" aria-label="Load this box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7 9.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2.5c0 .8.7 1.5 1.5 1.5h13c.8 0 1.5-.7 1.5-1.5V17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
-    </div>
-  </div>
 
   <div id="fade"></div>
 
@@ -502,9 +478,8 @@ function layout() {
   scale = Math.min(canvas.height / VH, canvas.width / zoomW);
   viewW = canvas.width / scale;
   const portrait = innerHeight > innerWidth * 1.1;
-  // on tall phones the road sits just above the touch buttons and the sky fills the top
-  const dirt = (VH - 806) * scale, btns = 112 * dpr;
-  offY = canvas.height - VH * scale - (portrait ? (showTouch ? Math.max(24 * dpr, btns - dirt) : 24 * dpr) : 0);
+  // on tall phones the road sits low and the sky fills the top
+  offY = canvas.height - VH * scale - (portrait ? 24 * dpr : 0);
 }
 function resize() {
   dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -618,7 +593,7 @@ function startRun(m) {
   P = newPlayer(m === "tow" ? "tow" : "dump"); P.y = groundY(P.x);
   run = { m, stations, got: 0 };
   cam.x = 0; locked = 0.3;
-  mode = m; showOnly(null); gameUI(true);
+  mode = m; showOnly(null);
   engineOn();
   setTimeout(() => { if (mode === m) say(m === "tow" ? "intro_tow" : "intro_deliver"); }, 450);
 }
@@ -655,22 +630,18 @@ function choose(s, it) {
   s.busy = true; P.vx = 0;
   const right = it.l === s.l;
   if (s.m === "deliver") {
-    it.state = "lift"; it.t = 0; sfx.whirr();
-    setTimeout(() => {
-      if (right) { it.state = "truck"; deliverRight(s, it); }
-      else {
-        // the box pops open in the truck and shows its thing while it says who it is, then goes back
-        it.state = "peek"; it.t = 0; sfx.pop(); s.misses++; s.first = false; s.bear.mood = "hmm"; s.bear.t = 0;
-        const back = () => { if (it.state !== "peek") return; it.state = "back"; it.t = 0; sfx.boing();
-          setTimeout(() => { it.state = "dock"; s.busy = false; if (s.bear.mood === "hmm") s.bear.mood = "idle"; if (s.misses >= 2) s.hint = true; }, 650); };
-        chain("box_" + it.l, 150, back, 750, orderKey(s)).then(() => { s.lastAsk = tNow; });
-        setTimeout(back, 6500);
-      }
-    }, 750);
+    if (right) { it.state = "lift"; it.t = 0; sfx.whirr(); setTimeout(() => { it.state = "truck"; deliverRight(s, it); }, 750); }
+    else {
+      // wrong: the box wobbles "nope" where it sits and says who it is. Kept short and plain,
+      // so guessing is never more fun than getting it right
+      it.nope = tNow; sfx.boing(); s.misses++; s.first = false; s.bear.mood = "hmm"; s.bear.t = 0;
+      chain(250, "box_" + it.l, 400, orderKey(s)).then(() => { s.lastAsk = tNow; });
+      setTimeout(() => { s.busy = false; if (s.bear.mood === "hmm") s.bear.mood = "idle"; if (s.misses >= 2) s.hint = true; }, 700);
+    }
   } else {
     if (right) { it.state = "attach"; it.t = 0; it.from = { x: it.x, y: groundY(it.x) + BACK }; P.trailer = it; sfx.clank(); towRight(s, it); }
     else {
-      it.hop = 0.55; it.peek = tNow; sfx.boing(); sfx.pop(); s.misses++; s.first = false;
+      it.hop = 0.55; sfx.boing(); s.misses++; s.first = false;
       chain("wrong_" + it.l, 250, orderKey(s)).then(() => { s.lastAsk = tNow; });
       setTimeout(() => { s.busy = false; if (s.misses >= 2) s.hint = true; }, 650);
     }
@@ -745,26 +716,6 @@ function honk() {
 function scareBird(b) { b.fly = true; b.vx = (b.x > P.x ? 1 : -1) * (200 + Math.random() * 150); b.vy = -380 - Math.random() * 160; sfx.tweet(); }
 function dust(x, y, n) { for (let i = 0; i < n; i++) parts.push({ kind: "dust", x: x + (Math.random() - 0.5) * 40, y: y - 6, vx: (Math.random() - 0.5) * 120, vy: -40 - Math.random() * 80, life: 0.6, size: 14 + Math.random() * 16 }); }
 
-/* ---------- which buttons exist right now ---------- */
-// driving: back, forward, jump, honk. At a stop: back and forward, plus the green pick button only while parked
-// under a box. While the bear talks or a box flies: nothing, just watch.
-const btnState = {};
-function showBtn(id, on) {
-  if (btnState[id] === on) return; btnState[id] = on;
-  $(id).classList.toggle("gone", !on);
-  if (on && id === "#t-grab" && showTouch) sfx.tick();
-}
-function updateButtons() {
-  const stop = atStop();
-  // at a stop, nobody picks while the bear (or a box) is talking: listen first
-  const watching = locked > 0 || (st && st.busy) || !!P.auto || (stop && speaking);
-  const canPick = stop && !watching && !!selected(st);
-  showBtn("#t-left", !watching); showBtn("#t-right", !watching);
-  showBtn("#t-jump", !watching && !stop); showBtn("#t-honk", !watching && !stop);
-  showBtn("#t-grab", canPick);
-  if (watching || !canPick) { $("#t-grab").classList.remove("on"); }
-  if (watching) { input.touchL = input.touchR = false; $("#t-left").classList.remove("on"); $("#t-right").classList.remove("on"); }
-}
 
 /* ---------- stuff to poke (touch / mouse) ---------- */
 let sunPoke = -9;
@@ -803,10 +754,13 @@ function poke(e) {
 }
 
 /* ---------- update ---------- */
-const input = { left: false, right: false, padX: 0, touchL: false, touchR: false };
+const input = { left: false, right: false, padX: 0 };
 function driveDir() {
-  let d = (input.right || input.touchR ? 1 : 0) - (input.left || input.touchL ? 1 : 0);
+  let d = (input.right ? 1 : 0) - (input.left ? 1 : 0);
   if (Math.abs(input.padX) > 0.25) d = input.padX;
+  // touch: no driving controls. The truck rolls on by itself between stops (once nobody's talking),
+  // and at a stop he just taps the box or trailer he wants
+  if (showTouch && !P.auto && !atStop() && !speaking) d = 0.75;
   return clamp(d, -1, 1);
 }
 const G = 2300;
@@ -891,7 +845,6 @@ function update(dt) {
       }
     }
     cam.x = lerp(cam.x, clamp(tx, 0, Math.max(0, road.len - viewW)), Math.min(1, dt * 3.5));
-    updateButtons();
     updateTruckBird(dt);
   } else if (P) { P.squash = Math.max(0, P.squash - dt); P.honk = Math.max(0, P.honk - dt); }
   for (const b of birds) { if (b.fly) { b.x += b.vx * dt; b.y += b.vy * dt; b.vy += 120 * dt; b.flap += dt * 18; } else b.flap += dt * 2; }
@@ -944,10 +897,7 @@ function updateDeliver(s, dt) {
     if (it.state === "lift") {
       const k = Math.min(1, it.t / 0.7), tx = P.x - 40, ty = P.y - 190;
       it.px = lerp(rest.x, tx, smooth(0.25, 1, k)); it.py = lerp(rest.y, ty, smooth(0.35, 1, k)) - Math.sin(Math.min(1, k * 1.3) * Math.PI) * 170;
-    } else if (it.state === "back") {
-      const k = Math.min(1, it.t / 0.6), fx = P.x - 40, fy = P.y - 190;
-      it.px = lerp(fx, rest.x, k); it.py = lerp(fy, rest.y, k) - Math.sin(k * Math.PI) * 200;
-    } else if (it.state === "truck" || it.state === "peek") { it.px = P.x - 40; it.py = P.y - 190; }
+    } else if (it.state === "truck") { it.px = P.x - 40; it.py = P.y - 190; }
     else if (it.state === "deliver") {
       const k = Math.min(1, it.t / 0.45), tx = s.bear.x, ty = groundY(s.bear.x) + BACK - 120;
       it.px = lerp(it.from.x, tx, k); it.py = lerp(it.from.y, ty, k) - Math.sin(k * Math.PI) * 180;
@@ -1044,7 +994,6 @@ function drawTrailer(t, o = {}) {
   ctx.translate(0, -hop * 70); ctx.rotate(-hop * 0.08); ctx.scale(K, K); ctx.translate(-120, -172);
   rr(14, 120, 180, 16, 4, t.color); rr(190, 122, 44, 8, 3, "#5b6370"); circle(236, 126, 7, "#3a3f4b"); circle(236, 126, 3, "#a3abb8");
   rr(60, 104, 96, 18, 9, dark);
-  if (t.peek && tNow - t.peek < 2.6) { const k = clamp((tNow - t.peek) / 0.45, 0, 1), out = clamp((tNow - t.peek - 2.2) / 0.4, 0, 1); drawItem(t.l, 104, 30 - 95 * k * (1 - out), 110 * (0.3 + 0.7 * easeBack(k)) * (1 - out * 0.7)); }
   crateBox(104, 60, 112, t.l, { fs: 0.72, glow: o.glow, sel: o.sel });
   wheel(104, 152, 20, t.wheel || 0);
   ctx.restore();
@@ -1171,10 +1120,9 @@ function drawDock(s) {
   const top = y - 430;
   ctx.fillStyle = "#ffc234"; rr(a - 10, top, 22, 430, 4, "#ffc234"); rr(b - 12, top, 22, 430, 4, "#ffc234"); rr(a - 20, top - 10, b - a + 40, 26, 6, "#ffb31f");
   ctx.save(); ctx.beginPath(); ctx.rect(a - 20, top - 10, b - a + 40, 26); ctx.clip(); ctx.fillStyle = "#23272f"; for (let x = a - 40; x < b + 40; x += 34) { ctx.beginPath(); ctx.moveTo(x, top + 16); ctx.lineTo(x + 14, top - 10); ctx.lineTo(x + 24, top - 10); ctx.lineTo(x + 10, top + 16); ctx.fill(); } ctx.restore();
-  const sel = selected(s), lift = s.items.find(i => i.state === "lift" || i.state === "back");
+  const sel = selected(s), lift = s.items.find(i => i.state === "lift");
   s.hookX = lerp(s.hookX ?? (a + b) / 2, lift ? lift.px : sel ? sel.x : (s.hookX ?? (a + b) / 2), 0.15);
-  const peek = s.items.some(i => i.state === "peek");
-  s.hookY = lerp(s.hookY ?? y - 190, lift ? lift.py - 70 : peek ? top + 110 : y - 190, lift ? 1 : 0.12);
+  s.hookY = lerp(s.hookY ?? y - 190, lift ? lift.py - 70 : y - 190, lift ? 1 : 0.12);
   const hookY = s.hookY;
   rr(s.hookX - 24, top + 14, 48, 22, 5, "#5b6370");
   ctx.strokeStyle = "#3a3f4b"; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(s.hookX, top + 36); ctx.lineTo(s.hookX, hookY); ctx.stroke();
@@ -1380,7 +1328,13 @@ function render() {
     if (s.m === "deliver") {
       drawDock(s);
       if (!run.party) { drawBear(s.bear, false, s.reveal); drawReveal(s); }
-      for (const it of s.items) if (it.state === "dock") crateBox(it.px ?? it.x, it.py ?? dockY(s) - 62, 120, it.l.toUpperCase(), { glow: s.hint && it.l === s.l, sel: it === sel && !s.busy });
+      // boxes bob a little when it's time to tap one; a wrong one wobbles
+      const ready = showTouch && !RM && s.active && !s.done && !s.busy && !speaking && locked <= 0;
+      for (const it of s.items) if (it.state === "dock") {
+        const nk = tNow - (it.nope ?? -9), wob = nk < 0.6 ? Math.sin(nk * 38) * 16 * (1 - nk / 0.6) : 0;
+        const bob = ready ? -Math.abs(Math.sin(tNow * 2.6 + it.x * 0.013)) * 9 : 0;
+        crateBox((it.px ?? it.x) + wob, (it.py ?? dockY(s) - 62) + bob, 120, it.l.toUpperCase(), { glow: s.hint && it.l === s.l, sel: it === sel && !s.busy && !showTouch });
+      }
       drawOrder(s);
     } else {
       for (const t of s.items) if ((t.state === "park" && !run.parade) || t.state === "withbig" || t.state === "transfer") drawTrailer(t, { glow: s.hint && t.l === s.l && t.state === "park", sel: t === sel && !s.busy });
@@ -1405,8 +1359,7 @@ function render() {
     drawTruck({ type: P.type, color: P.color, x: P.x, y: P.y, ang: P.ang, wheel: P.wheel, squash: P.squash, honk: P.honk });
     // a box riding in the dump truck, or flying to/from it
     for (const s of stations) if (s.m === "deliver") for (const it of s.items) {
-      if (it.state === "peek") { const k = clamp(it.t / 0.45, 0, 1); drawItem(it.l, it.px, it.py - 70 - 85 * k, 112 * (0.3 + 0.7 * easeBack(k))); crateBox(it.px, it.py, 100, it.l.toUpperCase()); }
-      else if (it.state === "lift" || it.state === "back" || it.state === "truck" || it.state === "deliver") crateBox(it.px, it.py, it.state === "truck" ? 100 : 110, it.l.toUpperCase());
+      if (it.state === "lift" || it.state === "truck" || it.state === "deliver") crateBox(it.px, it.py, it.state === "truck" ? 100 : 110, it.l.toUpperCase());
     }
   }
   if (P && P.bird) drawBirdAt(P.bird.x, P.bird.y, P.bird.hue, P.bird.state !== "sit", P.bird.flap, false);
@@ -1430,7 +1383,6 @@ function frame(t) { const dt = Math.min(0.05, (t - last) / 1000); last = t; poll
 
 /* ---------- screens ---------- */
 function showOnly(id) { ["ov-start", "ov-home", "ov-pick", "ov-end"].forEach(o => { $("#" + o).hidden = o !== id; }); }
-function gameUI(on) { $("#touch").hidden = !(on && showTouch); }
 function fadeTo(fn) { $("#fade").classList.add("on"); setTimeout(() => { fn(); setTimeout(() => $("#fade").classList.remove("on"), 60); }, 380); }
 function goHome() {
   cancelChains(); stopVoice(); engineOff();
@@ -1439,12 +1391,12 @@ function goHome() {
   birds = [{ x: 1380, y: 0, fly: false, vx: 0, vy: 0, flap: 0, hue: "#5b8fd6" }, { x: 1426, y: 0, fly: false, vx: 0, vy: 0, flap: 1, hue: "#e37b5b" }];
   addDecor(3000, []);
   P = newPlayer(Math.random() < 0.5 ? "dump" : "tow"); P.x = 300; P.y = groundY(P.x);
-  cam.x = 0; mode = "home"; showOnly("ov-home"); gameUI(false);
+  cam.x = 0; mode = "home"; showOnly("ov-home");
   setTimeout(() => focusFirst(), 60);
 }
 function endScreen(text) {
   engineOff(); locked = 99; $("#end-text").textContent = text;
-  setTimeout(() => { mode = "end"; showOnly("ov-end"); gameUI(false); setTimeout(() => focusFirst($("#btn-again")), 60); }, 300);
+  setTimeout(() => { mode = "end"; showOnly("ov-end"); setTimeout(() => focusFirst($("#btn-again")), 60); }, 300);
 }
 let lastMode = "deliver";
 function begin(m) { initAudio(); lastMode = m; cancelChains(); stopVoice(); fadeTo(() => showPicker(m)); }
@@ -1464,7 +1416,7 @@ function showPicker(m) {
     b.addEventListener("focus", () => { if (document.body.classList.contains("pad")) previewHorn(i, b); });
     box.appendChild(b);
   });
-  picking = false; mode = "pick"; showOnly("ov-pick"); gameUI(false);
+  picking = false; mode = "pick"; showOnly("ov-pick");
   if (P) { P.type = m === "tow" ? "tow" : "dump"; const t = TRUCKS[settings.truck] || TRUCKS[0]; P.color = t.color; P.horn = t.horn; }
   setTimeout(() => focusFirst(box.children[settings.truck] || box.children[0]), 60);
 }
@@ -1510,7 +1462,7 @@ function moveFocus(dir) {
   if (best && best !== cur) { best.focus({ preventScroll: true }); sfx.tick(); if (best.dataset.say && mode === "home") say(best.dataset.say); }
 }
 function setPad(on) { document.body.classList.toggle("pad", on); }
-function setTouch(on) { if (showTouch === on) return; showTouch = on; if (mode === "deliver" || mode === "tow") $("#touch").hidden = !on; resize(); }
+function setTouch(on) { showTouch = on; }
 
 /* ---------- input ---------- */
 const inGame = () => (mode === "deliver" || mode === "tow") && $("#parent").hidden;
@@ -1532,19 +1484,7 @@ document.addEventListener("keydown", e => {
   else if (k === "Tab") setPad(true);
 });
 document.addEventListener("keyup", e => { const k = e.key; if (k === "ArrowLeft" || k === "a" || k === "A") input.left = false; if (k === "ArrowRight" || k === "d" || k === "D") input.right = false; });
-addEventListener("blur", () => { input.left = input.right = input.touchL = input.touchR = false; });
-function holdBtn(id, on, off) {
-  const el = $(id);
-  el.addEventListener("pointerdown", e => { e.preventDefault(); initAudio(); el.setPointerCapture?.(e.pointerId); el.classList.add("on"); on(); });
-  const up = () => { el.classList.remove("on"); off && off(); };
-  ["pointerup", "pointercancel", "lostpointercapture"].forEach(ev => el.addEventListener(ev, up));
-  el.addEventListener("contextmenu", e => e.preventDefault());
-}
-holdBtn("#t-left", () => { input.touchL = true; }, () => { input.touchL = false; });
-holdBtn("#t-right", () => { input.touchR = true; }, () => { input.touchR = false; });
-holdBtn("#t-jump", () => jump());
-holdBtn("#t-grab", () => action());
-holdBtn("#t-honk", () => honk());
+addEventListener("blur", () => { input.left = input.right = false; });
 document.addEventListener("pointerdown", e => { setPad(false); if (e.pointerType === "touch" || e.pointerType === "mouse") setTouch(true); }, true);
 // tapping a box or trailer drives there and picks it; tapping the bear asks again; tapping the truck honks
 canvas.addEventListener("pointerdown", e => {
@@ -1593,7 +1533,7 @@ addEventListener("gamepadconnected", () => { setPad(true); setTouch(false); if (
 
 /* ---------- grown-up panel ---------- */
 const gear = $("#gear"); let holdTimer = null;
-function openParent() { stopVoice(); renderParent(); $("#parent").hidden = false; $("#gear-tip").hidden = true; input.left = input.right = input.touchL = input.touchR = false; setTimeout(() => $("#parent-close").focus({ preventScroll: true }), 30); }
+function openParent() { stopVoice(); renderParent(); $("#parent").hidden = false; $("#gear-tip").hidden = true; input.left = input.right = false; setTimeout(() => $("#parent-close").focus({ preventScroll: true }), 30); }
 function closeParent() { $("#parent").hidden = true; saveSettings(); if (mode === "home") focusFirst(); }
 function startHold(e) { e.preventDefault(); clearTimeout(holdTimer); gear.classList.add("holding"); $("#gear-tip").hidden = false; holdTimer = setTimeout(() => { endHold(); openParent(); }, 1500); }
 function endHold() { clearTimeout(holdTimer); gear.classList.remove("holding"); setTimeout(() => { $("#gear-tip").hidden = true; }, 600); }

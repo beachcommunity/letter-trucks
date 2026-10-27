@@ -10,8 +10,7 @@ GEOM = '''(() => { const s = __lt.st; if (!s) return null;
   const pts = s.items.map(it => ({ l: it.l, ...__lt.screenOf(it.x, 770 - 64 - 110) }));
   const bear = s.m === "deliver" ? __lt.screenOf(s.bear.x, 770 - 64 - 250) : (s.big ? __lt.screenOf(s.big.x, 770 - 150) : null);
   const road = __lt.screenOf(0, 770);
-  const btns = [...document.querySelectorAll('#touch .tbtn:not(.gone)')].map(b => b.getBoundingClientRect()).filter(r => r.width).map(r => ({ top: r.top, left: r.left, right: r.right }));
-  return { m: s.m, items: pts, bear, roadY: road.y, btnTop: btns.length ? Math.min(...btns.map(b => b.top)) : innerHeight, btns, W: innerWidth, H: innerHeight };
+  return { m: s.m, items: pts, bear, roadY: road.y, W: innerWidth, H: innerHeight };
 })()'''
 
 async def run(b, mode, vp, tag):
@@ -21,16 +20,15 @@ async def run(b, mode, vp, tag):
     await pg.goto(URL); await pg.wait_for_timeout(700)
     await pg.tap('#ov-start'); await pg.wait_for_timeout(900)
     await pg.tap(f'#btn-{mode}'); await T.pick(pg, 1, tap=True)
-    await pg.evaluate("document.getElementById('t-right').dispatchEvent(new PointerEvent('pointerdown', {bubbles:true, pointerType:'touch'}))")
+    # no controls on touch: the truck drives itself to the stop
     await T.wait_for(pg, '__lt.st && __lt.st.active', 20000)
-    await pg.evaluate("document.getElementById('t-right').dispatchEvent(new PointerEvent('pointerup', {bubbles:true, pointerType:'touch'}))")
     await T.wait_for(pg, '!__lt.P.auto', 15000); await pg.wait_for_timeout(600)
     await T.wait_for(pg, '!__lt.speaking', 15000); await pg.wait_for_timeout(900)
     g = await pg.evaluate(GEOM)
     await pg.screenshot(path=f't/{tag}-a.png')
     off = [i for i in g['items'] if i['x'] < 20 or i['x'] > g['W'] - 20]
-    print(tag, 'items', [(i['l'], round(i['x']), round(i['y'])) for i in g['items']], 'bear/big', g['bear'] and (round(g['bear']['x']), round(g['bear']['y'])), 'road y', round(g['roadY']), 'buttons top', round(g['btnTop']), 'H', g['H'])
-    print(tag, 'offscreen items:', off, '| road hidden by buttons:', g['roadY'] > g['btnTop'])
+    print(tag, 'items', [(i['l'], round(i['x']), round(i['y'])) for i in g['items']], 'bear/big', g['bear'] and (round(g['bear']['x']), round(g['bear']['y'])), 'road y', round(g['roadY']), 'H', g['H'])
+    print(tag, 'offscreen items:', off, '| road below screen:', g['roadY'] > g['H'])
     # wrong pick by tapping it
     s = await pg.evaluate('({l: __lt.st.l, items: __lt.st.items.map(i => i.l)})')
     wrong = [x for x in s['items'] if x != s['l']][0]
