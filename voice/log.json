@@ -1,0 +1,9169 @@
+[
+ {
+  "key": "pick_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "X! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "X! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "C! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "See! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I! i-i-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I! i-i-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little B!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little bee",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "intro_pick",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Let's pick up letters! Drive into the boxes!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   },
+   {
+    "transcript": "Let's pick up letters! Drive into the boxes!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_t",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "t t turtle",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "missing letter name T"
+   },
+   {
+    "transcript": "T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_s",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "s s-s-sun",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "letter name 'ess' was pronounced as sound /s/"
+   },
+   {
+    "transcript": "Ess! sss sss sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_t",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little ess! sss sss sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_s",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Ess! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big ay and little ay! a a apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_d",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "find_d",
+  "take": 1,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "find_d",
+  "take": 2,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "snd_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "k-k-key",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "El! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_d",
+  "take": 3,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "snd_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "i-i-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "h h horse",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little H. h h horse.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little L!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little L!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_l",
+  "take": 0,
+  "score": 1,
+  "verdicts": [
+   {
+    "transcript": "l-lion!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "only said 'l' once instead of twice"
+   },
+   {
+    "transcript": "Ooh, lion?",
+    "matches_script": false,
+    "sounds_ok": false,
+    "problems": "Missing the two l sounds; added 'ooh' before lion."
+   }
+  ]
+ },
+ {
+  "key": "wrong_j",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little J. J J juice.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated j's were said as the letter name J instead of the phonics sound."
+   }
+  ]
+ },
+ {
+  "key": "right_j",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little J! J J juice.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated j's were pronounced as the letter name 'J' instead of the phonics sound."
+   }
+  ]
+ },
+ {
+  "key": "wrong_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little M!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little em",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_j",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big J and little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big J and little J! J J juice.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated j-j was pronounced as the letter name J, not the phonics sound."
+   }
+  ]
+ },
+ {
+  "key": "right_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_m",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "m-moon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "letter sound spoken only once instead of twice"
+   },
+   {
+    "transcript": "Mmm, moon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Script calls for the m sound twice (m-m-moon), but only one prolonged 'mmm' is heard before 'moon'."
+   }
+  ]
+ },
+ {
+  "key": "meet_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big K and little K! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big K and little K. k k key.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little N!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little en.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_l",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big L and little L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big L and little L. L L lion.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated l's were pronounced as the letter name, not the /l/ sound."
+   }
+  ]
+ },
+ {
+  "key": "meet_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big M and little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big M and little M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_l",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "el el lion",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated l's were the letter name 'el', not the /l/ sound"
+   }
+  ]
+ },
+ {
+  "key": "snd_l",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "l-l-lion",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_j",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little J! J J juice!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated j's were pronounced as the letter name 'jay' instead of the j sound."
+   }
+  ]
+ },
+ {
+  "key": "wrong_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little L! la la lion.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "En! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "n-n-nose",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Oh! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big N and little N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big N and little N! n n nose.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_n",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little N! N N nose!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "the repeated n's were spoken as the letter name, not the phonics sound"
+   }
+  ]
+ },
+ {
+  "key": "find_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little O!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little O.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "wrong_j",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little Jay. Juh juh juice.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_j",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big J and little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big J and little J. J J juice.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated j said as letter name"
+   }
+  ]
+ },
+ {
+  "key": "snd_m",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "em em moon",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated m's were letter names, not sounds"
+   }
+  ]
+ },
+ {
+  "key": "meet_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big O and little O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big O and little O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_p",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "find_p",
+  "take": 1,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "right_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_p",
+  "take": 2,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "find_p",
+  "take": 3,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: PROHIBITED_CONTENT)\",\"code\":400}}"
+ },
+ {
+  "key": "snd_o",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "oh oh octopus",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated o's were pronounced as the letter name 'oh' instead of the o sound in 'octopus'."
+   }
+  ]
+ },
+ {
+  "key": "right_p",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "snd_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "o-o-octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Ah, ah, octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_p",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "meet_l",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big L and little L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big L and little L! l l lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_j",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big J and little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big J and little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_p",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   },
+   {
+    "transcript": "Little P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little Q!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little cue",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little P. p p pig.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_n",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little N. n n nose.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "kw kw queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Pee! puh puh pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_p",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big P and little P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big P and little P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_j",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little Jay! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little Q! kw kw queen.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big Q and little Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big Q and little Q! kwa kwa queen",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_m",
+  "take": 2,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "m moon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "only one m sound instead of two"
+   },
+   {
+    "transcript": "Mmm, moon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "missing one m sound before moon"
+   }
+  ]
+ },
+ {
+  "key": "find_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little S!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little ess",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little R!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little R",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! ah octopus!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "only said the 'o' sound once instead of twice"
+   },
+   {
+    "transcript": "I'm little oh! oh-oh-octopus.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated o bits were the letter name 'oh', not the short o sound."
+   }
+  ]
+ },
+ {
+  "key": "snd_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "r r rocket",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little ar! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_r",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big R and little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big R and little R. Rrr rocket.",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "The script requires two separate r sounds before rocket, but only one prolonged r sound is heard."
+   }
+  ]
+ },
+ {
+  "key": "find_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little T!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little T!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little T t t turtle",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big T and little T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big T and little T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "U! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "incorrect phonics sound for umbrella (/u\u02d0/ instead of /\u028c/)"
+   },
+   {
+    "transcript": "You! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_s",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "s-s-s-sun!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "repeated sound three times instead of two"
+   },
+   {
+    "transcript": "s s sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big S and little S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big S and little S! sss sss sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_s",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "sss sss sun",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "U! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "You! Uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_m",
+  "take": 3,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "m-moon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "letter sound spoken once instead of twice"
+   },
+   {
+    "transcript": "mmm moon",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "only one m sound before moon"
+   }
+  ]
+ },
+ {
+  "key": "snd_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "t t turtle",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_r",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big R and little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big R and little R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little ess! sss sss sun",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little U! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little U, uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little U!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little you.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little tee! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "find_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little V!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little V!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "right_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little U! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little you! uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big V and little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big V and little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big U and little U! u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little oh! o-o-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_v",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "v v-v-van",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "said the sound /v/ instead of the letter name 'vee'"
+   },
+   {
+    "transcript": "vee v v van",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_w",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Wuh! W-w-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "said letter sound instead of letter name for W"
+   },
+   {
+    "transcript": "Wuh! wuh wuh watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "w w watermelon",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little X!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little ex.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "u-u-umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "you you umbrella",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated u was said as the letter name, not the short u sound"
+   }
+  ]
+ },
+ {
+  "key": "pick_v",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Vee! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little X! Fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little X! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little X! Fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little X! Fox. ks. ks.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "find_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little W!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little W.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big W and little W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big W and little W! w w watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "fox, ks, ks",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little Y!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little Y.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   },
+   {
+    "transcript": "Why, y-y-yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big X and little X! Fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big X and little X! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Zee! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_y",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little Y. Y, Y, yarn.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated y's were pronounced as the letter name instead of the phonics sound."
+   }
+  ]
+ },
+ {
+  "key": "meet_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big Y and little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big Y and little Y. y y yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find little Z",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find little zee.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "u-u-umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "pronounced u as 'oo' instead of 'uh'"
+   },
+   {
+    "transcript": "U, U, umbrella.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated u's were said as the letter name, not the short u sound."
+   }
+  ]
+ },
+ {
+  "key": "right_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "u-u-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "intro_tow",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Let's go towing!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Let's go towing!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "depot",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "All the letters are home! Hooray!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "All the letters are home! Hooray!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_w",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "w-w-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "missing the letter name W"
+   },
+   {
+    "transcript": "double-u! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "menu_pick",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Pick up letters!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Pick up letters!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "tow_done",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Great towing! Beep beep!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Great towing! Beep beep!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big Z and little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big Z and little Z! z z zebra.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "menu_tow",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Tow truck!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Tow truck!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_y",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little why! why-why-yarn!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "Repeated y's are the letter name 'why', not the /j/ sound."
+   }
+  ]
+ },
+ {
+  "key": "title",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Letter Trucks!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Letter trucks!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_y",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little why. y-y-yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_w",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_z",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little zee! zee-zee-zebra!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated z's were letter name 'zee' instead of /z/ sound"
+   }
+  ]
+ },
+ {
+  "key": "snd_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_z",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "zee zee zebra",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated z was letter name, not sound"
+   }
+  ]
+ },
+ {
+  "key": "snd_z",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "z-z-zebra",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "z z zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_z",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "p-p-pig",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "P-p-pig?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_y",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little why. why why yarn.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated y's were said as the letter name instead of the sound"
+   }
+  ]
+ },
+ {
+  "key": "right_y",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little why y y yarn",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find the little letter P!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find the little letter P.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "find_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Find the little letter D!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Find the little letter dee!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Eh, eh, egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_e",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "eh! eh-eh-egg!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Letter E was pronounced as the sound 'eh' instead of the letter name 'ee'"
+   },
+   {
+    "transcript": "E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big E and little e. Eh, eh, egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little A! a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little A! a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Ee! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_e",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_e",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big E and little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big E and little E! eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_a",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "a-a-apple",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "used 'uh' sound instead of 'a' sound as in apple"
+   },
+   {
+    "transcript": "a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little E, eh eh egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_e",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little eye! ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ee eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "a-a-apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Ah, ah, apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little eye, ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_e",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little E! eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little E. eh, eh, egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_a",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little A! a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little I! ih ih igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_a",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big A and little A! A-A-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated A's were spoken as the letter name, not the short a sound"
+   }
+  ]
+ },
+ {
+  "key": "snd_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "A! a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_e",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ee eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "wrong_a",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little A, A A apple.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated a's pronounced as the letter name"
+   }
+  ]
+ },
+ {
+  "key": "right_i",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little I, ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "pick_i",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_i",
+  "take": 2,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "ih-ih-igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "eh eh igloo",
+    "matches_script": false,
+    "sounds_ok": false,
+    "problems": "said eh instead of ih"
+   }
+  ]
+ },
+ {
+  "key": "right_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big I and little I! ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_a",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Big A and little A! a-a-a-apple!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "The letter sound was repeated three times instead of twice."
+   },
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little oh, ah ah octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_i",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ih-ih-igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_i",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "I'm little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little eye. eye eye igloo.",
+    "matches_script": false,
+    "sounds_ok": false,
+    "problems": "repeated i said as letter name instead of short sound"
+   }
+  ]
+ },
+ {
+  "key": "meet_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big O and little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big O and little O. Ah, ah, octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little O, ah ah octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_i",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big I and little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big I and little I ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Oh! uh-uh-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_o",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Ooh! uh-uh-umbrella!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Said 'Ooh' instead of letter name 'U'"
+   },
+   {
+    "transcript": "Ooh! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_a",
+  "take": 2,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm little A! uh-uh-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "pronounced as 'uh' (/\u028c/) instead of the short 'a' sound (/\u00e6/) in apple"
+   },
+   {
+    "transcript": "I'm little A, a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   },
+   {
+    "transcript": "I'm little I. ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_a",
+  "take": 3,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated 'a' was pronounced as 'uh' (/\u028c/) instead of the vowel in apple (/\u00e6/)"
+   },
+   {
+    "transcript": "A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated a's are pronounced as the letter name /e\u026a/, not the short /\u00e6/ sound"
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "You! uh uh umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "You! uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big O and little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big oh and little oh. Ah, ah, octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little O. Ah, ah, octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "pick_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_u",
+  "take": 3,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "Ooh! uh-uh-umbrella!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "letter U pronounced as 'oo' instead of the letter name 'you'"
+   },
+   {
+    "transcript": "Ooh! uh-uh-umbrella!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "The standalone letter 'U' was pronounced as its sound 'ooh' instead of its name 'you'."
+   }
+  ]
+ },
+ {
+  "key": "snd_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ah-ah-octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "pick_o",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little eye, ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little U! uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big O and little O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big O and little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_i",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little I! ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "right_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "snd_a",
+  "take": 3,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "pronounced 'uh' instead of the short 'a' sound in apple"
+   },
+   {
+    "transcript": "a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "uh-uh-umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_a",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big A and little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big A and little A. a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big U and little U uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big U and little U, uh uh umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None."
+   }
+  ]
+ },
+ {
+  "key": "wrong_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "meet_o",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big O and little O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big O and little O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big U and little U! uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little U... uh... uh... umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little U! uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "right_u",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Little you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_o",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "snd_u",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "wrong_o",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little O. ah ah octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_u",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little you! uh-uh-umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "meet_u",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Big U and little U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "wrong_a",
+  "take": 3,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm little A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm little A! a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little B?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little bee?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_o",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I need uh uh octopus",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "pronounced uh instead of ah"
+   },
+   {
+    "transcript": "I need uh uh octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say m-m-moon?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say m-m-moon?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "box_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need ah ah octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_t",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Yay! T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Tee! tee-tee-turtle.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated t's were said as the letter name 'tee' instead of the /t/ sound."
+   }
+  ]
+ },
+ {
+  "key": "yay_t",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter ess! sss sss sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_g",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm C! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm C! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm Jay, j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm D! d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm D! d d dog.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm M! m m moon.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_p",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "Oh P! p-p-pig?",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "said 'Oh' instead of 'I\\'m'"
+   },
+   {
+    "transcript": "Oh, pee, p-p-pig?",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Says 'Oh' instead of 'I'm'."
+   }
+  ]
+ },
+ {
+  "key": "box_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm F! f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm F! f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm bee b b bus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm cue! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm why. y y yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "intro_deliver",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "The bears need letters! Let's go!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "The bears need letters! Let's go!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "deliver_done",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Every bear got a letter! Hooray!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Every bear got a letter! Hooray!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "menu_deliver",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Bear deliveries!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Bear deliveries?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm Z! z z zebra.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say b-b-bus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say b-b-bus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm X! Fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm eks! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! C! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! See! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_b",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter B! b-b-bus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say k-k-cat?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say k-k-cat?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter C! k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter C. k k cat.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little letter D?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little letter D?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little C?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little C?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_c",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need k-k-cat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need k k cat",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say d-d-dog?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say d-d-dog?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_f",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "where_f",
+  "take": 1,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "where_f",
+  "take": 2,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "say_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say f-f-fish?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say f f fish?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! D! d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! D! d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_d",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter D! d-d-dog!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter dee. d d dog.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_g",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need g g goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_k",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I'm K! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm K! K K key.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated k's said as letter name"
+   }
+  ]
+ },
+ {
+  "key": "where_g",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little G?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little gee?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! F! f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! F! f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_p",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "A P! p-p-pig!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Said 'A' instead of 'I'm'"
+   },
+   {
+    "transcript": "I'm pee! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter F! f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter F. f f fish.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need f-f-fish!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_g",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I need the letter G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter G. G G goat.",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "Repeated g's were pronounced as the letter name 'gee', not the /g/ sound."
+   }
+  ]
+ },
+ {
+  "key": "box_p",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_h",
+  "take": 0,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "where_h",
+  "take": 1,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "where_h",
+  "take": 2,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "yay_g",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Gee! guh guh goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_g",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter G! g-g-goat!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_h",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Can you say h-h-horse?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say, ha ha horse?",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "Repeated h bits sounded like 'ha' instead of the /h/ phonics sound."
+   }
+  ]
+ },
+ {
+  "key": "say_g",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say g-g-goat?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say g g goat?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter H. h h horse.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_h",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say h-h-horse?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say h h horse?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little J?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little J?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little K?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little K.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say k-k-key?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say k-k-key?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter Jay! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say j-j-juice?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say j j juice?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say l-l-lion?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say l-l-lion?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need h h horse",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_l",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "I need l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need uh uh lion.",
+    "matches_script": false,
+    "sounds_ok": false,
+    "problems": "Said filler 'uh uh' instead of the two required /l/ sounds."
+   }
+  ]
+ },
+ {
+  "key": "where_l",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Where's my little owl?",
+    "matches_script": false,
+    "sounds_ok": null,
+    "problems": "Speaker says owl instead of L"
+   },
+   {
+    "transcript": "Where's my little L.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_j",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! J! j-j-juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Jay! juh juh juice!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_l",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little L?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little L?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter K! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter kay k k key",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need m m moon.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter em. m m moon.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_k",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! K! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Kay! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little M?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little em?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter N. n n nose.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_l",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need l l lion",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_l",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter L! l-l-lion!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter L. l l lion.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need p p pig",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_m",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! M! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! em! m-m-moon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little letter P?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little letter P?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter Q. kw kw queen.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little N?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little en?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter P! p-p-pig!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! Q! kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Cue! Kwah, kwah, queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! N! n-n-nose!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need kw-kw-queen!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need kw kw queen.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_n",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say n-n-nose?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say n n nose?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say kw-kw-queen?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say kw kw queen?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_q",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little Q?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little Q?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little R?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little ar.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_p",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say p-p-pig?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say p p pig?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say r-r-rocket?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say r-r-rocket?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need t-t-turtle",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say t-t-turtle?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say t-t-turtle?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little S?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little ess?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need s s sun",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! R! r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little T?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little tee?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need v v van.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! S! s-s-sun!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_t",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter T! t-t-turtle!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter T. t t turtle.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say v-v-van?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say v v van?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm H! h-h-horse!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little W?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little double-u?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_r",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need r-r-rocket!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need r-r-rocket",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_s",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say s-s-sun?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say s-s-sun?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_v",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! V! v-v-van!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter W! w w watermelon.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say fox, ks, ks?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say fox? ks ks",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say w-w-watermelon?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say w w watermelon?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_w",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Yay! w-w-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "skipped letter name W"
+   },
+   {
+    "transcript": "Yay! W! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   },
+   {
+    "transcript": "I need w w watermelon",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! X! Fox. ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! eks! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little X?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little eks?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_v",
+  "take": 0,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "Where is my little V?",
+    "matches_script": false,
+    "sounds_ok": null,
+    "problems": "said 'Where is' instead of 'Where's'"
+   },
+   {
+    "transcript": "Where is my little V?",
+    "matches_script": false,
+    "sounds_ok": null,
+    "problems": "Script 'Where's' was spoken as 'Where is'"
+   }
+  ]
+ },
+ {
+  "key": "yay_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Why? y-y-yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_v",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little V?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little V?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little Y?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little Y.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter Y! y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter why. yuh yuh yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say z-z-zebra?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say z z zebra?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need y-y-yarn!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need y y yarn.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_y",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say y-y-yarn?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say y-y-yarn?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "thanks2",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Thank you so much!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Thank you so much!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "thanks",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Thank you",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Thank you.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "great",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "You did it!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "You did it!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little Z?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little zee?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Zee! z z zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_x",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter X! fox, ks, ks!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter ex. fox, ks, ks.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need z-z-zebra",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_w",
+  "take": 1,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "Yay! wuh! w-w-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "The letter W was read as its sound instead of its letter name"
+   },
+   {
+    "transcript": "Yay! Wuh! Wuh-wuh-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Standalone W was pronounced as the sound instead of the letter name 'double-u'."
+   }
+  ]
+ },
+ {
+  "key": "order0_z",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter Z! z-z-zebra!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter zee. z z zebra.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_k",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm K! k-k-key!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm K. k-k-key.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_w",
+  "take": 2,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "Yay! Wuh! w-w-watermelon!",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Letter W pronounced as sound instead of letter name"
+   },
+   {
+    "transcript": "Yay! Wuh! wuh wuh watermelon.",
+    "matches_script": false,
+    "sounds_ok": true,
+    "problems": "Standalone W was said as the sound 'wuh' instead of the letter name 'double-u'."
+   }
+  ]
+ },
+ {
+  "key": "box_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm oh ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm you. Uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little A?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little A.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm U! uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm you. Uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_a",
+  "take": 0,
+  "score": 1,
+  "verdicts": [
+   {
+    "transcript": "I'm A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "letter 'a' sound pronounced as 'uh' instead of /\u00e6/ as in 'apple'"
+   },
+   {
+    "transcript": "I'm A! uh uh apple!",
+    "matches_script": false,
+    "sounds_ok": false,
+    "problems": "Said 'uh uh' instead of the repeated short-a sound in 'apple'."
+   }
+  ]
+ },
+ {
+  "key": "where_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little A?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little A?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say a-a-apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say a a apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm you. Uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "box_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm oh ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm E eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_a",
+  "take": 0,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I need a-a-apple",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "pronounced repeated 'a' as 'uh' instead of the short 'a' in apple"
+   },
+   {
+    "transcript": "I need a a apple",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say a a apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say a a apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little A?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little A?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm I! ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_a",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm E eh eh egg",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say a-a-apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say a a apple?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter E. Eh, eh, egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say eh-eh-egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say eh eh egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need eh eh egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say eh-eh-egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say eh eh egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_e",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm eye! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Ee! eh, eh, egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "None"
+   }
+  ]
+ },
+ {
+  "key": "yay_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_a",
+  "take": 1,
+  "score": 2,
+  "verdicts": [
+   {
+    "transcript": "I need uh-uh-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "repeated letter sound was 'uh' instead of short 'a' /\u00e6/ as in apple"
+   },
+   {
+    "transcript": "I need a a apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated a's are pronounced as the letter name /e\u026a/, not the short /\u00e6/ vowel in apple."
+   }
+  ]
+ },
+ {
+  "key": "where_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say eh-eh-egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say eh eh egg?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need eh eh egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_e",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter E! eh-eh-egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter I. ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_a",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm A! a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ih ih igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ih ih igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order1_a",
+  "take": 2,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "I need a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": false,
+    "problems": "The repeated sound was pronounced as 'uh' (/\u028c/) instead of the short 'a' (/\u00e6/) sound in apple."
+   },
+   {
+    "transcript": "I need a a apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "box_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ih ih igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ih-ih-igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little E?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter I. ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ih-ih-igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ih ih igloo?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need ih ih igloo",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "box_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I'm A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I'm A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter I. ih ih igloo.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_e",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter E! eh eh egg!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter E. eh eh egg.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_i",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little I?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little I.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ah-ah-octopus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ah ah octopus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Oh! Ah, ah, octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little O?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little O?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_o",
+  "take": 1,
+  "error": "tts 400: {\"error\":{\"message\":\"Provider blocked this request through content moderation (provider finish reason: SAFETY)\",\"code\":400}}"
+ },
+ {
+  "key": "order1_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need uh uh umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ah ah octopus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ah-ah-octopus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little O?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little O.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_i",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little I?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little eye?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! You! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_o",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need uh uh umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need uh uh umbrella",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_a",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter A! a-a-apple!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter A. a a apple.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "yay_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter you. Uh, uh, umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! You! uh-uh-umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "No issues."
+   }
+  ]
+ },
+ {
+  "key": "where_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little I?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little I.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say ah-ah-octopus?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say ah ah octopus",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little U?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little you?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_u",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say uh uh umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say uh-uh-umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! You! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order1_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need uh uh umbrella.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "say_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say uh uh umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say uh-uh-umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "where_u",
+  "take": 1,
+  "score": 3,
+  "verdicts": [
+   {
+    "transcript": "Where is my little U?",
+    "matches_script": false,
+    "sounds_ok": null,
+    "problems": "said 'Where is' instead of 'Where's'"
+   },
+   {
+    "transcript": "Where's my little you?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_i",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! I! ih-ih-igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Eye! ih ih igloo!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Oh! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "say_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Can you say uh-uh-umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Can you say uh uh umbrella?",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_u",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little U?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little U.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_o",
+  "take": 1,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter O! ah-ah-octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter O! Ah, ah, octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "order0_u",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter U! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter you! uh-uh-umbrella!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "order0_o",
+  "take": 2,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I need the letter O! ah ah octopus!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "I need the letter oh. ah ah octopus.",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_f",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little letter F?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little letter F?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "where_h",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Where's my little letter H?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Where's my little letter H?",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "yay_w",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yay! Double U! w-w-watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yay! Double U! w w watermelon!",
+    "matches_script": true,
+    "sounds_ok": true,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "react_wow",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Wow",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Wow!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "react_whee",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Whee!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Whee!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "react_yum",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Yum yum!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Yum yum!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": ""
+   }
+  ]
+ },
+ {
+  "key": "react_love",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "I love it!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "I love it!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ },
+ {
+  "key": "react_brrr",
+  "take": 0,
+  "score": 4,
+  "verdicts": [
+   {
+    "transcript": "Brrr! So cold!",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   },
+   {
+    "transcript": "Brrr, so cold.",
+    "matches_script": true,
+    "sounds_ok": null,
+    "problems": "none"
+   }
+  ]
+ }
+]
