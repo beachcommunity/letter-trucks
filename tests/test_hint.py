@@ -10,8 +10,8 @@ async def main():
         b = await p.chromium.launch(args=['--autoplay-policy=no-user-gesture-required'])
         pg = await b.new_page(viewport={'width': 1280, 'height': 720}); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
-        prog = {l: {"lvl": 1, "streak": 0, "seen": 3, "first": 2} for l in "bdtp"}
-        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bdtp', stops:3, boxes:3})); localStorage.setItem('letter-trucks-progress', JSON.stringify({deliver: %s, tow: {}}))}catch(e){}" % json.dumps(prog))
+        prog = {l: {"lvl": 1, "streak": 0, "seen": 3, "first": 2} for l in "bksm"}
+        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bksm', stops:3, boxes:3})); localStorage.setItem('letter-trucks-progress', JSON.stringify({deliver: %s, tow: {}}))}catch(e){}" % json.dumps(prog))
         await pg.goto(URL); await pg.wait_for_timeout(600)
         await pg.mouse.click(640, 360); await pg.wait_for_timeout(900)
         await pg.click('#btn-deliver'); await pg.wait_for_timeout(900); await T.pick(pg, 0)

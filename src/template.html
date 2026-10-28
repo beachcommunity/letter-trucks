@@ -200,7 +200,7 @@ body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus)
       <div class="row"><button class="btn danger" id="btn-reset">Reset progress</button><span class="status" id="reset-note"></span></div>
 
       <h3>Letters to practice</h3>
-      <p>Letters whose name starts with their sound ("B" is "bee"), then ones where the sound is at the end ("F" is "eff"), then the trickiest ones, where the name doesn't help.</p>
+      <p>Each set mixes letters that sound and look different, like b, k, s and m. Letters that are easy to mix up (b, d and p, or m and n) are in different sets, so one is solid before its twin shows up. Letters whose name holds their sound ("B" is "bee") come early, and the trickiest ones come last.</p>
       <div class="chips" id="set-chips"></div>
       <div class="lgrid" id="letter-grid"></div>
       <div class="row"><span class="status" id="letter-count"></span><button class="btn" id="btn-clear">Clear all</button><button class="btn" id="btn-all">All 26</button></div>
@@ -235,20 +235,24 @@ const CREDITS = __CREDITS__;
 
 const LETTERS = "abcdefghijklmnopqrstuvwxyz".split("");
 const WORDS = { a: "apple", b: "bus", c: "cat", d: "dog", e: "egg", f: "fish", g: "goat", h: "horse", i: "igloo", j: "juice", k: "key", l: "lion", m: "moon", n: "nose", o: "octopus", p: "pig", q: "queen", r: "rocket", s: "sun", t: "turtle", u: "umbrella", v: "van", w: "watermelon", x: "fox", y: "yarn", z: "zebra" };
-// ordered by how much the letter's name helps with its sound
+// each set mixes letters that sound and look different (b k s m: a pop, a click, a hiss, a hum).
+// Look-alikes and sound-alikes (b/d/p, d/t, m/n, k/c) land in different sets, so the first ones are
+// solid before their twins show up. Within that, letters whose name holds their sound come early.
 const SETS = [
-  { name: "Easy 1", letters: "bdtp" }, { name: "Easy 2", letters: "kjvz" },
-  { name: "Sound at end", letters: "smnrlf" }, { name: "Tricky", letters: "hygcw" }, { name: "Short vowels", letters: "aeiou" }, { name: "Last", letters: "xq" },
+  { name: "Start", letters: "bksm" }, { name: "Next", letters: "tjvl" }, { name: "Then", letters: "dzrf" },
+  { name: "More", letters: "pnhg" }, { name: "Short vowels", letters: "aeiou" }, { name: "Last", letters: "cwyxq" },
 ];
 const ORDER = SETS.map(s => s.letters).join("").split("");
+// look-alikes (kept apart in tow mode while a letter is new) and sound-alikes (kept apart in bear deliveries)
 const CONFUSE = [["b", "d"], ["b", "p"], ["d", "q"], ["p", "q"], ["n", "u"], ["m", "w"]];
+const SOUNDALIKE = [["b", "p"], ["d", "t"], ["k", "g"], ["f", "v"], ["s", "z"], ["m", "n"], ["c", "k"], ["c", "g"]];
 const COLORS = ["#ec5a47", "#2f6fb8", "#2fa36b", "#ff7f32", "#8b65d6", "#e0478c", "#1f9aa8", "#c9a227"];
 const FURS = ["#c98a4b", "#b5733e", "#d9a066", "#9a6542", "#e0b27c"];
 const ROOFS = ["#ec5a47", "#2f6fb8", "#2fa36b", "#8b65d6", "#e0478c", "#ff7f32"];
 // four kinds of truck to pick from; each one honks its own silly way
 const TRUCKS = [{ kind: "dump", color: "#ffc234", horn: "quack" }, { kind: "fire", color: "#ff6b5b", horn: "ahooga" }, { kind: "pickup", color: "#5b9be0", horn: "moo" }, { kind: "tractor", color: "#4cbf72", horn: "toot" }];
 const WALLS = ["#fbefd9", "#fde3e3", "#e3f2fd", "#e8f5e0", "#fff3c4"];
-const HATS = ["hard", "chef", "flower", "bow", "beanie", "party", "cap", "none", "hard", "bow"];
+const HATS = ["hard", "chef", "flower", "beanie", "party", "cap", "none", "hard", "beanie", "cap"];
 // what each bear does with what it gets
 const REACT = { a: "yum", e: "yum", j: "yum", w: "yum", f: "yum", r: "whee", s: "sky", m: "sky", i: "brrr", u: "umbrella", q: "crown", c: "hug", d: "hug", g: "hug", h: "hug", l: "hug", p: "hug", t: "hug", x: "hug", z: "hug", o: "hug", y: "hug", b: "wow", v: "wow", k: "wow", n: "wow" };
 const REACT_LINE = { yum: "react_yum", hug: "react_love", umbrella: "react_love", crown: "react_love", whee: "react_whee", sky: "react_wow", wow: "react_wow", brrr: "react_brrr" };
@@ -257,10 +261,12 @@ const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FONT = '"Fraunces", Georgia, "Times New Roman", serif';
 
 /* ---------- settings + progress (per browser, optional) ---------- */
-const DEFAULTS = { letters: "bdtp", stops: 5, boxes: 3, music: true, truck: 0 };
+const DEFAULTS = { letters: "bksm", stops: 5, boxes: 3, music: true, truck: 0, sets: 2 };
 let settings = { ...DEFAULTS };
 let progress = { deliver: {}, tow: {} };
 try { const s = JSON.parse(localStorage.getItem("letter-trucks-v3") || "null"); if (s && typeof s === "object") settings = { ...DEFAULTS, ...s }; } catch (e) {}
+// someone still on an old default first set moves to the new one (a set picked by hand stays)
+if (!settings.sets) { if (settings.letters === "bdtp" || settings.letters === "wolf") settings.letters = DEFAULTS.letters; settings.sets = 2; }
 try { const p = JSON.parse(localStorage.getItem("letter-trucks-progress") || "null"); if (p && p.deliver && p.tow) progress = p; } catch (e) {}
 function saveSettings() { try { localStorage.setItem("letter-trucks-v3", JSON.stringify(settings)); } catch (e) {} }
 function saveProgress() { try { localStorage.setItem("letter-trucks-progress", JSON.stringify(progress)); } catch (e) {} }
@@ -557,7 +563,10 @@ function planTargets(m, n) {
 function distractors(m, target, k, lvl) {
   let pool = activeLetters().filter(l => l !== target);
   const extra = ORDER.filter(l => l !== target && !pool.includes(l));
-  const bad = l => m === "tow" && lvl === 0 && CONFUSE.some(([a, b]) => (a === l && b === target) || (b === l && a === target));
+  const pair = (list, l) => list.some(([a, b]) => (a === l && b === target) || (b === l && a === target));
+  // c and k make the same sound here, so they never share a stop in bear deliveries
+  const bad = l => m === "tow" ? lvl === 0 && pair(CONFUSE, l)
+    : (lvl === 0 && pair(SOUNDALIKE, l)) || ((l === "c" && target === "k") || (l === "k" && target === "c"));
   let picks = shuffle(pool.filter(l => !bad(l)));
   if (picks.length < k - 1) picks = picks.concat(extra.filter(l => !bad(l)).slice(0, k - 1 - picks.length));
   return picks.slice(0, k - 1);
@@ -1260,7 +1269,6 @@ function drawHat(kind) {
       inked(0, () => circle(fx, fy, 4.5, "#fff3b0"));
     }
   }
-  else if (kind === "bow") { const q = P2(); q.moveTo(40, -66); q.lineTo(12, -88); q.quadraticCurveTo(6, -68, 12, -46); q.closePath(); q.moveTo(40, -66); q.lineTo(68, -88); q.quadraticCurveTo(74, -68, 68, -46); q.closePath(); fillP(q, "#ff8fb3"); circle(40, -67, 10, "#f06b9a"); }
   else if (kind === "beanie") { dome(64, 50, -52, "#5b9be0"); rr(-66, -62, 132, 18, 9, "#ff8a7a"); circle(0, -106, 14, "#ffffff"); }
   else if (kind === "party") { const q = P2(); q.moveTo(-30, -58); q.lineTo(30, -58); q.lineTo(4, -150); q.closePath(); fillP(q, "#b89cf0"); inked(0, () => { ctx.strokeStyle = "#ffd36a"; ctx.lineWidth = 7; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(-20, -82); ctx.lineTo(22, -86); ctx.moveTo(-10, -112); ctx.lineTo(14, -114); ctx.stroke(); }); circle(4, -152, 11, "#ffd36a"); }
   else if (kind === "cap") { ell(56, -58, 38, 9, "#e2574a"); dome(58, 42, -56, "#ff7a6b"); circle(0, -98, 7, "#e2574a"); }

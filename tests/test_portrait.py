@@ -16,7 +16,7 @@ GEOM = '''(() => { const s = __lt.st; if (!s) return null;
 async def run(b, mode, vp, tag):
     pg = await b.new_page(viewport=vp, is_mobile=True, has_touch=True); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
-    await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bdtp', stops:3, boxes:3, truck: 1}))}catch(e){}")
+    await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bksm', stops:3, boxes:3, truck: 1}))}catch(e){}")
     await pg.goto(URL); await pg.wait_for_timeout(700)
     await pg.tap('#ov-start'); await pg.wait_for_timeout(900)
     await pg.tap(f'#btn-{mode}'); await T.pick(pg, 1, tap=True)

@@ -74,7 +74,7 @@ async def main():
         pg = await b.new_page(viewport={'width': 1280, 'height': 720})
         pg.on('console', lambda m: errs.append(f'{m.type}: {m.text}') if m.type in ('error','warning') else None)
         pg.on('pageerror', lambda e: errs.append(f'PAGEERROR: {e}'))
-        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bdtpkjvz', stops:3, boxes:3}))}catch(e){}")
+        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bksmtjvl', stops:3, boxes:3}))}catch(e){}")
         await pg.goto(URL); await pg.wait_for_timeout(700)
         await pg.mouse.click(640, 360); await pg.wait_for_timeout(1200)
         await pg.screenshot(path='t/01-home.png')

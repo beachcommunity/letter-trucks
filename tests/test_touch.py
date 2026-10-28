@@ -21,7 +21,7 @@ async def main():
         b = await p.chromium.launch(args=['--autoplay-policy=no-user-gesture-required'])
         pg = await b.new_page(viewport={'width': 844, 'height': 390}, has_touch=True, is_mobile=True); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
-        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bdtp', stops:3, boxes:3}))}catch(e){}")
+        await pg.add_init_script("try{localStorage.setItem('letter-trucks-v3', JSON.stringify({letters:'bksm', stops:3, boxes:3}))}catch(e){}")
         await pg.goto(URL); await pg.wait_for_timeout(600)
         await pg.tap('#ov-start'); await pg.wait_for_timeout(800); await pg.tap('#btn-deliver'); await pg.wait_for_timeout(1200); await T.pick(pg, 0, tap=True)
         print('touch buttons in page:', await pg.evaluate("document.querySelectorAll('#touch, .tbtn').length"))
