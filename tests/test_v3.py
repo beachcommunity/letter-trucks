@@ -11,20 +11,23 @@ async def wait_for(pg, expr, timeout=30000, step=200):
         if await pg.evaluate(expr): return True
         await pg.wait_for_timeout(step); t += step
     return False
+async def hold_key(pg, key, cond, timeout=25000):
+    await pg.keyboard.down(key)
+    ok = await wait_for(pg, cond, timeout, 100)
+    await pg.keyboard.up(key)
+    return ok
 async def play_station(pg, idx, shots, wrong_first=0, use_tap=False):
-    # drive right until the station is active
-    await pg.keyboard.down('ArrowRight')
-    ok = await wait_for(pg, '__lt.st && __lt.st.active && !__lt.st.done', 20000)
-    await pg.keyboard.up('ArrowRight')
-    if not ok: print('station', idx, 'never activated'); return False
+    # drive right until the truck has parked itself at the loading spot
+    ok = await hold_key(pg, 'ArrowRight', '__lt.st && __lt.st.active && __lt.st.phase === "pick"')
+    if not ok: print('station', idx, 'never got to the loading spot'); return False
     s = await st(pg, '({l: __lt.st.l, lvl: __lt.st.lvl, items: __lt.st.items.map(i => i.l), m: __lt.st.m})')
     await pg.wait_for_timeout(800)
     if shots: await pg.screenshot(path=f't/{shots}-a-arrive.png')
     wrongs = [x for x in s['items'] if x != s['l']]
     for w in range(min(wrong_first, len(wrongs))):
-        await wait_for(pg, '!__lt.st.busy', 8000)
+        await wait_for(pg, '!__lt.st.busy && !__lt.speaking', 15000)
         if use_tap and w == 0:
-            pos = await st(pg, f'(() => {{ const s = __lt.st, it = s.items.find(i => i.l === "{wrongs[0]}"); const y = s.m === "deliver" ? __lt.dockY(s) - 62 : 770 - 64 - 110; return __lt.screenOf(it.x, y); }})()')
+            pos = await st(pg, f'(() => {{ const s = __lt.st, it = s.items.find(i => i.l === "{wrongs[0]}"); const y = s.m === "deliver" ? __lt.dockY(s) - 62 : __lt.gy(it.x) - 64 - 110; return __lt.screenOf(it.x, y); }})()')
             await pg.mouse.click(pos['x'], pos['y'])
         else:
             await st(pg, f'__lt.pick("{wrongs[w % len(wrongs)]}")')
@@ -35,28 +38,39 @@ async def play_station(pg, idx, shots, wrong_first=0, use_tap=False):
     await pg.wait_for_timeout(800)
     hint = await st(pg, '__lt.st.hint')
     if shots and wrong_first >= 2: await pg.screenshot(path=f't/{shots}-c-hint.png')
-    # now the right one, by driving there and pressing the action key
-    target_x = await st(pg, f'__lt.st.items.find(i => i.l === "{s["l"]}").x')
-    for _ in range(6):
-        px = await st(pg, '__lt.P.x')
-        if abs(px - target_x) < 80: break
-        key = 'ArrowRight' if target_x > px else 'ArrowLeft'
-        await pg.keyboard.down(key)
-        for _ in range(100):
-            await pg.wait_for_timeout(25)
-            px = await st(pg, '__lt.P.x')
-            if abs(px - target_x) < 110: break
-        await pg.keyboard.up(key); await pg.wait_for_timeout(500)
-    await wait_for(pg, '!__lt.speaking', 15000)
+    # move the crane's cursor to the right one with the arrow keys, then press space
+    await wait_for(pg, '!__lt.speaking && !__lt.st.busy', 15000)
+    target = s['items'].index(s['l'])
+    for _ in range(4):
+        cur = await st(pg, '__lt.st.cursor')
+        if cur == target: break
+        await pg.keyboard.press('ArrowRight' if target > cur else 'ArrowLeft'); await pg.wait_for_timeout(150)
     sel = await st(pg, '__lt.sel() && __lt.sel().l')
     await pg.keyboard.press('Space')
-    await pg.wait_for_timeout(1800)
+    loaded = await wait_for(pg, '__lt.st.phase === "carry"', 12000)
+    # drive it up to the customer, then hand it over
+    at = await hold_key(pg, 'ArrowRight', '__lt.st.phase === "give"')
+    await pg.wait_for_timeout(500)
+    await pg.keyboard.press('Space')
+    await pg.wait_for_timeout(1400)
     if shots: await pg.screenshot(path=f't/{shots}-d-right.png')
     done = await wait_for(pg, '!__lt.st || __lt.st.done', 30000)
     if not done:
-        print('STUCK:', await st(pg, '({busy: __lt.st.busy, locked: __lt.locked, speaking: __lt.speaking, items: __lt.st.items.map(i => i.l + ":" + i.state), px: Math.round(__lt.P.x), sel: __lt.sel() && __lt.sel().l, misses: __lt.st.misses})'))
-    print(f'station {idx}: mode {s["m"]} target {s["l"]} lvl {s["lvl"]} items {s["items"]} selected-before-press {sel} hint {hint} done {done}')
+        print('STUCK:', await st(pg, '({phase: __lt.st.phase, busy: __lt.st.busy, locked: __lt.locked, speaking: __lt.speaking, items: __lt.st.items.map(i => i.l + ":" + i.state), px: Math.round(__lt.P.x), misses: __lt.st.misses})'))
+    print(f'station {idx}: mode {s["m"]} target {s["l"]} lvl {s["lvl"]} items {s["items"]} cursor-on {sel} loaded {loaded} at-customer {at} hint {hint} done {done}')
     return done
+# press and hold on the road ahead of the truck until cond holds
+async def touch_drive(pg, cond, timeout=25000):
+    t = 0
+    while t < timeout:
+        if await pg.evaluate(cond): return True
+        pos = await pg.evaluate('(() => { const x = __lt.P.x + 300; const q = __lt.screenOf(x, __lt.gy(x) + 10); q.x = Math.min(q.x, innerWidth - 20); return q; })()')
+        await pg.mouse.move(pos['x'], pos['y']); await pg.mouse.down()
+        for _ in range(10):
+            await pg.wait_for_timeout(100); t += 100
+            if await pg.evaluate(cond): break
+        await pg.mouse.up()
+    return await pg.evaluate(cond)
 async def pick(pg, i=0, shot=None, tap=False):
     ok = await wait_for(pg, '!document.getElementById("ov-pick").hidden', 5000)
     await pg.wait_for_timeout(500)
@@ -102,12 +116,11 @@ async def main():
         await ph.screenshot(path='t/31-phone-home.png')
         await ph.tap('#btn-tow'); await ph.wait_for_timeout(1200)
         await pick(ph, 3, '31b-phone-picker', tap=True)
-        # on touch the truck drives itself to the stop
-        await wait_for(ph, '__lt.st && __lt.st.active', 20000)
+        await touch_drive(ph, '__lt.st && __lt.st.phase === "pick"')
         await ph.wait_for_timeout(1500)
         await ph.screenshot(path='t/32-phone-tow-station.png')
         await ph.evaluate('document.getElementById("parent-home").click()'); await ph.wait_for_timeout(1200); await ph.tap('#btn-deliver'); await ph.wait_for_timeout(1000); await pick(ph, 0, None, tap=True)
-        await wait_for(ph, '__lt.st && __lt.st.active', 20000)
+        await touch_drive(ph, '__lt.st && __lt.st.phase === "pick"')
         await ph.wait_for_timeout(1500)
         await ph.screenshot(path='t/33-phone-deliver-station.png')
         print('phone scrollWidth', await ph.evaluate('[document.documentElement.scrollWidth, innerWidth]'))

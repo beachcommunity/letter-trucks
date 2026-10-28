@@ -20,8 +20,8 @@ async def run(b, mode, vp, tag):
     await pg.goto(URL); await pg.wait_for_timeout(700)
     await pg.tap('#ov-start'); await pg.wait_for_timeout(900)
     await pg.tap(f'#btn-{mode}'); await T.pick(pg, 1, tap=True)
-    # no controls on touch: the truck drives itself to the stop
-    await T.wait_for(pg, '__lt.st && __lt.st.active', 20000)
+    # press and hold to drive up to the loading spot
+    await T.touch_drive(pg, '__lt.st && __lt.st.phase === "pick"')
     await T.wait_for(pg, '!__lt.P.auto', 15000); await pg.wait_for_timeout(600)
     await T.wait_for(pg, '!__lt.speaking', 15000); await pg.wait_for_timeout(900)
     g = await pg.evaluate(GEOM)
@@ -45,6 +45,10 @@ async def run(b, mode, vp, tag):
     g = await pg.evaluate(GEOM)
     pos = [i for i in g['items'] if i['l'] == s['l']][0]
     await pg.touchscreen.tap(pos['x'], pos['y'])
+    await T.wait_for(pg, '__lt.st.phase === "carry"', 12000)
+    await T.touch_drive(pg, '__lt.st.phase === "give"'); await pg.wait_for_timeout(500)
+    await pg.screenshot(path=f't/{tag}-c0-give.png')
+    t = await pg.evaluate('__lt.screenOf(__lt.P.x, __lt.P.y - 90)'); await pg.touchscreen.tap(t['x'], t['y'])
     await T.wait_for(pg, '__lt.st && __lt.st.payoff', 8000); await pg.wait_for_timeout(2600)
     await pg.screenshot(path=f't/{tag}-c-right.png')
     await pg.wait_for_timeout(1800)

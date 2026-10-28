@@ -24,7 +24,7 @@ async def poke_all(pg, tag):
     await pg.screenshot(path=f't/p-{tag}-1.png')
     for kind, yo, xo, key in (('tree', 112, 0, 'shake'), ('bush', 28, 8, 'shake'), ('flower', 44, 0, 'pop')):
         p = await pg.evaluate(f'''(() => {{ for (let i = 0; i < __lt.decor.length; i++) {{ const d = __lt.decor[i]; if (d.kind !== "{kind}") continue;
-            const q = __lt.screenOf(d.x + {xo} * d.s, __lt.gy(d.x) - 112 - {yo} * d.s); if (q.x < 40 || q.x > innerWidth - 40 || q.y < 60) continue; if (document.elementFromPoint(q.x, q.y) !== document.getElementById('world')) continue; return {{ i, ...q }}; }} return null; }})()''')
+            const q = __lt.screenOf(d.x + {xo} * d.s, __lt.gy(d.x) - 112 - {yo} * d.s); if (q.x < 40 || q.x > innerWidth - 40 || q.y < 60) continue; if (document.elementFromPoint(q.x, q.y) !== document.getElementById('world')) continue; const t = __lt.P && __lt.screenOf(__lt.P.x, __lt.P.y - 100); if (t && Math.abs(q.x - t.x) < 140 && Math.abs(q.y - t.y) < 110) continue; return {{ i, ...q }}; }} return null; }})()''')
         if not p: out[kind] = 'none on screen'; continue
         await pg.mouse.click(p['x'], p['y']); await pg.wait_for_timeout(200)
         out[kind] = await pg.evaluate(f'(__lt.decor[{p["i"]}].{key} || 0) >= {t0}')
