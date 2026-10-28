@@ -22,11 +22,12 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 - Letter sets, in order: Easy 1 (b d t p), Easy 2 (k j v z), Sound at end (s m n r l f), Tricky (h y g c w), Short vowels (a e i o u), Last (x q). Basis: Treiman's letter-name research. The default is Easy 1; letters can be toggled one by one in the grown-up panel.
 - Two-story a/g font (Fraunces). Uppercase is shown next to lowercase so he sees they're the same letter.
 - **No faces on trucks** ("just trucks"). Customers are cute bears.
+- **Look (she asked for Kakao Friends / LINE Friends vibes):** a flat pastel world with a warm brown outline (`INK`) on things he can touch. Bears are sticker style: a soft mochi-shaped head as big as the body, big shiny eyes set low, a little snout, stubby bent arms, a brown outline plus a white sticker edge with one soft shadow (`stickerEdge`). Bears are about truck height (`BS`); houses are small and sit beside the bear. Use `inked(w, fn)` to outline shapes drawn with `rr`/`circle`/`ell`, `fillP` for paths and `blob` for clusters (trees, bushes, clouds) so they get one outline. Bear preview page: https://claude.ai/artifact/6zt9bsPRNM7ZZMhCgRPqC4 (same code as the game).
 - **Don't personalize with the kid's name, and no animal-pup mascot character.** She said this explicitly ("that's weird").
 - Progress is shown as collecting (slots that fill with what he delivered), never as lives.
 - **Touch has no on-screen controls** (she saw him get confused by having both arrows and tapping). The truck drives itself between stops once nobody's talking; at a stop he taps the box or trailer, and boxes bob gently when it's time to pick. Tapping the truck honks. Keyboard and controller still drive and pick by hand. The grown-up panel opens with a 1.5 s hold on the gear and has "Back to home screen".
 - Works with touch, keyboard and controller (PS5/Steam). Portrait phone: the camera stays close on the choices, a card in the sky shows the customer and what they want (tap it to hear the order again), and the camera pans to the customer for the payoff. Landscape: the whole stop fits on screen.
-- Extras: pick a truck before each game (yellow=quack, red=ahooga, blue=moo, green=toot; all synthesized), music (can be turned off), things to poke (sun, clouds, trees, bushes, flowers, birds, cones, puddles, bears at finished stops), box reveals with bear reactions, hats and houses, a bird that lands on the parked truck.
+- Extras: pick a truck before each game: four different kinds, each with its own horn (yellow dump truck=quack, red fire truck=ahooga, blue pickup=moo, green tractor=toot; all synthesized). `TRUCK_GEO` says where a box rides and where a bird lands on each kind; in tow mode they all get a hitch, music (can be turned off), things to poke (sun, clouds, trees, bushes, flowers, birds, cones, puddles, bears at finished stops), box reveals with bear reactions, hats and houses, a bird that lands on the parked truck.
 
 ## Voice
 - All audio is pre-generated and embedded in the page. **Never put an API key in the page or in the repo.** The OpenRouter key belongs in the environment as `OPENROUTER_API_KEY` (she has about $6.86 left of a $10 cap).
@@ -38,6 +39,6 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 
 ## Open questions / ideas she's considering
 - Playtest notes: he plays on her phone, used both arrows and tapping, and tended to pick left to right. She thinks he's guessing on everything rather than knowing the sounds. Not yet playtested: the self-driving truck and the quieter wrong pick.
-- Glow-first is in (version 8), not yet playtested. Bear redesign: three styles mocked up at https://claude.ai/artifact/6zt9bsPRNM7ZZMhCgRPqC4 (plush, storybook, sticker), waiting on her pick.
+- Glow-first is in, not yet playtested. The art overhaul (sticker bears, truck kinds, pastel world) is new too.
 - Deliver boxes stay uppercase for now (one new thing at a time: the sound, on a letter he already knows); tow mode does upper to lower.
 - Possible next features: a "first sounds" game (which box does the picture start with?), an installable offline app (PWA), and a grown-up progress page.

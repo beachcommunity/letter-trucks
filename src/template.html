@@ -141,11 +141,14 @@ body.pad .mode[data-nav]:focus .face { outline: min(1vh, 8px) solid var(--focus)
     <div class="modes">
       <button class="mode deliver" data-nav data-say="menu_deliver" id="btn-deliver">
         <span class="face"><svg class="ico" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="28" cy="30" r="12" fill="#c98a4b"/><circle cx="72" cy="30" r="12" fill="#c98a4b"/><circle cx="28" cy="30" r="6" fill="#f2a7a0"/><circle cx="72" cy="30" r="6" fill="#f2a7a0"/>
-          <circle cx="50" cy="56" r="32" fill="#c98a4b"/><ellipse cx="50" cy="66" rx="15" ry="11" fill="#f6e6c8"/><ellipse cx="50" cy="61" rx="5" ry="3.6" fill="#4a3426"/>
-          <path d="M44 68q3 3 6 0q3 3 6 0" fill="none" stroke="#4a3426" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="38" cy="50" r="3.6" fill="#2b2220"/><circle cx="62" cy="50" r="3.6" fill="#2b2220"/><circle cx="39.2" cy="48.8" r="1.2" fill="#fff"/><circle cx="63.2" cy="48.8" r="1.2" fill="#fff"/>
-          <circle cx="30" cy="62" r="5" fill="#f4a0a0" opacity=".7"/><circle cx="70" cy="62" r="5" fill="#f4a0a0" opacity=".7"/></svg></span>
+          <g stroke="#fff" stroke-width="7" stroke-linejoin="round" fill="#fff"><ellipse cx="28.7" cy="37" rx="8.7" ry="8"/><ellipse cx="71.3" cy="37" rx="8.7" ry="8"/><path d="M50 30.2C69.8 30.2 82.7 38.5 83.8 54.5C85 70.4 72 81.1 50 81.1C28 81.1 15 70.4 16.2 54.5C17.3 38.5 30.2 30.2 50 30.2Z"/></g>
+          <g stroke="#4a3426" stroke-width="2.2" stroke-linejoin="round" fill="#c98a4b"><ellipse cx="28.7" cy="37" rx="8.7" ry="8"/><ellipse cx="71.3" cy="37" rx="8.7" ry="8"/><path d="M50 30.2C69.8 30.2 82.7 38.5 83.8 54.5C85 70.4 72 81.1 50 81.1C28 81.1 15 70.4 16.2 54.5C17.3 38.5 30.2 30.2 50 30.2Z"/></g>
+          <ellipse cx="28.7" cy="37.8" rx="4.6" ry="4" fill="#e3b689"/><ellipse cx="71.3" cy="37.8" rx="4.6" ry="4" fill="#e3b689"/>
+          <ellipse cx="37.5" cy="59" rx="3.8" ry="4.2" fill="#3a2a22"/><ellipse cx="62.5" cy="59" rx="3.8" ry="4.2" fill="#3a2a22"/>
+          <circle cx="38.7" cy="57.5" r="1.4" fill="#fff"/><circle cx="63.7" cy="57.5" r="1.4" fill="#fff"/>
+          <ellipse cx="28" cy="67.4" rx="5" ry="3" fill="#ff96aa" opacity=".85"/><ellipse cx="72" cy="67.4" rx="5" ry="3" fill="#ff96aa" opacity=".85"/>
+          <ellipse cx="50" cy="68.5" rx="9.1" ry="6.5" fill="#f3dcc0"/><ellipse cx="50" cy="65.5" rx="3.2" ry="2.3" fill="#3a2a22"/>
+          <path d="M47 69.6q1.5 2.3 3 0q1.5 2.3 3 0" fill="none" stroke="#3a2a22" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         <span class="post"></span><span class="label">Bear deliveries</span>
       </button>
       <button class="mode tow" data-nav data-say="menu_tow" id="btn-tow">
@@ -242,8 +245,8 @@ const CONFUSE = [["b", "d"], ["b", "p"], ["d", "q"], ["p", "q"], ["n", "u"], ["m
 const COLORS = ["#ec5a47", "#2f6fb8", "#2fa36b", "#ff7f32", "#8b65d6", "#e0478c", "#1f9aa8", "#c9a227"];
 const FURS = ["#c98a4b", "#b5733e", "#d9a066", "#9a6542", "#e0b27c"];
 const ROOFS = ["#ec5a47", "#2f6fb8", "#2fa36b", "#8b65d6", "#e0478c", "#ff7f32"];
-// trucks to pick from; each one honks its own silly way
-const TRUCKS = [{ color: "#ffb31f", horn: "quack" }, { color: "#ec5a47", horn: "ahooga" }, { color: "#2f6fb8", horn: "moo" }, { color: "#2fa36b", horn: "toot" }];
+// four kinds of truck to pick from; each one honks its own silly way
+const TRUCKS = [{ kind: "dump", color: "#ffc234", horn: "quack" }, { kind: "fire", color: "#ff6b5b", horn: "ahooga" }, { kind: "pickup", color: "#5b9be0", horn: "moo" }, { kind: "tractor", color: "#4cbf72", horn: "toot" }];
 const WALLS = ["#fbefd9", "#fde3e3", "#e3f2fd", "#e8f5e0", "#fff3c4"];
 const HATS = ["hard", "chef", "flower", "bow", "beanie", "party", "cap", "none", "hard", "bow"];
 // what each bear does with what it gets
@@ -513,7 +516,7 @@ let props = [], birds = [], parts = [], bubbles = [], decor = [];
 let locked = 0, tNow = 0;
 function newPlayer(type) {
   const tr = TRUCKS[settings.truck] || TRUCKS[0];
-  return { x: 420, y: 770, vx: 0, vy: 0, onGround: true, ang: 0, wheel: 0, squash: 0, type, color: tr.color, horn: tr.horn, bed: null, trailer: null, honk: 0, face: 1, auto: null };
+  return { x: 420, y: 770, vx: 0, vy: 0, onGround: true, ang: 0, wheel: 0, squash: 0, type, kind: tr.kind, color: tr.color, horn: tr.horn, bed: null, trailer: null, honk: 0, face: 1, auto: null };
 }
 function addDecor(len, avoid) {
   decor = [];
@@ -680,7 +683,7 @@ function deliverRight(s, box) {
     () => { box.state = "deliver"; box.t = 0; box.from = { x: P.x - 40, y: P.y - 190 }; sfx.jump(); },
     450,
     () => { box.state = "gone"; s.reveal = { l: s.l, kind, t: 0, ev: 0 }; s.bear.mood = "react"; s.bear.t = 0; sfx.pop(); sfx.sparkle();
-            addBubble(s.l, () => ({ x: s.bear.x - 260, y: groundY(s.bear.x) + BACK - 250 }), 4.2); },
+            addBubble(s.l, () => ({ x: s.bear.x - 250, y: groundY(s.bear.x) + BACK - 210 }), 4.2); },
     300,
     REACT_LINE[kind],
     900,
@@ -741,7 +744,7 @@ function poke(e) {
     if (p.kind === "cone" && p.state === "up" && Math.abs(w.x - p.x) < 45 && w.y > groundY(p.x) - 95 && w.y < groundY(p.x) + 10) { p.state = "fly"; p.vx = (Math.random() < 0.5 ? -1 : 1) * 300; p.vy = -720; p.vr = 9; p.y = groundY(p.x); sfx.bonk(); return true; }
     if (p.kind === "puddle" && Math.abs(w.x - p.x) < p.w * 0.5 && Math.abs(w.y - groundY(p.x)) < 40) { splashAt(p.x); return true; }
   }
-  if (run) for (const q of run.stations) if (q.m === "deliver" && q !== st && Math.abs(w.x - q.bear.x) < 90 && w.y > groundY(q.bear.x) + BACK - 290 && w.y < groundY(q.bear.x) + BACK) { q.bear.mood = "wave"; q.bear.t = 0; sfx.giggle(); return true; }
+  if (run) for (const q of run.stations) if (q.m === "deliver" && q !== st && Math.abs(w.x - q.bear.x) < 90 && w.y > groundY(q.bear.x) + BACK - 230 && w.y < groundY(q.bear.x) + BACK) { q.bear.mood = "wave"; q.bear.t = 0; sfx.giggle(); return true; }
   // small things first, so a flower in front of a tree still pops
   for (const d of [...decor.filter(q => q.kind === "flower"), ...decor.filter(q => q.kind !== "flower")]) {
     const g = groundY(d.x) - 112;
@@ -873,7 +876,7 @@ const dockY = s => groundY(s.x) + BACK - 90;   // top of the loading dock
 // sometimes a bird lands on the cab while he's parked at a stop, and flies off when he drives
 function updateTruckBird(dt) {
   if (Math.abs(P.vx) > 5 || !atStop()) P.stillSince = tNow;
-  const roof = { x: P.x + 92 * K, y: P.y - 108 * K };
+  const roof = truckAt("roof");
   const b = P.bird;
   if (!b) { if (atStop() && tNow - (P.stillSince || tNow) > 3 && Math.random() < dt * 0.25) P.bird = { state: "in", t: 0, sx: P.x - 700, sy: P.y - 650, x: P.x - 700, y: P.y - 650, flap: 0, hue: rand(["#5b8fd6", "#e37b5b", "#7cb35b"]) }; return; }
   b.t += dt; b.flap += dt * (b.state === "sit" ? 2 : 18);
@@ -884,12 +887,12 @@ function updateTruckBird(dt) {
 function updateReveal(s, dt) {
   const r = s.reveal; if (!r) return;
   r.t += dt; const t2 = r.t - 0.5, b = s.bear, gy = groundY(b.x) + BACK;
-  if (r.kind === "yum") { const bites = [0.95, 1.35, 1.75]; while (r.ev < 3 && t2 > bites[r.ev]) { r.ev++; sfx.chomp(); for (let i = 0; i < 6; i++) parts.push({ kind: "crumb", x: b.x + (Math.random() - 0.5) * 30, y: gy - 140, vx: (Math.random() - 0.5) * 260, vy: -150 - Math.random() * 200, life: 0.8, size: 6 + Math.random() * 5, color: "#e8a24a" }); } }
-  if (r.kind === "hug" && t2 > 0.4 && t2 < 2.2 && Math.floor(t2 / 0.35) > r.ev) { r.ev = Math.floor(t2 / 0.35); sfx.heart(); parts.push({ kind: "heart", x: b.x + (Math.random() - 0.5) * 80, y: gy - 150, vx: (Math.random() - 0.5) * 40, vy: -120, life: 1.4, size: 22 }); }
+  if (r.kind === "yum") { const bites = [0.95, 1.35, 1.75]; while (r.ev < 3 && t2 > bites[r.ev]) { r.ev++; sfx.chomp(); for (let i = 0; i < 6; i++) parts.push({ kind: "crumb", x: b.x + (Math.random() - 0.5) * 30, y: gy + BEAR_MOUTH, vx: (Math.random() - 0.5) * 260, vy: -150 - Math.random() * 200, life: 0.8, size: 6 + Math.random() * 5, color: "#e8a24a" }); } }
+  if (r.kind === "hug" && t2 > 0.4 && t2 < 2.2 && Math.floor(t2 / 0.35) > r.ev) { r.ev = Math.floor(t2 / 0.35); sfx.heart(); parts.push({ kind: "heart", x: b.x + (Math.random() - 0.5) * 80, y: gy - 110, vx: (Math.random() - 0.5) * 40, vy: -120, life: 1.4, size: 22 }); }
   if (r.kind === "whee" && t2 > 0.3 && r.ev === 0) { r.ev = 1; sfx.whoosh(); }
-  if (r.kind === "whee" && t2 > 0.3 && t2 < 1.6) parts.push({ kind: "dust", x: b.x + 10, y: gy - 260 - Math.pow(Math.max(0, t2 - 0.3), 2) * 900 + 40, vx: (Math.random() - 0.5) * 60, vy: 40, life: 0.6, size: 18 });
+  if (r.kind === "whee" && t2 > 0.3 && t2 < 1.6) parts.push({ kind: "dust", x: b.x + 10, y: gy + ABOVE_BEAR - Math.pow(Math.max(0, t2 - 0.3), 2) * 900 + 40, vx: (Math.random() - 0.5) * 60, vy: 40, life: 0.6, size: 18 });
   if (r.kind === "brrr" && t2 > 0.2 && r.ev === 0) { r.ev = 1; sfx.brrr(); }
-  if ((r.kind === "wow" || r.kind === "sky") && t2 > 0.2 && t2 < 1.6 && Math.random() < 0.25) parts.push({ kind: "spark", x: b.x + (Math.random() - 0.5) * 160, y: gy - 260 + (Math.random() - 0.5) * 140, vx: 0, vy: -30, life: 0.7, size: 10 + Math.random() * 8 });
+  if ((r.kind === "wow" || r.kind === "sky") && t2 > 0.2 && t2 < 1.6 && Math.random() < 0.25) parts.push({ kind: "spark", x: b.x + (Math.random() - 0.5) * 160, y: gy - 200 + (Math.random() - 0.5) * 140, vx: 0, vy: -30, life: 0.7, size: 10 + Math.random() * 8 });
   if (r.kind === "crown" && t2 > 0.7) b.hat = "none";
 }
 function updateDeliver(s, dt) {
@@ -900,13 +903,13 @@ function updateDeliver(s, dt) {
     it.t += dt; it.wob = Math.max(0, it.wob - dt);
     const rest = { x: it.x, y: dockY(s) - 62 };
     if (it.state === "lift") {
-      const k = Math.min(1, it.t / 0.7), tx = P.x - 40, ty = P.y - 190;
+      const k = Math.min(1, it.t / 0.7), bed = truckAt("bed"), tx = bed.x, ty = bed.y;
       it.px = lerp(rest.x, tx, smooth(0.25, 1, k)); it.py = lerp(rest.y, ty, smooth(0.35, 1, k)) - Math.sin(Math.min(1, k * 1.3) * Math.PI) * 170;
-    } else if (it.state === "truck") { it.px = P.x - 40; it.py = P.y - 190; }
+    } else if (it.state === "truck") { const bed = truckAt("bed"); it.px = bed.x; it.py = bed.y; }
     else if (it.state === "deliver") {
-      const k = Math.min(1, it.t / 0.45), tx = s.bear.x, ty = groundY(s.bear.x) + BACK - 120;
+      const k = Math.min(1, it.t / 0.45), tx = s.bear.x, ty = groundY(s.bear.x) + BACK + BEAR_CHEST - 12;
       it.px = lerp(it.from.x, tx, k); it.py = lerp(it.from.y, ty, k) - Math.sin(k * Math.PI) * 180;
-    } else if (it.state === "held") { it.px = s.bear.x; it.py = groundY(s.bear.x) + BACK - 120 - Math.abs(Math.sin(s.bear.t * 6)) * (s.bear.mood === "happy" ? 30 : 0); }
+    } else if (it.state === "held") { it.px = s.bear.x; it.py = groundY(s.bear.x) + BACK + BEAR_CHEST - 12 - Math.abs(Math.sin(s.bear.t * 6)) * (s.bear.mood === "happy" ? 30 : 0); }
     else { it.px = rest.x; it.py = rest.y; }
   }
 }
@@ -930,16 +933,27 @@ function updateTow(s, dt) {
 }
 
 /* ---------- drawing ---------- */
-const CAB = new Path2D("M214 66 h44 q10 0 15 7 l23 34 q4 6 4 13 v28 h-86 z");
-const WIN = new Path2D("M226 78 h30 q5 0 8 4 l16 24 h-54 z");
-const DUMP = new Path2D("M10 40 h202 l-12 98 h-178 z");
-function rr(x, y, w, h, r, fill, stroke, lw) { ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(x, y, w, h, r); else ctx.rect(x, y, w, h); if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw || 2; ctx.stroke(); } }
-function circle(x, y, r, fill) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fillStyle = fill; ctx.fill(); }
-function ell(x, y, rx, ry, fill, rot = 0) { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); ctx.fillStyle = fill; ctx.fill(); }
+// the look: a flat pastel world with a warm brown outline on the things he can touch
+const INK = "#4a3426";
+let LINE = 0;   // while set, rr / circle / ell also outline what they fill
+function inked(w, fn) { const was = LINE; LINE = w; try { fn(); } finally { LINE = was; } }
+function inkStroke(path, w) { ctx.strokeStyle = INK; ctx.lineWidth = w || LINE; ctx.lineJoin = "round"; ctx.lineCap = "round"; if (path) ctx.stroke(path); else ctx.stroke(); }
+function fillP(path, fill) { ctx.fillStyle = fill; ctx.fill(path); if (LINE) inkStroke(path); }
+// several overlapping shapes as one outlined blob: a thick stroke underneath, the fill on top
+function blob(path, fill, w = LINE) { if (w) inkStroke(path, w * 2); ctx.fillStyle = fill; ctx.fill(path); }
+function circlesP(cs) { const p = new Path2D(); for (const [x, y, r] of cs) { p.moveTo(x + r, y); p.arc(x, y, r, 0, Math.PI * 2); } return p; }
+function rr(x, y, w, h, r, fill, stroke, lw) { ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(x, y, w, h, r); else ctx.rect(x, y, w, h); if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw || 2; ctx.stroke(); } else if (fill && LINE) inkStroke(); }
+function circle(x, y, r, fill) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fillStyle = fill; ctx.fill(); if (LINE) inkStroke(); }
+function ell(x, y, rx, ry, fill, rot = 0) { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); ctx.fillStyle = fill; ctx.fill(); if (LINE) inkStroke(); }
 function wheel(x, y, r, rot) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(rot);
-  circle(0, 0, r, "#2b2f38"); circle(0, 0, r * 0.5, "#cfd4dc"); circle(0, 0, r * 0.18, "#2b2f38");
-  for (let i = 0; i < 2; i++) { ctx.rotate(Math.PI); rr(-r * 0.11, -r * 0.92, r * 0.22, r * 0.32, r * 0.11, "#555c69"); }
+  const w = LINE;
+  circle(0, 0, r, "#3d3640");
+  inked(0, () => {
+    circle(0, 0, r * 0.56, "#eef1f5");
+    for (let i = 0; i < 3; i++) { const a = i * Math.PI * 2 / 3; circle(Math.cos(a) * r * 0.32, Math.sin(a) * r * 0.32, r * 0.08, "#a9b0bb"); }
+  });
+  if (w) { ctx.beginPath(); ctx.arc(0, 0, r * 0.56, 0, Math.PI * 2); inkStroke(null, w * 0.7); }
   ctx.restore();
 }
 function glyph(ch, cx, cy, size, color) {
@@ -948,137 +962,335 @@ function glyph(ch, cx, cy, size, color) {
   ctx.fillText(ch, cx, cy + (a - d) / 2);
 }
 function crateBox(x, y, s, ch, o = {}) {
-  // glow: true, or 0..1 for a fading guide glow
-  if (o.glow) { const g = o.glow === true ? 1 : o.glow; ctx.save(); ctx.shadowColor = `rgba(255,214,40,${0.45 + 0.55 * g})`; ctx.shadowBlur = (16 + 24 * g) + Math.sin(tNow * 8) * 14 * g; rr(x - s / 2, y - s / 2, s, s, s * 0.12, "#fff6dc"); ctx.restore(); }
-  rr(x - s / 2, y - s / 2, s, s, s * 0.12, "#fff6dc", o.sel ? "#ffb31f" : "#e3c27f", s * (o.sel ? 0.1 : 0.075));
-  circle(x - s * 0.33, y - s * 0.33, s * 0.035, "#e3c27f"); circle(x + s * 0.33, y - s * 0.33, s * 0.035, "#e3c27f");
-  if (ch) glyph(ch, x, y, s * (o.fs || 0.66), o.color);
+  inked(0, () => {
+    // glow: true, or 0..1 for a fading guide glow
+    if (o.glow) { const g = o.glow === true ? 1 : o.glow; ctx.save(); ctx.shadowColor = `rgba(255,214,40,${0.45 + 0.55 * g})`; ctx.shadowBlur = (16 + 24 * g) + Math.sin(tNow * 8) * 14 * g; rr(x - s / 2, y - s / 2, s, s, s * 0.16, "#fff4d6"); ctx.restore(); }
+    const lw = Math.max(3, s * 0.045);
+    if (o.sel) rr(x - s / 2 - lw * 1.6, y - s / 2 - lw * 1.6, s + lw * 3.2, s + lw * 3.2, s * 0.2, null, "#ffb31f", lw * 1.6);
+    rr(x - s / 2, y - s / 2, s, s, s * 0.16, "#fff4d6", INK, lw);
+    rr(x - s * 0.39, y - s * 0.39, s * 0.78, s * 0.78, s * 0.1, null, "#f1dcae", s * 0.035);
+    if (ch) glyph(ch, x, y + s * 0.01, s * (o.fs || 0.66), o.color);
+  });
 }
+// truck units: 320 across, the ground at y 172, facing right. Each kind keeps where a box rides (bed)
+// and where a bird can land (roof).
+const TRUCK_GEO = {
+  dump: { bed: [112, 4], roof: [250, 60] },
+  fire: { bed: [112, 2], roof: [234, 50] },
+  pickup: { bed: [104, 44], roof: [244, 60] },
+  tractor: { bed: [60, 56], roof: [168, 26] },
+};
+const truckAt = (which) => { const g = (TRUCK_GEO[P.kind] || TRUCK_GEO.dump)[which]; return { x: P.x + (g[0] - 160) * K, y: P.y + (g[1] - 172) * K }; };
+const CAB = new Path2D("M204 150 V80 Q204 60 224 60 H256 Q270 60 279 72 L298 98 Q304 107 304 120 V138 Q304 150 292 150 Z");
+const WIN = new Path2D("M218 74 H254 Q262 74 267 81 L283 103 Q285 108 280 108 H223 Q218 108 218 103 Z");
+const DUMP = new Path2D("M10 62 Q10 52 20 51 L192 34 Q206 33 206 46 L200 128 Q199 138 189 138 H34 Q24 138 21 129 Z");
+const HOOD = new Path2D("M118 98 Q118 86 130 86 H226 Q242 86 252 94 L292 108 Q302 112 302 124 V136 Q302 146 292 146 H130 Q118 146 118 136 Z");
 function cab(color, bear) {
-  ctx.fillStyle = color; ctx.fill(CAB);
-  ctx.fillStyle = "#d8f1ff"; ctx.fill(WIN);
+  fillP(CAB, color);
+  inked(0, () => {
+    ctx.fillStyle = "#d6f0ff"; ctx.fill(WIN);
+    ctx.fillStyle = "rgba(255,255,255,.75)"; ctx.beginPath(); ctx.moveTo(228, 79); ctx.lineTo(238, 79); ctx.lineTo(229, 103); ctx.lineTo(222, 103); ctx.closePath(); ctx.fill();
+    rr(222, 116, 16, 5, 2.5, shade(color, -0.3));
+  });
+  if (LINE) inkStroke(WIN, LINE * 0.8);
   if (bear) {
-    // the bear leans out of the window: head above the roof, a paw that waves while it asks
+    // the bear peeks out over the roof; a paw waves while it asks
     const happy = bear.mood === "happy", wave = bear.mood === "wave" || bear.mood === "listen";
     const bob = happy ? Math.abs(Math.sin(bear.t * 6)) * 10 : Math.sin(bear.t * 2.2) * 1.5;
-    if (wave || happy) { ctx.strokeStyle = bear.fur; ctx.lineWidth = 12; ctx.lineCap = "round"; const a = Math.sin(bear.t * 10) * 0.5; ctx.beginPath(); ctx.moveTo(282, 82); ctx.lineTo(282 + Math.sin(0.5 + a) * 34, 82 - Math.cos(0.5 + a) * 34 - bob); ctx.stroke(); }
-    drawBearHead(258, 52 - bob, 0.4, bear.fur, happy, bearFace(bear, 258));
+    if (wave || happy) { const a = Math.sin(bear.t * 10) * 0.5; const hx = 280 + Math.sin(0.5 + a) * 26, hy = 84 - Math.cos(0.5 + a) * 26 - bob; ctx.lineCap = "round"; ctx.strokeStyle = INK; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(276, 86); ctx.lineTo(hx, hy); ctx.stroke(); ctx.strokeStyle = bear.fur; ctx.lineWidth = 10; ctx.stroke(); }
+    drawBearHead(246, 52 - bob, 0.3, bear.fur, happy, bearFace(bear, 246));
   }
-  ctx.strokeStyle = "rgba(255,255,255,.85)"; ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(232, 82); ctx.lineTo(228, 102); ctx.stroke();
-  rr(226, 114, 16, 5, 2.5, "rgba(0,0,0,.2)"); rr(289, 122, 12, 13, 3, "#fff3b0"); rr(292, 136, 18, 12, 4, "#a3abb8");
+  inked(LINE * 0.8, () => { circle(296, 120, 7, "#fff3b0"); rr(280, 136, 28, 12, 6, "#d5dae2"); });
 }
-function chassis() { rr(12, 138, 290, 13, 5, "#3a3f4b"); rr(6, 124, 9, 13, 2, "#ff6a5a"); }
 function drawTruck(o) {
-  const { type, color } = o, dark = shade(color, -0.25), light = shade(color, 0.35);
+  const { color } = o, kind = o.type === "big" ? "big" : o.kind || "dump", light = shade(color, 0.3), dark = shade(color, -0.2), w = o.wheel || 0;
   ctx.save(); ctx.translate(o.x, o.y); ctx.rotate(o.ang || 0);
   const sq = o.squash || 0; ctx.scale(K * (1 + sq * 0.25), K * (1 - sq * 0.3)); ctx.translate(-160, -172);
-  if (o.honk > 0) { ctx.save(); ctx.strokeStyle = "#23272f"; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.globalAlpha = Math.min(1, o.honk * 3); const s = 1 + (0.5 - o.honk); ctx.beginPath(); ctx.moveTo(318, 70 - 14 * s); ctx.lineTo(332 + 10 * s, 56 - 20 * s); ctx.moveTo(322, 92); ctx.lineTo(344 + 12 * s, 88); ctx.moveTo(318, 114 + 10 * s); ctx.lineTo(332 + 10 * s, 128 + 16 * s); ctx.stroke(); ctx.restore(); }
-  chassis();
-  if (type === "dump") {
-    ctx.fillStyle = color; ctx.fill(DUMP); rr(10, 40, 202, 9, 3, light);
-    ctx.strokeStyle = dark; ctx.globalAlpha = 0.45; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(78, 50); ctx.lineTo(74, 132); ctx.moveTo(146, 50); ctx.lineTo(146, 132); ctx.stroke(); ctx.globalAlpha = 1;
-    cab(color); wheel(66, 150, 22, o.wheel || 0); wheel(258, 150, 22, o.wheel || 0);
-  } else if (type === "tow") {
-    rr(16, 98, 196, 42, 6, color); rr(16, 98, 196, 8, 4, light);
-    ctx.save(); ctx.beginPath(); ctx.rect(24, 112, 120, 18); ctx.clip(); ctx.fillStyle = "#ffc234"; for (let i = -2; i < 9; i++) { ctx.beginPath(); ctx.moveTo(24 + i * 22, 130); ctx.lineTo(36 + i * 22, 112); ctx.lineTo(46 + i * 22, 112); ctx.lineTo(34 + i * 22, 130); ctx.fill(); } ctx.restore();
-    ctx.strokeStyle = "#5b6370"; ctx.lineWidth = 13; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(176, 96); ctx.lineTo(40, 44); ctx.stroke(); circle(176, 96, 11, "#3a3f4b");
-    ctx.strokeStyle = "#3a3f4b"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(38, 46); ctx.lineTo(22, 112); ctx.stroke();
-    ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(22, 120, 8, -Math.PI / 2, Math.PI * 0.9); ctx.stroke();
-    rr(196, 46, 8, 34, 4, "#a3abb8"); rr(206, 58, 14, 8, 3, "#ffc234");
-    cab(color); wheel(66, 150, 22, o.wheel || 0); wheel(258, 150, 22, o.wheel || 0);
-  } else {
-    rr(12, 128, 200, 13, 3, dark); rr(200, 40, 8, 40, 4, "#a3abb8");
-    crateBox(110, 66, 124, o.letter, { fs: 0.72 });
-    cab(color, o.bear); wheel(58, 150, 22, o.wheel || 0); wheel(112, 150, 22, o.wheel || 0); wheel(258, 150, 22, o.wheel || 0);
-  }
+  if (o.honk > 0) { ctx.save(); ctx.strokeStyle = INK; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.globalAlpha = Math.min(1, o.honk * 3); const s = 1 + (0.5 - o.honk); ctx.beginPath(); ctx.moveTo(318, 70 - 14 * s); ctx.lineTo(332 + 10 * s, 56 - 20 * s); ctx.moveTo(322, 92); ctx.lineTo(344 + 12 * s, 88); ctx.moveTo(318, 114 + 10 * s); ctx.lineTo(332 + 10 * s, 128 + 16 * s); ctx.stroke(); ctx.restore(); }
+  ctx.fillStyle = "rgba(60,40,30,.14)"; ctx.beginPath(); ctx.ellipse(160, 172, 150, 9, 0, 0, Math.PI * 2); ctx.fill();
+  inked(4.5, () => {
+    if (o.tow) { rr(-8, 126, 26, 10, 5, "#9aa1ad"); circle(-8, 131, 7, "#6b7280"); }
+    if (kind !== "tractor") rr(12, 134, 290, 14, 7, "#5a5260");
+    if (kind === "dump") {
+      fillP(DUMP, color);
+      inked(0, () => { ctx.strokeStyle = light; ctx.lineWidth = 8; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(22, 60); ctx.lineTo(194, 44); ctx.stroke(); ctx.strokeStyle = dark; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(78, 66); ctx.lineTo(78, 126); ctx.moveTo(142, 60); ctx.lineTo(142, 126); ctx.stroke(); });
+      circle(26, 134, 7, "#8a909c");
+      cab(color); wheel(66, 147, 25, w); wheel(256, 147, 25, w);
+    } else if (kind === "fire") {
+      rr(10, 70, 200, 72, 16, color);
+      inked(0, () => { rr(16, 112, 188, 9, 4.5, "#fff6e8"); for (const dx of [22, 84, 146]) { rr(dx, 80, 50, 26, 8, dark); circle(dx + 42, 93, 3, "#ffe8a8"); } });
+      // the ladder on top
+      rr(14, 50, 196, 9, 4.5, "#e3e8ef"); rr(14, 62, 196, 9, 4.5, "#e3e8ef");
+      inked(0, () => { for (let x = 30; x < 200; x += 22) rr(x, 57, 6, 7, 2, "#b9c0cb"); });
+      cab(color);
+      const blink = Math.floor(tNow * 3) % 2;
+      rr(222, 48, 36, 14, 7, blink ? "#ff8a8a" : "#7fb3ff");
+      wheel(62, 147, 25, w); wheel(256, 147, 25, w);
+    } else if (kind === "pickup") {
+      rr(10, 84, 200, 58, 16, color);
+      inked(0, () => { rr(20, 90, 180, 10, 5, dark); rr(10, 118, 200, 8, 4, light); rr(22, 102, 6, 14, 3, dark); });
+      cab(color); wheel(64, 147, 25, w); wheel(256, 147, 25, w);
+    } else if (kind === "tractor") {
+      rr(8, 102, 106, 14, 7, "#a87a55"); rr(18, 116, 10, 22, 5, "#7c5a40"); rr(94, 116, 10, 22, 5, "#7c5a40");
+      fillP(HOOD, color);
+      inked(0, () => { for (let x = 266; x < 296; x += 9) rr(x, 112, 4, 24, 2, dark); rr(130, 92, 96, 8, 4, light); });
+      rr(262, 56, 12, 40, 6, "#8a909c"); rr(258, 50, 20, 9, 4.5, "#5f6570");
+      rr(136, 30, 9, 64, 4.5, "#5f5762"); rr(198, 30, 9, 64, 4.5, "#5f5762");
+      rr(124, 22, 96, 16, 8, color);
+      rr(150, 70, 34, 18, 7, "#5f5762");
+      // the big back wheel's fender, then the wheels
+      const f = new Path2D(); f.moveTo(104, 128); f.arc(160, 128, 56, Math.PI, Math.PI * 2); f.lineTo(216, 136); f.lineTo(104, 136); f.closePath(); fillP(f, dark);
+      wheel(160, 128, 44, w * 0.5); wheel(266, 150, 22, w);
+      circle(298, 114, 6, "#fff3b0");
+    } else {
+      // the bear's big truck: a flatbed with the big letter, the bear in the cab
+      rr(10, 124, 200, 16, 8, dark);
+      crateBox(110, 64, 124, o.letter, { fs: 0.72 });
+      cab(color, o.bear); wheel(56, 147, 25, w); wheel(110, 147, 25, w); wheel(256, 147, 25, w);
+    }
+  });
   ctx.restore();
 }
 function drawTrailer(t, o = {}) {
-  const dark = shade(t.color, -0.25);
+  const dark = shade(t.color, -0.22);
   ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.ang || 0);
   const hop = t.hop > 0 ? Math.sin((0.55 - t.hop) / 0.55 * Math.PI) : 0;
   ctx.translate(0, -hop * 70); ctx.rotate(-hop * 0.08); ctx.scale(K, K); ctx.translate(-120, -172);
-  rr(14, 120, 180, 16, 4, t.color); rr(190, 122, 44, 8, 3, "#5b6370"); circle(236, 126, 7, "#3a3f4b"); circle(236, 126, 3, "#a3abb8");
-  rr(60, 104, 96, 18, 9, dark);
-  crateBox(104, 60, 112, t.l, { fs: 0.72, glow: o.glow, sel: o.sel });
-  wheel(104, 152, 20, t.wheel || 0);
+  ctx.fillStyle = "rgba(60,40,30,.12)"; ctx.beginPath(); ctx.ellipse(110, 172, 96, 8, 0, 0, Math.PI * 2); ctx.fill();
+  inked(4.5, () => {
+    rr(190, 122, 48, 9, 4.5, "#9aa1ad"); circle(238, 126, 7, "#6b7280");
+    rr(14, 116, 184, 20, 10, t.color);
+    rr(58, 102, 96, 20, 10, dark);
+    wheel(104, 152, 20, t.wheel || 0);
+  });
+  crateBox(104, 58, 112, t.l, { fs: 0.72, glow: o.glow, sel: o.sel });
   ctx.restore();
 }
-/* bears: round and soft, dot eyes with a highlight, tiny w mouth, rosy cheeks, cream muzzle */
 // blinking every few seconds, and eyes that look toward the truck
 function bearFace(b, worldX) {
   if (tNow > b.blinkAt + 0.14) b.blinkAt = tNow + 2 + Math.random() * 3.5;
   return { hat: b.hat, blink: tNow >= b.blinkAt, look: P ? clamp((P.x - (worldX ?? b.x)) / 600, -1, 1) : 0, mouth: b.mouth };
 }
-function drawHat(kind) {
-  if (!kind || kind === "none") return;
-  if (kind === "hard") { ctx.fillStyle = "#ffc234"; ctx.beginPath(); ctx.ellipse(0, -56, 60, 44, 0, Math.PI, 0); ctx.fill(); rr(-76, -62, 152, 15, 7, "#f2a91c"); rr(-7, -100, 14, 40, 7, "#f2a91c"); }
-  else if (kind === "chef") { rr(-44, -88, 88, 28, 6, "#ffffff"); circle(-30, -100, 24, "#ffffff"); circle(0, -114, 30, "#ffffff"); circle(30, -100, 24, "#ffffff"); rr(-44, -70, 88, 8, 3, "#e8ecf1"); }
-  else if (kind === "flower") { const cs = ["#ec5a47", "#ffc234", "#e0478c", "#8b65d6", "#ffffff"]; for (let i = 0; i < 7; i++) { const a = Math.PI * (1.12 + i * 0.127), fx = Math.cos(a) * 66, fy = Math.sin(a) * 66; for (let k = 0; k < 5; k++) { const pa = k / 5 * Math.PI * 2; circle(fx + Math.cos(pa) * 7, fy + Math.sin(pa) * 7, 6.5, cs[i % 5]); } circle(fx, fy, 5, "#fff3b0"); } }
-  else if (kind === "bow") { ctx.fillStyle = "#f06b9a"; ctx.beginPath(); ctx.moveTo(40, -66); ctx.lineTo(10, -88); ctx.lineTo(12, -48); ctx.closePath(); ctx.fill(); ctx.beginPath(); ctx.moveTo(40, -66); ctx.lineTo(70, -90); ctx.lineTo(70, -46); ctx.closePath(); ctx.fill(); circle(40, -67, 10, "#d94f82"); }
-  else if (kind === "beanie") { ctx.fillStyle = "#2f6fb8"; ctx.beginPath(); ctx.ellipse(0, -52, 64, 48, 0, Math.PI, 0); ctx.fill(); rr(-66, -60, 132, 18, 8, "#ec5a47"); circle(0, -104, 15, "#ffffff"); }
-  else if (kind === "party") { ctx.fillStyle = "#8b65d6"; ctx.beginPath(); ctx.moveTo(-30, -58); ctx.lineTo(30, -58); ctx.lineTo(4, -150); ctx.closePath(); ctx.fill(); ctx.strokeStyle = "#ffc234"; ctx.lineWidth = 7; ctx.beginPath(); ctx.moveTo(-22, -82); ctx.lineTo(24, -88); ctx.moveTo(-12, -112); ctx.lineTo(16, -116); ctx.stroke(); circle(4, -152, 12, "#ffc234"); }
-  else if (kind === "cap") { ctx.fillStyle = "#ec5a47"; ctx.beginPath(); ctx.ellipse(0, -56, 58, 40, 0, Math.PI, 0); ctx.fill(); ell(58, -58, 38, 9, "#c94634"); circle(0, -96, 7, "#c94634"); }
+/* bears: sticker style. A head as big as the body, dot eyes set low, a little snout, stubby arms,
+   a warm outline and a white sticker edge. Bear units: feet at 0, head centre at -140. */
+const BS = 0.86;   // bear size in the world
+// where things go on a bear, in world units above its feet
+const BEAR_CHEST = -48, BEAR_MOUTH = -100, ABOVE_BEAR = -220;
+const SH = { x: 34, y: -64, reach: 32 };   // shoulders, and how far a stubby arm reaches
+let OPS = [], HEAD_M = null;
+const P2 = () => new Path2D();
+function circleP(x, y, r) { const p = P2(); p.arc(x, y, r, 0, Math.PI * 2); return p; }
+function ellP(x, y, rx, ry, rot = 0) { const p = P2(); p.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); return p; }
+function lineP(pts, curve) {
+  const p = P2(); p.moveTo(pts[0][0], pts[0][1]);
+  if (curve) p.quadraticCurveTo(pts[1][0], pts[1][1], pts[2][0], pts[2][1]); else for (const q of pts.slice(1)) p.lineTo(q[0], q[1]);
+  return p;
 }
-function drawBearHead(x, y, s, fur, happy, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  circle(-50, -52, 24, fur); circle(50, -52, 24, fur); circle(-50, -52, 13, "#f2a7a0"); circle(50, -52, 13, "#f2a7a0");
-  circle(0, 0, 70, fur);
-  ell(0, 22, 32, 24, "#f6e6c8");
-  ell(0, 12, 11, 8, "#4a3426");
-  ctx.strokeStyle = "#4a3426"; ctx.lineWidth = 4; ctx.lineCap = "round";
-  if (o.mouth === "open") ell(0, 31, 9, 8, "#7a3b33");
-  else { ctx.beginPath(); ctx.moveTo(-11, 26); ctx.quadraticCurveTo(-5.5, 34, 0, 26); ctx.quadraticCurveTo(5.5, 34, 11, 26); ctx.stroke(); }
-  const lx = (o.look || 0) * 4;
-  if (happy) { ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(-26, -8, 8, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke(); ctx.beginPath(); ctx.arc(26, -8, 8, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke(); }
-  else if (o.blink) { ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(-33, -8); ctx.lineTo(-19, -8); ctx.moveTo(19, -8); ctx.lineTo(33, -8); ctx.stroke(); }
-  else { circle(-26 + lx, -8, 8, "#2b2220"); circle(26 + lx, -8, 8, "#2b2220"); circle(-23.5 + lx, -10.5, 2.8, "#fff"); circle(28.5 + lx, -10.5, 2.8, "#fff"); }
-  ctx.globalAlpha = 0.65; circle(-44, 14, 11, "#f4a0a0"); circle(44, 14, 11, "#f4a0a0"); ctx.globalAlpha = 1;
-  drawHat(o.hat);
+// a limb from (x1,y1) to (x2,y2)
+function limbP(x1, y1, r1, x2, y2, r2) {
+  const a = Math.atan2(y2 - y1, x2 - x1), p = P2();
+  p.arc(x1, y1, r1, a + Math.PI / 2, a - Math.PI / 2); p.arc(x2, y2, r2, a - Math.PI / 2, a + Math.PI / 2); p.closePath(); return p;
+}
+function squircleP(cx, cy, w, h, n) {
+  const p = P2();
+  for (let i = 0; i <= 64; i++) {
+    const a = i / 64 * Math.PI * 2, c = Math.cos(a), s = Math.sin(a);
+    const x = cx + Math.sign(c) * Math.pow(Math.abs(c), 2 / n) * w / 2, y = cy + Math.sign(s) * Math.pow(Math.abs(s), 2 / n) * h / 2;
+    i ? p.lineTo(x, y) : p.moveTo(x, y);
+  }
+  p.closePath(); return p;
+}
+// parts are collected first so the sticker edge can go round the whole bear
+function op(path, o) { OPS.push({ m: ctx.getTransform(), path, ...o }); }
+function at(x, y, rot, fn) { ctx.save(); ctx.translate(x, y); if (rot) ctx.rotate(rot); fn(); ctx.restore(); }
+const HEAD = (() => { const p = P2(); p.moveTo(0, -68); p.bezierCurveTo(52, -68, 86, -46, 89, -4); p.bezierCurveTo(92, 38, 58, 66, 0, 66); p.bezierCurveTo(-58, 66, -92, 38, -89, -4); p.bezierCurveTo(-86, -46, -52, -68, 0, -68); p.closePath(); return p; })();
+// a pear-shaped body that the head sits on
+const BODY = (() => { const p = P2(); p.moveTo(-30, -84); p.bezierCurveTo(-50, -72, -56, -34, -50, -16); p.bezierCurveTo(-46, -4, -30, -2, 0, -2); p.bezierCurveTo(30, -2, 46, -4, 50, -16); p.bezierCurveTo(56, -34, 50, -72, 30, -84); p.closePath(); return p; })();
+// a soft, slightly bent arm from the shoulder to the paw
+function armP(x1, y1, x2, y2, bend) {
+  const dx = x2 - x1, dy = y2 - y1, d = Math.hypot(dx, dy) || 1, nx = -dy / d, ny = dx / d, mx = (x1 + x2) / 2 + nx * bend, my = (y1 + y2) / 2 + ny * bend;
+  const r1 = 14, r2 = 13.5, a = Math.atan2(dy, dx), p = P2();
+  p.moveTo(x1 + nx * r1, y1 + ny * r1);
+  p.quadraticCurveTo(mx + nx * r1, my + ny * r1, x2 + nx * r2, y2 + ny * r2);
+  p.arc(x2, y2, r2, a + Math.PI / 2, a - Math.PI / 2, true);
+  p.quadraticCurveTo(mx - nx * r1, my - ny * r1, x1 - nx * r1, y1 - ny * r1);
+  p.arc(x1, y1, r1, a - Math.PI / 2, a + Math.PI / 2, true);
+  p.closePath(); return p;
+}
+function buildHead(p, fur) {
+  const light = shade(fur, 0.62), ink = "#3a2a22", blush = "rgba(255,150,170,.85)";
+  for (const [sx, r] of [[-1, p.earL], [1, p.earR]]) at(sx * 56, -50, sx * 0.25 + r, () => { op(ellP(0, 0, 23, 21), { fill: fur, body: true }); op(ellP(0, 2, 12, 10.5), { fill: shade(fur, 0.35) }); });
+  op(HEAD, { fill: fur, body: true });
+  // the face sits low, so there's lots of forehead
+  const lx = p.look * 3, ly = p.lookY * 4;
+  for (const sx of [-1, 1]) {
+    const x = sx * 33, y = 8;
+    if (p.eyes === "blink") op(lineP([[x - 10, y + 2], [x + 10, y + 2]]), { stroke: ink, lw: 5 });
+    else if (p.eyes === "happy" && p.squeeze) op(lineP([[x + 8 * sx, y - 9], [x - 7 * sx, y], [x + 8 * sx, y + 9]]), { stroke: ink, lw: 5 });
+    else if (p.eyes === "happy") { const q = P2(); q.arc(x, y + 5, 10, Math.PI * 1.12, Math.PI * 1.88); op(q, { stroke: ink, lw: 5 }); }
+    else {
+      op(ellP(x + lx, y + ly, 10, 11), { fill: ink });
+      op(circleP(x + lx + 3.2, y + ly - 4, 3.8), { fill: "#fff" }); op(circleP(x + lx - 3.2, y + ly + 4.5, 1.7), { fill: "#fff" });
+    }
+    op(ellP(sx * 58, 30, 13, 8), { fill: blush });
+  }
+  op(ellP(0, 33, 24, 17), { fill: light });
+  const nose = P2(); nose.moveTo(-8, 24); nose.quadraticCurveTo(0, 19, 8, 24); nose.quadraticCurveTo(7, 31, 0, 32); nose.quadraticCurveTo(-7, 31, -8, 24); nose.closePath(); op(nose, { fill: ink });
+  op(ellP(-2.5, 23.5, 2.6, 1.5), { fill: "rgba(255,255,255,.6)" });
+  if (p.mouth === "open") {
+    const q = P2(); q.moveTo(-8, 33); q.quadraticCurveTo(0, 31, 8, 33); q.quadraticCurveTo(7, 45, 0, 45); q.quadraticCurveTo(-7, 45, -8, 33); q.closePath();
+    op(q, { fill: "#8a3b34" }); op(ellP(0, 41, 4.5, 3), { fill: "#f08a8a" });
+  } else if (p.mouth === "o") op(ellP(0, 37, 3.6, 4.2), { fill: "#8a3b34" });
+  else if (p.mouth === "flat") op(lineP([[-5, 37], [5, 36]]), { stroke: ink, lw: 3.5 });
+  else { op(lineP([[-8, 35], [-4, 41], [0, 35]], true), { stroke: ink, lw: 3.5 }); op(lineP([[0, 35], [4, 41], [8, 35]], true), { stroke: ink, lw: 3.5 }); }
+  if (p.sweat) {
+    const d = P2(); d.moveTo(78, -40); d.quadraticCurveTo(90, -22, 84, -14); d.arc(78, -16, 7, 0.3, Math.PI - 0.3); d.quadraticCurveTo(68, -22, 78, -40); d.closePath();
+    at(0, (1 - p.sweat) * -8, 0, () => op(d, { fill: "#8fd0f4" }));
+  }
+}
+function buildBear(p, fur) {
+  const light = shade(fur, 0.62);
+  for (const sx of [-1, 1]) op(ellP(sx * 22, -8, 19, 12, -sx * 0.12), { fill: fur, body: true });
+  op(BODY, { fill: fur, body: true });
+  op(ellP(0, -36, 27, 25), { fill: light });
+  at(0, -140 + p.headDy, p.tilt, () => { HEAD_M = ctx.getTransform(); buildHead(p, fur); });
+  for (const [sx, t] of [[-1, p.L], [1, p.R]]) {
+    const x1 = sx * SH.x, dx = t[0] - x1, dy = t[1] - SH.y, d = Math.hypot(dx, dy) || 1, k = Math.min(1, SH.reach / d);
+    op(armP(x1, SH.y, x1 + dx * k, SH.y + dy * k, -sx * 5), { fill: fur, body: true });
+  }
+}
+function paintOps(fur) {
+  const line = shade(fur, -0.58);
+  ctx.save();
+  for (const o of OPS) {
+    ctx.setTransform(o.m);
+    if (o.fill) { ctx.fillStyle = o.fill; ctx.fill(o.path); }
+    if (o.stroke) { ctx.strokeStyle = o.stroke; ctx.lineWidth = o.lw || 4; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.stroke(o.path); }
+    if (o.body) { ctx.strokeStyle = line; ctx.lineWidth = 5; ctx.lineJoin = "round"; ctx.stroke(o.path); }
+  }
   ctx.restore();
+}
+// the white sticker edge goes on a small canvas of its own, so the bear casts one soft shadow
+const edgeCv = document.createElement("canvas");
+function stickerEdge(base, w0) {
+  const a = base.transformPoint(new DOMPoint(-140, -300)), c = base.transformPoint(new DOMPoint(140, 30));
+  const x0 = Math.floor(Math.min(a.x, c.x)), y0 = Math.floor(Math.min(a.y, c.y)), w = Math.ceil(Math.abs(c.x - a.x)), h = Math.ceil(Math.abs(c.y - a.y));
+  if (w < 4 || h < 4 || w > 3000 || h > 3000) return;
+  if (edgeCv.width < w || edgeCv.height < h) { edgeCv.width = Math.max(edgeCv.width, w); edgeCv.height = Math.max(edgeCv.height, h); }
+  const e = edgeCv.getContext("2d"); e.setTransform(1, 0, 0, 1, 0, 0); e.clearRect(0, 0, w + 1, h + 1);
+  e.lineJoin = "round"; e.strokeStyle = e.fillStyle = "#fff"; e.lineWidth = w0;
+  const off = new DOMMatrix().translate(-x0, -y0);
+  for (const o of OPS) if (o.body) { e.setTransform(off.multiply(o.m)); e.stroke(o.path); e.fill(o.path); }
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.shadowColor = "rgba(60,40,30,.2)"; ctx.shadowOffsetY = 2 + h * 0.01; ctx.shadowBlur = 3 + h * 0.015;
+  ctx.drawImage(edgeCv, 0, 0, w, h, x0, y0, w, h); ctx.restore();
+}
+function drawHatOn(kind) {
+  if (!HEAD_M || !kind || kind === "none") return;
+  ctx.save(); ctx.setTransform(HEAD_M); ctx.translate(0, -8); ctx.scale(1.12, 1.12); inked(4.5, () => drawHat(kind)); ctx.restore();
+}
+// what the body does for each mood
+function bearPose(b, rk, rt) {
+  const t = b.t, m = b.mood, f = bearFace(b);
+  const br = RM ? 0 : Math.sin(tNow * 2.4 + (b.x || 0) * 0.01);
+  const p = { y: 0, sx: 1 - br * 0.012, sy: 1 + br * 0.02, rot: 0, tilt: 0, headDy: br * 1.6, eyes: f.blink ? "blink" : "open", squeeze: false,
+    look: f.look * 0.9, lookY: 0, mouth: b.mouth === "open" ? "open" : "smile", earL: 0, earR: 0, L: [-58, -42], R: [58, -42], sweat: 0, shiver: 0 };
+  if (b.earAt === undefined) { b.earAt = tNow + 1 + Math.random() * 4; b.earSide = 1; }
+  if (tNow > b.earAt + 0.4) { b.earAt = tNow + 2.5 + Math.random() * 4; b.earSide = Math.random() < 0.5 ? -1 : 1; }
+  if (tNow >= b.earAt && !RM) { const k = Math.sin((tNow - b.earAt) / 0.4 * Math.PI) * 0.35; if (b.earSide < 0) p.earL = -k; else p.earR = k; }
+  const armsUp = () => { p.L = [-84, -172]; p.R = [84, -172]; }, hug = () => { p.L = [-40, -50]; p.R = [40, -50]; };
+  if (m === "wave") { const a = 0.55 + Math.sin(t * 9) * 0.45; p.R = [SH.x + Math.sin(a) * 66, SH.y - Math.cos(a) * 66]; p.mouth = "open"; p.tilt = Math.sin(t * 9) * 0.04; }
+  else if (m === "listen") { p.R = [70, -196]; p.tilt = 0.2; p.mouth = "o"; p.lookY = -0.2; }
+  else if (m === "hmm") { p.L = [-12, -118]; p.tilt = -0.17; p.look = -0.6; p.lookY = -0.7; p.mouth = "flat"; p.sweat = Math.min(1, t / 0.4); }
+  else if (m === "happy") { p.y = -Math.abs(Math.sin(t * 6)) * 34; armsUp(); p.eyes = "happy"; p.squeeze = true; p.mouth = "open"; p.look = 0; }
+  else if (m === "dance") { const s = Math.sin(t * 5); p.rot = s * 0.1; p.y = -Math.abs(Math.cos(t * 5)) * 12; p.eyes = "happy"; p.squeeze = true; p.mouth = "open"; p.look = 0; p.L = s > 0 ? [-80, -168] : [-62, -50]; p.R = s > 0 ? [62, -50] : [80, -168]; }
+  else if (m === "react" && rk) {
+    const on = rt > 0;   // the thing has popped out of the box
+    if (rk === "hug" || rk === "brrr") {
+      hug(); if (on) { p.eyes = "happy"; p.look = 0; }
+      if (rk === "brrr" && rt > 0.2 && rt < 1.9) { p.shiver = Math.sin(b.t * 60) * 4; p.squeeze = true; p.mouth = "flat"; }
+    }
+    else if (rk === "yum") { if (rt > 0.2) { p.L = [-22, -134]; p.R = [22, -134]; p.eyes = "happy"; p.look = 0; } }
+    else if (rk === "umbrella") { p.R = [50, -200]; if (on) { p.eyes = "happy"; p.look = 0; } }
+    else if (rk === "crown") { if (on) { p.eyes = "happy"; p.look = 0; p.tilt = Math.sin(b.t * 3) * 0.06; } }
+    else if (on) { armsUp(); p.mouth = "open"; p.look = 0; if (rk !== "wow") p.eyes = "happy"; }
+  }
+  if (RM) p.y = 0;
+  return p;
 }
 function drawBear(b, holdBox, reveal, gyOverride) {
   const gy = gyOverride ?? groundY(b.x) + BACK;
   const rk = reveal && b.mood === "react" ? reveal.kind : null, rt = reveal ? reveal.t - 0.5 : 0;
-  const dance = b.mood === "dance";
-  const happy = b.mood === "happy" || dance || (rk && (rk === "wow" || rk === "sky" || rk === "whee") && rt > 0);
-  const wave = b.mood === "wave", listen = b.mood === "listen", hmm = b.mood === "hmm";
-  const hop = happy ? Math.abs(Math.sin(b.t * 6)) * 30 : Math.sin(b.t * 2.2) * 3;
-  const tilt = listen ? 0.18 : hmm ? -0.2 : dance ? Math.sin(b.t * 5) * 0.15 : 0;
   b.mouth = rk === "yum" && rt > 0.5 && rt < 1.9 && Math.floor(rt / 0.2) % 2 === 0 ? "open" : null;
-  const shiver = rk === "brrr" && rt > 0.2 && rt < 1.9 ? Math.sin(b.t * 60) * 5 : 0;
-  ctx.save(); ctx.translate(b.x + shiver, gy - hop); if (dance) ctx.rotate(Math.sin(b.t * 5) * 0.08);
-  ell(0, hop - 2, 60, 12, "rgba(0,0,0,.14)");
-  ell(-26, -10, 22, 14, shade(b.fur, -0.1)); ell(26, -10, 22, 14, shade(b.fur, -0.1));
-  ell(0, -72, 60, 66, b.fur); ell(0, -66, 38, 42, shade(b.fur, 0.35));
-  ctx.strokeStyle = b.fur; ctx.lineWidth = 26; ctx.lineCap = "round";
-  // arms
-  ctx.beginPath();
-  if (rk === "hug" || rk === "brrr") { ctx.moveTo(-46, -92); ctx.lineTo(-8, -98); ctx.moveTo(46, -92); ctx.lineTo(8, -98); }
-  else if (rk === "yum" && rt > 0.2) { ctx.moveTo(-46, -92); ctx.lineTo(-22, -138); ctx.moveTo(46, -92); ctx.lineTo(22, -138); }
-  else if (hmm) { ctx.moveTo(-48, -92); ctx.lineTo(-62, -40); ctx.moveTo(46, -92); ctx.lineTo(14, -138); }
-  else if (rk === "umbrella") { ctx.moveTo(-48, -92); ctx.lineTo(-62, -40); ctx.moveTo(46, -98); ctx.lineTo(16, -210); }
-  else if (holdBox) { ctx.moveTo(-46, -90); ctx.lineTo(-30, -112); ctx.moveTo(46, -90); ctx.lineTo(30, -112); }
-  else if (happy) { ctx.moveTo(-48, -96); ctx.lineTo(-74, -150); ctx.moveTo(48, -96); ctx.lineTo(74, -150); }
-  else if (wave) { const a = Math.sin(b.t * 10) * 0.5; ctx.moveTo(-48, -92); ctx.lineTo(-62, -40); ctx.moveTo(48, -96); ctx.lineTo(48 + Math.sin(-0.6 + a) * 60, -96 - Math.cos(-0.6 + a) * 60); }
-  else if (listen) { ctx.moveTo(-48, -92); ctx.lineTo(-62, -40); ctx.moveTo(48, -98); ctx.lineTo(70, -168); }
-  else { ctx.moveTo(-48, -92); ctx.lineTo(-62, -40); ctx.moveTo(48, -92); ctx.lineTo(62, -40); }
-  ctx.stroke();
-  ctx.save(); ctx.translate(0, -168); ctx.rotate(tilt); drawBearHead(0, 0, 0.92, b.fur, happy && !b.mouth, bearFace(b)); ctx.restore();
-  if (listen) { circle(72, -170, 16, b.fur); }
+  const p = bearPose(b, rk, rt);
+  ctx.save(); ctx.translate(b.x + p.shiver, gy); ctx.scale(BS, BS);
+  inked(0, () => ell(0, 2, 60 * (1 + p.y / 220), 10, "rgba(60,40,30,.16)"));
+  const base = ctx.getTransform();
+  OPS = []; HEAD_M = null;
+  ctx.translate(0, p.y); ctx.rotate(p.rot); ctx.scale(p.sx, p.sy);
+  buildBear(p, b.fur);
   ctx.restore();
+  stickerEdge(base, 14);
+  paintOps(b.fur);
+  drawHatOn(b.hat);
+}
+// just the head: the bear in a truck cab, and the customer on the phone's order card
+function drawBearHead(x, y, s, fur, happy, o = {}) {
+  const p = { eyes: happy ? "happy" : o.blink ? "blink" : "open", squeeze: false, look: (o.look || 0) * 0.9, lookY: 0, mouth: o.mouth === "open" ? "open" : "smile", earL: 0, earR: 0, sweat: 0 };
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  OPS = []; HEAD_M = ctx.getTransform();
+  buildHead(p, fur);
+  ctx.restore();
+  ctx.save(); ctx.lineJoin = "round"; ctx.strokeStyle = "#fff";
+  for (const q of OPS) if (q.body) { ctx.setTransform(q.m); ctx.lineWidth = 14; ctx.stroke(q.path); }
+  ctx.restore();
+  paintOps(fur);
+  drawHatOn(o.hat);
+}
+function drawHat(kind) {
+  if (!kind || kind === "none") return;
+  const dome = (rx, ry, y, fill) => { const q = P2(); q.ellipse(0, y, rx, ry, 0, Math.PI, 0); q.closePath(); fillP(q, fill); };
+  if (kind === "hard") { dome(60, 44, -56, "#ffc234"); rr(-7, -100, 14, 40, 7, "#f2a91c"); rr(-76, -64, 152, 15, 7.5, "#f2a91c"); }
+  else if (kind === "chef") { fillP(circlesP([[-30, -100, 24], [0, -114, 30], [30, -100, 24]]), "#ffffff"); rr(-44, -90, 88, 30, 8, "#ffffff"); }
+  else if (kind === "flower") {
+    const cs = ["#ff8a7a", "#ffd36a", "#ff8fc0", "#b89cf0", "#ffffff"];
+    for (let i = 0; i < 7; i++) {
+      const a = Math.PI * (1.12 + i * 0.127), fx = Math.cos(a) * 66, fy = Math.sin(a) * 66;
+      blob(circlesP([0, 1, 2, 3, 4].map(k => [fx + Math.cos(k / 5 * Math.PI * 2) * 7, fy + Math.sin(k / 5 * Math.PI * 2) * 7, 6.5])), cs[i % 5], LINE * 0.6);
+      inked(0, () => circle(fx, fy, 4.5, "#fff3b0"));
+    }
+  }
+  else if (kind === "bow") { const q = P2(); q.moveTo(40, -66); q.lineTo(12, -88); q.quadraticCurveTo(6, -68, 12, -46); q.closePath(); q.moveTo(40, -66); q.lineTo(68, -88); q.quadraticCurveTo(74, -68, 68, -46); q.closePath(); fillP(q, "#ff8fb3"); circle(40, -67, 10, "#f06b9a"); }
+  else if (kind === "beanie") { dome(64, 50, -52, "#5b9be0"); rr(-66, -62, 132, 18, 9, "#ff8a7a"); circle(0, -106, 14, "#ffffff"); }
+  else if (kind === "party") { const q = P2(); q.moveTo(-30, -58); q.lineTo(30, -58); q.lineTo(4, -150); q.closePath(); fillP(q, "#b89cf0"); inked(0, () => { ctx.strokeStyle = "#ffd36a"; ctx.lineWidth = 7; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(-20, -82); ctx.lineTo(22, -86); ctx.moveTo(-10, -112); ctx.lineTo(14, -114); ctx.stroke(); }); circle(4, -152, 11, "#ffd36a"); }
+  else if (kind === "cap") { ell(56, -58, 38, 9, "#e2574a"); dome(58, 42, -56, "#ff7a6b"); circle(0, -98, 7, "#e2574a"); }
 }
 function drawHouse(x, h) {
+  // a small round-cornered house behind the bear: arched door, a round window, a flower box
   const g = groundY(x) - 112;
-  ctx.save(); ctx.translate(x, g);
-  rr(-150, -250, 300, 250, 12, h.wall); ctx.fillStyle = h.roof;
-  if (h.kind === "round") { ctx.beginPath(); ctx.ellipse(0, -246, 172, 120, 0, Math.PI, 0); ctx.fill(); circle(0, -330, 22, "#fff8e8"); circle(0, -330, 14, "#cfefff"); }
-  else if (h.kind === "flat") { rr(-176, -280, 352, 44, 10, h.roof); rr(90, -340, 36, 66, 5, "#b0844f"); for (let i = 0; i < 5; i++) circle(-140 + i * 22, -292, 8, shade(h.roof, 0.25)); }
-  else { ctx.beginPath(); ctx.moveTo(-180, -240); ctx.lineTo(0, -360); ctx.lineTo(180, -240); ctx.closePath(); ctx.fill(); rr(60, -330, 30, 60, 4, "#b0844f"); }
-  rr(-40, -140, 80, 140, 40, h.door); circle(24, -70, 6, "#ffc234");
-  rr(-120, -200, 56, 56, 8, "#cfefff", "#fff", 6); rr(64, -200, 56, 56, 8, "#cfefff", "#fff", 6);
-  for (let i = 0; i < 4; i++) circle(-112 + i * 14, -140, 8, ["#ec5a47", "#ffc234", "#e0478c", "#8b65d6"][i]);
-  rr(-126, -138, 68, 14, 4, "#9a6542");
+  ctx.save(); ctx.translate(x, g); ctx.scale(0.6, 0.6);
+  inked(7, () => {
+    rr(h.kind === "flat" ? 92 : 64, -350, 38, 90, 10, "#c98f62");
+    rr(-150, -250, 300, 250, 30, h.wall);
+    const roof = P2();
+    if (h.kind === "round") { roof.ellipse(0, -240, 180, 130, 0, Math.PI, 0); roof.closePath(); }
+    else if (h.kind === "flat") roof.roundRect(-180, -290, 360, 56, 26);
+    else { roof.moveTo(-182, -224); roof.quadraticCurveTo(-200, -236, -186, -252); roof.lineTo(-18, -364); roof.quadraticCurveTo(0, -376, 18, -364); roof.lineTo(186, -252); roof.quadraticCurveTo(200, -236, 182, -224); roof.closePath(); }
+    fillP(roof, h.roof);
+    const d = P2(); d.moveTo(-44, 0); d.lineTo(-44, -100); d.arc(0, -100, 44, Math.PI, 0); d.lineTo(44, 0); d.closePath(); fillP(d, h.door);
+    circle(-94, -150, 34, "#d6f0ff");
+    rr(56, -190, 70, 66, 18, "#d6f0ff");
+    rr(48, -122, 86, 22, 11, "#b98258");
+  });
+  inked(0, () => {
+    rr(-96, -182, 5, 64, 2.5, "rgba(255,255,255,.9)"); rr(-126, -152, 64, 5, 2.5, "rgba(255,255,255,.9)");
+    rr(88, -190, 5, 66, 2.5, "rgba(255,255,255,.9)");
+    circle(24, -50, 6, "#ffd36a");
+    for (let i = 0; i < 4; i++) circle(62 + i * 20, -128, 10, ["#ff8a7a", "#ffd36a", "#ff8fc0", "#b89cf0"][i]);
+    if (h.kind === "flat") for (let i = 0; i < 6; i++) circle(-150 + i * 60, -232, 14, shade(h.roof, 0.3));
+    if (h.kind === "round") { circle(0, -300, 26, "#fff8e8"); circle(0, -300, 17, "#d6f0ff"); }
+    if (h.kind === "peak") { circle(0, -290, 22, "#fff8e8"); circle(0, -290, 14, "#d6f0ff"); }
+  });
   ctx.restore();
 }
 function drawItem(l, x, y, size, rot = 0, alpha = 1) {
@@ -1092,115 +1304,153 @@ function drawReveal(s) {
   const b = s.bear, gy = groundY(b.x) + BACK, t = r.t, t2 = t - 0.5, bx = b.x;
   if (t < 1.0) {
     ctx.save(); ctx.globalAlpha = clamp(1 - (t - 0.6) / 0.4, 0, 1);
-    crateBox(bx, gy - 120, 96, r.l.toUpperCase());
-    ctx.translate(bx - 30 - t * 120, gy - 172 - Math.sin(Math.min(1, t * 2) * Math.PI) * 60); ctx.rotate(-t * 4);
-    rr(-50, -8, 100, 16, 6, "#fff6dc", "#e3c27f", 6); ctx.restore();
+    crateBox(bx, gy + BEAR_CHEST - 12, 84, r.l.toUpperCase());
+    ctx.translate(bx - 30 - t * 120, gy + BEAR_CHEST - 58 - Math.sin(Math.min(1, t * 2) * Math.PI) * 60); ctx.rotate(-t * 4);
+    rr(-44, -8, 88, 16, 8, "#fff4d6", INK, 4); ctx.restore();
   }
   const rise = clamp(t / 0.5, 0, 1), popS = 0.3 + 0.7 * easeBack(rise);
-  let x = bx, y = gy - 120 - 150 * rise, size = 130 * popS, rot = 0, alpha = 1;
+  let x = bx, y = gy + BEAR_CHEST - 12 - 160 * rise, size = 112 * popS, rot = 0, alpha = 1;
   if (t2 > 0) {
     const m = smooth(0, 0.45, t2);
-    if (r.kind === "yum") { const bites = t2 > 1.75 ? 0 : t2 > 1.35 ? 0.33 : t2 > 0.95 ? 0.66 : 1; x = bx; y = lerp(gy - 270, gy - 150, m); size = 110 * bites; if (!bites) return; }
-    else if (r.kind === "hug") { y = lerp(gy - 270, gy - 92, m); size = lerp(130, 92, m); rot = Math.sin(b.t * 3) * 0.08; }
-    else if (r.kind === "whee") { const up = Math.max(0, t2 - 0.3); y = gy - 270 - up * up * 900; x = bx + up * 120; rot = 0.3; if (y < -400) return; }
-    else if (r.kind === "sky") { x = lerp(bx, bx + 70, m); y = lerp(gy - 270, gy - 470, m) + Math.sin(tNow * 2) * 8; ctx.save(); ctx.globalAlpha = 0.35 * m; circle(x, y, 95, "#fff3b0"); ctx.restore(); }
-    else if (r.kind === "brrr") { x = lerp(bx, bx + 105, m); y = lerp(gy - 270, gy - 70, m); size = lerp(130, 120, m); }
-    else if (r.kind === "umbrella") { x = lerp(bx, bx + 14, m); y = lerp(gy - 270, gy - 300, m); size = lerp(130, 170, m); }
-    else if (r.kind === "crown") { y = lerp(gy - 270, gy - 248, m); size = lerp(130, 78, m); }
-    else { y = gy - 270 + Math.sin(t2 * 6) * 10; rot = t2 < 1.6 ? Math.sin(t2 * 8) * 0.3 : 0; }
+    if (r.kind === "yum") { const bites = t2 > 1.75 ? 0 : t2 > 1.35 ? 0.33 : t2 > 0.95 ? 0.66 : 1; x = bx; y = lerp(gy + ABOVE_BEAR, gy + BEAR_MOUTH - 6, m); size = 84 * bites; if (!bites) return; }
+    else if (r.kind === "hug") { y = lerp(gy + ABOVE_BEAR, gy + BEAR_CHEST - 6, m); size = lerp(112, 72, m); rot = Math.sin(b.t * 3) * 0.08; }
+    else if (r.kind === "whee") { const up = Math.max(0, t2 - 0.3); y = gy + ABOVE_BEAR - up * up * 900; x = bx + up * 120; rot = 0.3; if (y < -400) return; }
+    else if (r.kind === "sky") { x = lerp(bx, bx + 70, m); y = lerp(gy + ABOVE_BEAR, gy - 400, m) + Math.sin(tNow * 2) * 8; ctx.save(); ctx.globalAlpha = 0.35 * m; circle(x, y, 95, "#fff3b0"); ctx.restore(); }
+    else if (r.kind === "brrr") { x = lerp(bx, bx + 100, m); y = lerp(gy + ABOVE_BEAR, gy - 52, m); size = lerp(112, 100, m); }
+    else if (r.kind === "umbrella") { x = lerp(bx, bx + 40, m); y = lerp(gy + ABOVE_BEAR, gy - 212, m); size = lerp(112, 150, m); }
+    else if (r.kind === "crown") { y = lerp(gy + ABOVE_BEAR, gy - 186, m); size = lerp(112, 66, m); }
+    else { y = gy + ABOVE_BEAR + Math.sin(t2 * 6) * 10; rot = t2 < 1.6 ? Math.sin(t2 * 8) * 0.3 : 0; }
   }
   drawItem(r.l, x, y, size, rot, alpha);
 }
 function drawBirdAt(x, y, hue, fly, flap, flip) {
   ctx.save(); ctx.translate(x, y); if (flip) ctx.scale(-1, 1);
-  circle(0, -18, 18, hue); circle(12, -30, 11, hue); circle(15, -32, 2.6, "#23272f");
-  ctx.fillStyle = "#ffb31f"; ctx.beginPath(); ctx.moveTo(22, -31); ctx.lineTo(32, -28); ctx.lineTo(22, -25); ctx.fill();
-  ell(-4, -20, 14, 7, shade(hue, -0.2), fly ? -Math.sin(flap) * 0.9 : -0.15);
+  inked(3.5, () => {
+    blob(circlesP([[0, -18, 18], [10, -28, 13]]), hue, 3.5);
+    const bk = P2(); bk.moveTo(22, -31); bk.quadraticCurveTo(34, -28, 22, -24); bk.closePath(); fillP(bk, "#ffb31f");
+    ell(-4, -18, 13, 7, shade(hue, -0.18), fly ? -Math.sin(flap) * 0.9 : -0.15);
+  });
+  inked(0, () => { circle(14, -31, 2.8, "#2b2220"); circle(15, -32, 1, "#fff"); circle(8, -22, 4, "rgba(255,150,170,.7)"); });
   ctx.restore();
 }
 function drawDock(s) {
   const y = dockY(s), a = s.dockA, b = s.dockB;
-  rr(a, y, b - a, 90, 6, "#b88a56"); rr(a, y, b - a, 12, 4, "#d4ab78");
-  for (let x = a + 30; x < b; x += 70) rr(x, y + 20, 6, 62, 3, "#9a6b45");
-  // crane: two posts and a beam, a hook that hangs over the box he's parked under
+  // crane: two posts and a striped beam, and a hook that hangs over the box he's parked under
   const top = y - 430;
-  ctx.fillStyle = "#ffc234"; rr(a - 10, top, 22, 430, 4, "#ffc234"); rr(b - 12, top, 22, 430, 4, "#ffc234"); rr(a - 20, top - 10, b - a + 40, 26, 6, "#ffb31f");
-  ctx.save(); ctx.beginPath(); ctx.rect(a - 20, top - 10, b - a + 40, 26); ctx.clip(); ctx.fillStyle = "#23272f"; for (let x = a - 40; x < b + 40; x += 34) { ctx.beginPath(); ctx.moveTo(x, top + 16); ctx.lineTo(x + 14, top - 10); ctx.lineTo(x + 24, top - 10); ctx.lineTo(x + 10, top + 16); ctx.fill(); } ctx.restore();
+  inked(5, () => {
+    rr(a - 12, top, 26, 440, 13, "#ffc234"); rr(b - 14, top, 26, 440, 13, "#ffc234");
+    rr(a - 24, top - 12, b - a + 48, 30, 15, "#ffd36a");
+    rr(a, y, b - a, 88, 18, "#d9a66a");
+  });
+  inked(0, () => {
+    ctx.save(); ctx.beginPath(); ctx.roundRect(a - 22, top - 10, b - a + 44, 26, 13); ctx.clip(); ctx.fillStyle = "rgba(74,52,38,.85)";
+    for (let x = a - 40; x < b + 40; x += 40) { ctx.beginPath(); ctx.moveTo(x, top + 16); ctx.lineTo(x + 16, top - 10); ctx.lineTo(x + 30, top - 10); ctx.lineTo(x + 14, top + 16); ctx.fill(); }
+    ctx.restore();
+    rr(a + 8, y + 8, b - a - 16, 12, 6, "#e9c08c");
+    for (let x = a + 40; x < b - 20; x += 80) rr(x, y + 30, 6, 46, 3, "#b9844f");
+  });
   const sel = selected(s), lift = s.items.find(i => i.state === "lift");
   s.hookX = lerp(s.hookX ?? (a + b) / 2, lift ? lift.px : sel ? sel.x : (s.hookX ?? (a + b) / 2), 0.15);
   s.hookY = lerp(s.hookY ?? y - 190, lift ? lift.py - 70 : y - 190, lift ? 1 : 0.12);
   const hookY = s.hookY;
-  rr(s.hookX - 24, top + 14, 48, 22, 5, "#5b6370");
-  ctx.strokeStyle = "#3a3f4b"; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(s.hookX, top + 36); ctx.lineTo(s.hookX, hookY); ctx.stroke();
-  ctx.lineWidth = 7; ctx.beginPath(); ctx.arc(s.hookX, hookY + 10, 11, -Math.PI / 2, Math.PI * 0.95); ctx.stroke();
+  ctx.strokeStyle = INK; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(s.hookX, top + 30); ctx.lineTo(s.hookX, hookY); ctx.stroke();
+  inked(4, () => rr(s.hookX - 26, top + 10, 52, 24, 9, "#8a909c"));
+  ctx.strokeStyle = INK; ctx.lineWidth = 8; ctx.lineCap = "round"; ctx.beginPath(); ctx.arc(s.hookX, hookY + 10, 11, -Math.PI / 2, Math.PI * 0.95); ctx.stroke();
 }
 function drawGate(s) {
   const x = s.gateX, g = groundY(x);
   ctx.save(); ctx.translate(x, g - 20);
-  rr(-14, -112, 28, 112, 6, "#5b6370"); circle(0, -104, 18, "#3a3f4b");
-  ctx.translate(0, -104); ctx.rotate(s.gateA * Math.PI / 2 * 0.95);
-  ctx.save(); ctx.beginPath(); ctx.rect(-250, -12, 250, 24); ctx.clip(); rr(-250, -12, 250, 24, 10, "#fff"); ctx.fillStyle = "#ec5a47"; for (let i = 0; i < 5; i++) ctx.fillRect(-250 + i * 52, -12, 26, 24); ctx.restore();
+  inked(4.5, () => {
+    ctx.save(); ctx.translate(0, -104); ctx.rotate(s.gateA * Math.PI / 2 * 0.95);
+    rr(-250, -12, 250, 24, 12, "#ffffff");
+    inked(0, () => { ctx.save(); ctx.beginPath(); ctx.roundRect(-250, -12, 250, 24, 12); ctx.clip(); ctx.fillStyle = "#ff7a6b"; for (let i = 0; i < 5; i++) ctx.fillRect(-244 + i * 52, -12, 26, 24); ctx.restore(); });
+    rr(-250, -12, 250, 24, 12, null, INK, 4.5);
+    ctx.restore();
+    rr(-14, -112, 28, 116, 14, "#8a909c"); circle(0, -104, 17, "#6b7280");
+  });
   ctx.restore();
 }
 function drawCone(p) {
   const g = groundY(p.x);
   ctx.save(); if (p.state === "up") ctx.translate(p.x, g); else ctx.translate(p.x, p.y + 10); ctx.rotate(p.rot || 0);
-  ctx.beginPath(); ctx.moveTo(-26, 0); ctx.lineTo(-8, -78); ctx.lineTo(8, -78); ctx.lineTo(26, 0); ctx.closePath(); ctx.fillStyle = "#ff7f32"; ctx.fill();
-  ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(-19, -26); ctx.lineTo(-13, -48); ctx.lineTo(13, -48); ctx.lineTo(19, -26); ctx.closePath(); ctx.fill();
-  rr(-34, -8, 68, 10, 4, "#e2662a"); ctx.restore();
+  inked(4, () => {
+    const c = P2(); c.moveTo(-26, -4); c.lineTo(-10, -76); c.quadraticCurveTo(0, -84, 10, -76); c.lineTo(26, -4); c.closePath(); fillP(c, "#ff8c4a");
+    inked(0, () => { ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(-18, -28); ctx.lineTo(-13, -48); ctx.lineTo(13, -48); ctx.lineTo(18, -28); ctx.closePath(); ctx.fill(); });
+    rr(-34, -10, 68, 12, 6, "#f0713a");
+  });
+  ctx.restore();
 }
 function drawBird(b) {
   const gy = groundY(b.x) + BACK - 6, y = b.fly ? gy + b.y : gy;
-  ctx.save(); ctx.translate(b.x, y); if (b.fly && b.vx < 0) ctx.scale(-1, 1);
-  circle(0, -18, 18, b.hue); circle(12, -30, 11, b.hue); circle(15, -32, 2.6, "#23272f");
-  ctx.fillStyle = "#ffb31f"; ctx.beginPath(); ctx.moveTo(22, -31); ctx.lineTo(32, -28); ctx.lineTo(22, -25); ctx.fill();
-  const w = b.fly ? Math.sin(b.flap) * 0.9 : 0.15; ell(-4, -20, 14, 7, shade(b.hue, -0.2), -w);
-  if (!b.fly) { ctx.strokeStyle = "#e0a21a"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-4, -2); ctx.lineTo(-4, 4); ctx.moveTo(4, -2); ctx.lineTo(4, 4); ctx.stroke(); }
-  ctx.restore();
+  if (!b.fly) { ctx.strokeStyle = "#e0a21a"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(b.x - 4, y - 2); ctx.lineTo(b.x - 4, y + 4); ctx.moveTo(b.x + 4, y - 2); ctx.lineTo(b.x + 4, y + 4); ctx.stroke(); }
+  drawBirdAt(b.x, y, b.hue, b.fly, b.flap, b.fly && b.vx < 0);
 }
 function drawDecor(d) {
   const g = groundY(d.x) - 112;
   const sh = d.shake && tNow - d.shake < 0.7 ? Math.sin((tNow - d.shake) * 32) * 0.09 * (1 - (tNow - d.shake) / 0.7) : 0;
-  ctx.save(); ctx.translate(d.x, g); ctx.scale(d.s, d.s);
-  if (d.kind === "bush") { ctx.rotate(sh); circle(-30, -18, 30, "#5fae66"); circle(10, -30, 38, "#6fbf70"); circle(44, -16, 26, "#5fae66"); }
-  else if (d.kind === "tree") { rr(-9, -90, 18, 92, 6, "#9a6b45"); ctx.translate(0, -90); ctx.rotate(sh); ctx.translate(0, 90); circle(0, -120, 56, "#4f9e5c"); circle(-34, -96, 34, "#5fae66"); circle(34, -98, 36, "#5fae66"); }
-  else {
-    ctx.strokeStyle = "#4f9e5c"; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, -40); ctx.stroke();
+  ctx.save(); ctx.translate(d.x, g); ctx.scale(d.s * 0.85, d.s * 0.85);
+  if (d.kind === "bush") {
+    ctx.rotate(sh);
+    blob(circlesP([[-30, -20, 28], [8, -32, 36], [42, -18, 25], [6, -12, 30]]), "#7fcf7a", 4.5);
+    inked(0, () => { circle(-4, -46, 9, "#a5e09a"); circle(30, -34, 6, "#a5e09a"); });
+  } else if (d.kind === "tree") {
+    inked(4.5, () => rr(-12, -96, 24, 98, 12, "#b98258"));
+    ctx.translate(0, -90); ctx.rotate(sh); ctx.translate(0, 90);
+    blob(circlesP([[0, -132, 54], [-40, -104, 38], [40, -106, 40], [0, -96, 44]]), d.hue < 0.5 ? "#6cc475" : "#88d27a", 4.5);
+    inked(0, () => { circle(-20, -150, 14, "rgba(255,255,255,.35)"); circle(-34, -126, 7, "rgba(255,255,255,.3)"); if (d.hue > 0.75) for (const [fx, fy] of [[18, -128], [-14, -100], [34, -96]]) circle(fx, fy, 7, "#ff8a7a"); });
+  } else {
+    ctx.strokeStyle = "#5fae66"; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(4, -22, 0, -40); ctx.stroke();
     const grow = d.pop ? smooth(5, 5.6, tNow - d.pop) : 1;
-    if (grow > 0.02) { ctx.translate(0, -44); ctx.scale(grow, grow); const c = d.hue < 0.33 ? "#ec5a47" : d.hue < 0.66 ? "#ffc234" : "#e0478c"; for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; circle(Math.cos(a) * 10, Math.sin(a) * 10, 8, c); } circle(0, 0, 6, "#fff3b0"); }
+    if (grow > 0.02) {
+      ctx.translate(0, -44); ctx.scale(grow, grow);
+      const c = d.hue < 0.33 ? "#ff8a7a" : d.hue < 0.66 ? "#ffd36a" : "#ff8fc0";
+      blob(circlesP([0, 1, 2, 3, 4].map(i => [Math.cos(i / 5 * Math.PI * 2) * 10, Math.sin(i / 5 * Math.PI * 2) * 10, 8.5])), c, 3);
+      inked(0, () => circle(0, 0, 6, "#fff3b0"));
+    }
   }
   ctx.restore();
 }
 function drawGarage(x) {
   const g = groundY(x) - 112; ctx.save(); ctx.translate(x, g);
-  rr(-170, -230, 340, 230, 10, "#d9e6f2"); ctx.fillStyle = "#2f6fb8"; ctx.beginPath(); ctx.moveTo(-195, -222); ctx.lineTo(0, -300); ctx.lineTo(195, -222); ctx.closePath(); ctx.fill();
-  rr(-110, -160, 220, 160, 8, "#8d96a6"); for (let i = 0; i < 5; i++) rr(-110, -160 + i * 32, 220, 4, 0, "#7a8394");
+  inked(6, () => {
+    rr(-170, -230, 340, 236, 28, "#e9f1f8");
+    const r = P2(); r.moveTo(-200, -214); r.quadraticCurveTo(-212, -228, -196, -238); r.lineTo(-14, -306); r.quadraticCurveTo(0, -312, 14, -306); r.lineTo(196, -238); r.quadraticCurveTo(212, -228, 200, -214); r.closePath(); fillP(r, "#5b9be0");
+    rr(-112, -164, 224, 170, 16, "#a9b2c0");
+  });
+  inked(0, () => { for (let i = 1; i < 5; i++) rr(-104, -164 + i * 33, 208, 5, 2.5, "#8f99a8"); circle(0, -258, 20, "#fff8e8"); circle(0, -258, 13, "#d6f0ff"); });
   ctx.restore();
 }
 function drawRoad(x0, x1) {
   const step = 24;
-  ctx.beginPath(); ctx.moveTo(x0, VH + 400); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 130); ctx.lineTo(x1 + step, VH + 400); ctx.closePath(); ctx.fillStyle = "#86c97f"; ctx.fill();
-  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 112); for (let x = x1 + step; x >= x0; x -= step) ctx.lineTo(x, groundY(x) + 36); ctx.closePath(); ctx.fillStyle = "#4a4e5a"; ctx.fill();
-  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 112); ctx.strokeStyle = "#3b3f4a"; ctx.lineWidth = 10; ctx.stroke();
-  ctx.strokeStyle = "rgba(246,239,216,.9)"; ctx.lineWidth = 9; ctx.setLineDash([90, 70]); ctx.beginPath(); for (let x = Math.floor(x0 / 160) * 160; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 38); ctx.stroke(); ctx.setLineDash([]);
-  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) + 36); ctx.lineTo(x1 + step, VH + 400); ctx.lineTo(x0, VH + 400); ctx.closePath(); ctx.fillStyle = "#c79a64"; ctx.fill();
-  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) + 36); ctx.strokeStyle = "#b0844f"; ctx.lineWidth = 8; ctx.stroke();
-  for (let gx = Math.floor(x0 / 90) * 90; gx < x1 + 90; gx += 90) {
+  ctx.beginPath(); ctx.moveTo(x0, VH + 400); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 132); ctx.lineTo(x1 + step, VH + 400); ctx.closePath(); ctx.fillStyle = "#9bd88a"; ctx.fill();
+  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 112); for (let x = x1 + step; x >= x0; x -= step) ctx.lineTo(x, groundY(x) + 36); ctx.closePath(); ctx.fillStyle = "#6b6878"; ctx.fill();
+  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 112); ctx.strokeStyle = "#57546a"; ctx.lineWidth = 8; ctx.stroke();
+  ctx.strokeStyle = "rgba(255,248,226,.95)"; ctx.lineWidth = 10; ctx.lineCap = "round"; ctx.setLineDash([70, 90]); ctx.beginPath(); for (let x = Math.floor(x0 / 160) * 160; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) - 38); ctx.stroke(); ctx.setLineDash([]); ctx.lineCap = "butt";
+  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) + 36); ctx.lineTo(x1 + step, VH + 400); ctx.lineTo(x0, VH + 400); ctx.closePath(); ctx.fillStyle = "#aee096"; ctx.fill();
+  ctx.beginPath(); for (let x = x0; x <= x1 + step; x += step) ctx.lineTo(x, groundY(x) + 40); ctx.strokeStyle = "#d9d3c7"; ctx.lineWidth = 14; ctx.stroke();
+  // grass tufts and tiny flowers, the same every time for a given spot
+  ctx.lineCap = "round";
+  for (let gx = Math.floor(x0 / 70) * 70; gx < x1 + 70; gx += 70) {
     const h = Math.sin(gx * 12.9898) * 43758.5453, r1 = h - Math.floor(h), r2 = (h * 7.13) - Math.floor(h * 7.13);
-    const py = groundY(gx) + 80 + r1 * (VH - groundY(gx) - 110);
-    ell(gx + r2 * 60, py, 10 + r1 * 14, 6 + r2 * 6, r2 < 0.5 ? "#b88a56" : "#d4ab78");
+    const px = gx + r2 * 50, py = groundY(gx) + 90 + r1 * (VH - groundY(gx) - 120);
+    if (r2 < 0.22) { const c = r1 < 0.5 ? "#ffffff" : "#ffb3c6"; for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; circle(px + Math.cos(a) * 6, py + Math.sin(a) * 6, 5, c); } circle(px, py, 4, "#ffd36a"); }
+    else { ctx.strokeStyle = "#8fcf7d"; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(px - 10, py - 12); ctx.lineTo(px - 4, py + 2); ctx.moveTo(px, py - 18); ctx.lineTo(px, py + 2); ctx.moveTo(px + 10, py - 12); ctx.lineTo(px + 4, py + 2); ctx.stroke(); }
   }
+  ctx.lineCap = "butt";
   for (const b of road.bumps) {
     if (b.x < x0 - 300 || b.x > x1 + 300) continue;
-    ctx.strokeStyle = "#e0a21a"; ctx.lineWidth = 6; ctx.setLineDash([22, 18]); ctx.beginPath(); for (let x = b.x - b.w * 1.6; x <= b.x + b.w * 1.6; x += 10) ctx.lineTo(x, groundY(x) - 2); ctx.stroke(); ctx.setLineDash([]);
+    ctx.strokeStyle = "#ffc234"; ctx.lineWidth = 7; ctx.lineCap = "round"; ctx.setLineDash([18, 20]); ctx.beginPath(); for (let x = b.x - b.w * 1.6; x <= b.x + b.w * 1.6; x += 10) ctx.lineTo(x, groundY(x) - 2); ctx.stroke(); ctx.setLineDash([]); ctx.lineCap = "butt";
   }
 }
 function drawSky() {
   const W = canvas.width, H = canvas.height, s = scale;
-  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#a4dcf3"); g.addColorStop(0.6, "#c9ecf8"); g.addColorStop(1, "#e6f6fb");
+  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#9fdcf5"); g.addColorStop(0.6, "#c8ecfa"); g.addColorStop(1, "#eef9fc");
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   ctx.save(); ctx.translate(0, Math.max(0, offY * 0.6));
   ctx.beginPath(); ctx.arc(W - 200 * s, 130 * s, 70 * s, 0, Math.PI * 2); ctx.fillStyle = "rgba(255,226,122,.35)"; ctx.fill();
+  // soft rounded rays that turn slowly
+  ctx.save(); ctx.translate(W - 200 * s, 130 * s); ctx.rotate(RM ? 0 : tNow * 0.15); ctx.strokeStyle = "#ffe9a0"; ctx.lineCap = "round"; ctx.lineWidth = 12 * s;
+  ctx.beginPath(); for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; ctx.moveTo(Math.cos(a) * 72 * s, Math.sin(a) * 72 * s); ctx.lineTo(Math.cos(a) * 88 * s, Math.sin(a) * 88 * s); } ctx.stroke(); ctx.restore();
   const sp = tNow - sunPoke, sunR = 54 * s * (1 + (sp < 0.5 ? Math.sin(sp / 0.5 * Math.PI) * 0.25 : 0));
   ctx.beginPath(); ctx.arc(W - 200 * s, 130 * s, sunR, 0, Math.PI * 2); ctx.fillStyle = "#ffe27a"; ctx.fill();
   if (sp < 3.5) {
@@ -1214,13 +1464,15 @@ function drawSky() {
   for (let i = 0; i < 5; i++) {
     const span = viewW + 600; const x = ((i * 520 - cam.x * 0.08 + tNow * 8 * (1 + i * 0.2)) % span + span) % span - 300;
     const y = 90 + (i % 3) * 70, c = 0.7 + (i % 2) * 0.3;
-    ctx.fillStyle = cloudRain[i] > tNow ? "rgba(214,224,236,.97)" : "rgba(255,255,255,.95)";
-    ctx.beginPath(); ctx.ellipse(x * s, y * s, 90 * c * s, 30 * c * s, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc((x - 30 * c) * s, (y - 18 * c) * s, 34 * c * s, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc((x + 22 * c) * s, (y - 24 * c) * s, 40 * c * s, 0, Math.PI * 2); ctx.fill();
+    // puffy clouds with flat bottoms and a soft blue edge
+    const k = c * s, cl = new Path2D();
+    cl.roundRect((x - 92 * c) * s, (y - 12 * c) * s, 184 * k, 42 * k, 21 * k);
+    for (const [dx, dy, r] of [[-46, -12, 32], [0, -28, 42], [46, -10, 30]]) { cl.moveTo((x + dx * c) * s + r * k, (y + dy * c) * s); cl.arc((x + dx * c) * s, (y + dy * c) * s, r * k, 0, Math.PI * 2); }
+    ctx.strokeStyle = "rgba(140,195,228,.6)"; ctx.lineWidth = 7 * k; ctx.lineJoin = "round"; ctx.stroke(cl);
+    ctx.fillStyle = cloudRain[i] > tNow ? "#dfe6ef" : "#ffffff"; ctx.fill(cl);
   }
   ctx.restore();
-  hills(0.22, "#a9d99a", 560, 55, 900); hills(0.45, "#86c97f", 620, 45, 600);
+  hills(0.22, "#c2e8ab", 560, 55, 900); hills(0.45, "#a6dc90", 620, 45, 600);
 }
 function hills(f, color, base, amp, wl) {
   const W = canvas.width, s = scale;
@@ -1231,7 +1483,7 @@ function hills(f, color, base, amp, wl) {
 function drawOrder(s) {
   // speech bubble over the bear: what the bear wants, as a picture (never the letter)
   const b = s.m === "deliver" ? s.bear : null; if (!b || s.done || !s.active) return;
-  const x = b.x + 40, y = groundY(b.x) + BACK - 330;
+  const x = b.x + 40, y = groundY(b.x) + BACK - 262;
   const pulse = 1 + Math.sin(tNow * 3) * 0.03;
   ctx.save(); ctx.translate(x, y); ctx.scale(pulse, pulse);
   ctx.shadowColor = "rgba(0,0,0,.12)"; ctx.shadowOffsetY = 6; rr(-90, -170, 180, 160, 30, "#fff"); ctx.shadowColor = "transparent";
@@ -1325,7 +1577,7 @@ function render() {
   for (const d of decor) if (vis(d.x)) drawDecor(d);
   if (mode === "home" || (run && cam.x < 900)) drawGarage(160);
   const stations = run && (mode === "deliver" || mode === "tow" || mode === "end") ? run.stations : [];
-  for (const s of stations) if (s.m === "deliver" && vis(s.bear.x)) drawHouse(s.bear.x + 40, s.bear.house);
+  for (const s of stations) if (s.m === "deliver" && vis(s.bear.x)) drawHouse(s.bear.x + 80, s.bear.house);
   drawRoad(x0, x1);
   for (const b of birds) if (vis(b.x) && !b.fly) drawBird(b);
   const sel = selected(st);
@@ -1362,7 +1614,7 @@ function render() {
       if (t.state === "attached") { ctx.strokeStyle = "#3a3f4b"; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(t.x + TRW * 0.5, t.y - 46 * K); ctx.lineTo(P.x - TW * 0.5 + 8, P.y - 40 * K); ctx.stroke(); }
       drawTrailer(t);
     }
-    drawTruck({ type: P.type, color: P.color, x: P.x, y: P.y, ang: P.ang, wheel: P.wheel, squash: P.squash, honk: P.honk });
+    drawTruck({ kind: P.kind, tow: P.type === "tow", color: P.color, x: P.x, y: P.y, ang: P.ang, wheel: P.wheel, squash: P.squash, honk: P.honk });
     // a box riding in the dump truck, or flying to/from it
     for (const s of stations) if (s.m === "deliver") for (const it of s.items) {
       if (it.state === "lift" || it.state === "truck" || it.state === "deliver") crateBox(it.px, it.py, it.state === "truck" ? 100 : 110, it.l.toUpperCase());
@@ -1375,7 +1627,7 @@ function render() {
     drawTrailer({ x: tx, y: groundY(tx) + BACK, l: q.l, color: q.tcolor, wheel: q.wheel, ang: 0 });
     drawTruck({ type: "big", color: q.color, letter: q.l.toUpperCase(), x: q.x, y: gy, wheel: q.wheel, honk: Math.sin(q.t * 2) > 0.95 ? 0.4 : 0, bear: q });
   }
-  if (run && run.party) for (const b of run.party) { const gy = groundY(b.x); drawBear(b, false, null, gy); drawItem(b.l, b.x, gy - 330 - Math.abs(Math.sin(b.t * 6)) * 30, 96); }
+  if (run && run.party) for (const b of run.party) { const gy = groundY(b.x); drawBear(b, false, null, gy); drawItem(b.l, b.x, gy - 250 - Math.abs(Math.sin(b.t * 6)) * 30, 90); }
   for (const b of birds) if (vis(b.x) && b.fly) drawBird(b);
   drawParts();
   for (const b of bubbles) drawBubble(b);
@@ -1406,10 +1658,10 @@ function endScreen(text) {
 }
 let lastMode = "deliver";
 function begin(m) { initAudio(); lastMode = m; cancelChains(); stopVoice(); fadeTo(() => showPicker(m)); }
-function truckThumb(type, color) {
+function truckThumb(kind, color, tow) {
   const c = document.createElement("canvas"); c.width = 400; c.height = 215;
   const keep = ctx; ctx = c.getContext("2d");
-  try { drawTruck({ type, color, x: 200, y: 205, wheel: 0 }); } finally { ctx = keep; }
+  try { drawTruck({ kind, tow, color, x: 204, y: 205, wheel: 0 }); } finally { ctx = keep; }
   return c.toDataURL();
 }
 let picking = false;
@@ -1417,18 +1669,18 @@ function showPicker(m) {
   const box = $("#truck-choices"); box.innerHTML = "";
   TRUCKS.forEach((t, i) => {
     const b = document.createElement("button"); b.className = "truck-btn"; b.dataset.nav = ""; b.setAttribute("aria-label", `truck ${i + 1}`);
-    const im = new Image(); im.alt = ""; im.src = truckThumb(m === "tow" ? "tow" : "dump", t.color); b.appendChild(im);
+    const im = new Image(); im.alt = ""; im.src = truckThumb(t.kind, t.color, m === "tow"); b.appendChild(im);
     b.addEventListener("click", () => pickTruck(m, i, b));
     b.addEventListener("focus", () => { if (document.body.classList.contains("pad")) previewHorn(i, b); });
     box.appendChild(b);
   });
   picking = false; mode = "pick"; showOnly("ov-pick");
-  if (P) { P.type = m === "tow" ? "tow" : "dump"; const t = TRUCKS[settings.truck] || TRUCKS[0]; P.color = t.color; P.horn = t.horn; }
+  if (P) { P.type = m === "tow" ? "tow" : "dump"; const t = TRUCKS[settings.truck] || TRUCKS[0]; P.kind = t.kind; P.color = t.color; P.horn = t.horn; }
   setTimeout(() => focusFirst(box.children[settings.truck] || box.children[0]), 60);
 }
 function previewHorn(i, b) {
   initAudio(); (sfx[TRUCKS[i].horn] || sfx.horn)(); b.classList.remove("bounce"); void b.offsetWidth; b.classList.add("bounce");
-  if (P) { P.color = TRUCKS[i].color; P.horn = TRUCKS[i].horn; P.honk = 0.5; P.squash = 0.6; }
+  if (P) { P.kind = TRUCKS[i].kind; P.color = TRUCKS[i].color; P.horn = TRUCKS[i].horn; P.honk = 0.5; P.squash = 0.6; }
 }
 function pickTruck(m, i, b) {
   if (picking) return; picking = true;
@@ -1506,7 +1758,7 @@ canvas.addEventListener("pointerdown", e => {
       if (Math.abs(w.x - it.x) < 85 && Math.abs(w.y - iy) < 110) { P.auto = { x: it.x, then: () => { if (!s.busy && !s.done) choose(s, it); } }; return; }
     }
     const bx = s.m === "deliver" ? s.bear.x : s.big.x;
-    if (Math.abs(w.x - bx) < 140 && w.y < groundY(bx) + BACK && w.y > groundY(bx) + BACK - 420) { ask(s); return; }
+    if (Math.abs(w.x - bx) < 140 && w.y < groundY(bx) + BACK && w.y > groundY(bx) + BACK - 320) { ask(s); return; }
   }
   if (Math.abs(w.x - P.x) < TW * 0.55 && w.y > P.y - 230 && w.y < P.y + 20) { honk(); return; }
   poke(e);
