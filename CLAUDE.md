@@ -4,7 +4,7 @@ A truck game in the browser that teaches a toddler (almost 3) lowercase letters 
 
 **How she likes to work:** lowercase, chill, not overly enthusiastic. Challenge weak assumptions, and say clearly what's fact, what's inference and what's speculation. Ask when something is genuinely unclear. Keep summaries short.
 
-**Published game:** https://claude.ai/artifact/Cf8gc3nNXwRqXrh7f3UHmd (version 8 = branch `remove-personal-name` with the glow-first change). To update it, read that artifact and then publish to the same `url`, so she keeps the same link. If no artifact tool is available, send her `dist/letter-trucks.html`.
+**Published game:** https://claude.ai/artifact/Cf8gc3nNXwRqXrh7f3UHmd (version 9 = branch `remove-personal-name` with the new look). To update it, read that artifact and then publish to the same `url`, so she keeps the same link. If no artifact tool is available, send her `dist/letter-trucks.html`.
 
 ## Layout
 - `src/template.html` — the whole game in one file: canvas side-scroller plus DOM overlays, no framework. It has the placeholders `__LINES__`, `__VOICE__`, `__PICS__` and `__CREDITS__`.
