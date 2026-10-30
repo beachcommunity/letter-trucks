@@ -575,7 +575,7 @@ function distractors(m, target, k, lvl) {
 }
 
 /* ---------- a game: one road, several stations ---------- */
-const BOXGAP = 290, TRGAP = 300, DRIVE = 1200, HITCH = TW * 0.5 + TRW * 0.5 + 14;
+const BOXGAP = 290, TRGAP = 300, DRIVE = 1800, HAUL = 3200, HITCH = TW * 0.5 + TRW * 0.5 + 14;
 function startRun(m) {
   const targets = planTargets(m, settings.stops);
   const stations = []; let x = 2500;
@@ -587,10 +587,10 @@ function startRun(m) {
     if (m === "deliver") {
       s.items = choices.map((c, j) => ({ l: c, x: x + j * BOXGAP, state: "dock", t: 0, ox: 0, oy: 0, wob: 0 }));
       const last = x + (choices.length - 1) * BOXGAP;
-      // the truck parks under the crane past the dock to load, then drives up to the bear and stops
-      // with its back end at the bear, so the box can slide out to it
-      s.dockA = x - 140; s.dockB = last + 140; s.loadX = s.dockB + 260; s.craneR = s.loadX + 215;
-      s.bear = { x: s.loadX + 470, fur: rand(FURS), hat: rand(HATS), house: makeHouse(), mood: "idle", t: 0, holding: null, blinkAt: 2 + Math.random() * 3 };
+      // the truck parks under the crane past the dock to load, then he drives it a good way up the road
+      // (HAUL) to the bear's house, and it stops with its back end at the bear so the box can slide out
+      s.dockA = x - 140; s.dockB = last + 140; s.loadX = s.dockB + 260; s.craneR = s.loadX + 215; s.yardB = s.craneR + 250;
+      s.bear = { x: s.loadX + HAUL, fur: rand(FURS), hat: rand(HATS), house: makeHouse(), mood: "idle", t: 0, holding: null, blinkAt: 2 + Math.random() * 3 };
       s.giveX = s.bear.x + 120 + TW * 0.5; s.endX = s.giveX + 300;
       s.crane = { x: (x + last) / 2, y: 0, open: 1 };
     } else {
@@ -599,8 +599,8 @@ function startRun(m) {
       const last = x + (choices.length - 1) * TRGAP;
       // the truck waits just past the trailers; after hitching one it drives on past the big truck, and the
       // trailer rolls back into the spot behind it
-      s.dockA = x - 160; s.dockB = last + 160; s.loadX = last + HITCH + 40;
-      s.big = { x: s.loadX + 700, color: bigColor, fur: rand(FURS), hat: rand(HATS), honk: 0, vx: 0, wheel: 0, state: "wait", mood: "idle", t: 0, blinkAt: 2 + Math.random() * 3 };
+      s.dockA = x - 160; s.dockB = last + 160; s.loadX = last + HITCH + 40; s.yardB = s.loadX + 300;
+      s.big = { x: s.loadX + HAUL, color: bigColor, fur: rand(FURS), hat: rand(HATS), honk: 0, vx: 0, wheel: 0, state: "wait", mood: "idle", t: 0, blinkAt: 2 + Math.random() * 3 };
       s.giveX = s.big.x + 520; s.endX = s.giveX + 300;
     }
     s.zoneA = s.dockA - 500;
@@ -608,11 +608,13 @@ function startRun(m) {
     x = s.endX + DRIVE;
   });
   const len = x - DRIVE + 1500;
-  road = { len, ph1: Math.random() * 6, ph2: Math.random() * 6, bumps: [], flat: stations.map(s => [s.dockA - 300, s.endX + 100]) };
+  // flat ground at the dock and at the customer; hills, bumps, cones and puddles on the road between
+  const custA = s => (s.m === "deliver" ? s.bear.x - 400 : s.big.x - HITCH - 400);
+  road = { len, ph1: Math.random() * 6, ph2: Math.random() * 6, bumps: [], flat: stations.flatMap(s => [[s.dockA - 300, s.yardB + 100], [custA(s) - 100, s.endX + 100]]) };
   const segs = []; let prev = 700;
-  for (const s of stations) { segs.push([prev, s.dockA - 500]); prev = s.endX + 150; }
+  for (const s of stations) { segs.push([prev, s.dockA - 500], [s.yardB + 300, custA(s) - 400]); prev = s.endX + 150; }
   segs.push([prev, len - 400]);
-  addProps(segs); addDecor(len, stations.map(s => [s.dockA - 200, s.endX]));
+  addProps(segs); addDecor(len, stations.flatMap(s => [[s.dockA - 200, s.yardB], [custA(s), s.endX]]));
   parts = []; bubbles = []; st = null;
   P = newPlayer(m === "tow" ? "tow" : "dump"); P.y = groundY(P.x);
   run = { m, stations, got: 0 };
@@ -866,8 +868,8 @@ function update(dt) {
     // close to a spot, the truck pulls in and parks by itself
     if (st && st.active && !st.done && !P.auto && locked <= 0) {
       const s = st;
-      if (s.phase === "come" && P.x > s.loadX - 260) P.auto = { x: s.loadX, force: true, then: () => arriveLoad(s) };
-      else if (s.phase === "carry" && P.x > s.giveX - 300 && (s.m === "deliver" || (P.trailer && P.trailer.state === "attached"))) P.auto = { x: s.giveX, force: true, then: () => arriveGive(s) };
+      if (s.phase === "come" && P.x > s.loadX - 140) P.auto = { x: s.loadX, force: true, then: () => arriveLoad(s) };
+      else if (s.phase === "carry" && P.x > s.giveX - 160 && (s.m === "deliver" || (P.trailer && P.trailer.state === "attached"))) P.auto = { x: s.giveX, force: true, then: () => arriveGive(s) };
     }
     if (st && st.active && st.phase === "pick" && !st.busy && !st.done && !speaking && tNow - st.lastAsk > 9) ask(st);
     // props
@@ -891,7 +893,7 @@ function update(dt) {
     let wantW = baseW, frame = null;
     if (atSt) {
       const s = st, xs = s.items.map(i => i.x), cx = s.m === "deliver" ? s.bear.x : s.big.x;
-      if (s.phase === "come" || s.phase === "pick") frame = [Math.min(...xs) - (tall ? 100 : 220), tall ? s.loadX + 270 : Math.max(s.loadX + 270, cx + 170)];
+      if (s.phase === "come" || s.phase === "pick") frame = [Math.min(...xs) - (tall ? 100 : 220), s.loadX + 270];
       else if (s.phase === "give" || s.phase === "payoff") frame = s.m === "deliver" ? [cx - 240, s.giveX + 210] : [cx - HITCH - 200, s.giveX + 210];
     }
     if (frame) wantW = tall ? clamp(frame[1] - frame[0], baseW, 1150) : Math.max(MINW, frame[1] - frame[0]);
@@ -1586,12 +1588,12 @@ function drawParts() {
 let cardRect = null;
 function drawOrderCard() {
   cardRect = null;
-  const s = st; if (!s || !s.active || s.done || s.phase !== "pick" || !(mode === "deliver" || mode === "tow")) return;
+  const s = st; if (!s || !s.active || s.done || (s.phase !== "pick" && s.phase !== "carry") || !(mode === "deliver" || mode === "tow")) return;
   const cx = s.m === "deliver" ? s.bear.x : s.big.x, sx = (cx - cam.x) * scale;
   const show = sx > canvas.width - 70 * scale || sx < 0;
   s.cardK = lerp(s.cardK || 0, show ? 1 : 0, 0.15); if (s.cardK < 0.02) return;
   const W = canvas.width, tall = isTall(), sH = Math.min(canvas.height / VH, W / 1400) * (tall ? 1.5 : 1);
-  const w = tall ? Math.min(W * 0.72, 520 * dpr) : Math.min(W * 0.36, 420 * dpr), h = w * 0.36, x = (W - w) / 2, y = 20 * sH + 74 * sH + 18 * sH;
+  const w = tall ? Math.min(W * 0.72, 520 * dpr) : Math.min(W * 0.3, 360 * dpr), h = w * 0.36, x = (W - w) / 2, y = 20 * sH + 74 * sH + 18 * sH;
   const k = s.cardK, talk = speaking && Math.sin(tNow * 16) > 0, bob = speaking ? Math.sin(tNow * 6) * 0.02 : 0;
   ctx.save(); ctx.globalAlpha = k; ctx.translate(x + w / 2, y + h / 2); ctx.scale(0.8 + 0.2 * k + bob, 0.8 + 0.2 * k + bob); ctx.translate(-w / 2, -h / 2);
   ctx.shadowColor = "rgba(0,0,0,.14)"; ctx.shadowOffsetY = 6 * dpr; rr(0, 0, w, h, h * 0.28, "#fff"); ctx.shadowColor = "transparent";

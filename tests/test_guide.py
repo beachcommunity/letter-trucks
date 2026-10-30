@@ -24,10 +24,12 @@ async def main():
             # stop 0 picks right away (before any glow); the others wait for the glow if there is one
             if n > 0 and want is not None:
                 await pg.wait_for_timeout(int(want * 1000) + 500)
+            # the glow hides while the bear talks (it asks again every few seconds), so look once it's quiet
+            if n > 0: await T.wait_for(pg, '!__lt.speaking', 10000)
             glow = await pg.evaluate('__lt.glowing()')
             if n == 1: await pg.screenshot(path='t/70-guide.png')
             print(f'stop {n}: {s["l"]} wait {s["guide"]} (want {want}) glowing right away {early} glowing at pick {glow}', 'OK' if s['guide'] == want and not early and glow == (n > 0 and want is not None) else 'WRONG')
-            await settle(pg)
+            if n == 0: await settle(pg)
             await tap(pg, await pg.evaluate(SPOT + f'("{s["l"]}")'))
             await T.wait_for(pg, '__lt.st.phase === "carry"', 12000)
             await drive_until(pg, '__lt.st.phase === "give"')
