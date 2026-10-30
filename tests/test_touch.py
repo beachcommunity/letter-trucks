@@ -9,7 +9,7 @@ URL = 'file://' + _os.path.join(_HERE, 'index.html') + '#debug'
 SPOT = '''(l => { const s = __lt.st, it = s.items.find(i => i.l === l);
   return __lt.screenOf(it.x, s.m === "deliver" ? __lt.dockY(s) - 62 : __lt.gy(it.x) - 64 - 110); })'''
 # an empty patch of road ahead of the truck, to press and hold on
-ROAD = '(() => { const x = __lt.P.x + 300; const q = __lt.screenOf(x, __lt.gy(x) + 10); q.x = Math.min(q.x, innerWidth - 20); return q; })()'
+ROAD = '(() => { const x = __lt.P.x + 300; const q = __lt.screenOf(x, __lt.gy(x) + 120); q.x = Math.min(q.x, innerWidth - 20); return q; })()'
 TRUCK = '__lt.screenOf(__lt.P.x, __lt.P.y - 90)'
 async def settle(pg):
     for _ in range(80):
@@ -72,6 +72,18 @@ async def main():
             x0 = await pg.evaluate('__lt.P.x'); await pg.wait_for_timeout(1500); x1 = await pg.evaluate('__lt.P.x')
             print(mode, 'stays put until he drives:', abs(x1 - x0) < 2)
             await pg.wait_for_timeout(2000); print(mode, 'hint hand after a while (screenshot)'); await pg.screenshot(path=f't/{tag}-0-hint.png')
+            # real touch events (like a phone): a quick tap scoots a little and stops; holding drives and
+            # lifting the finger stops the truck
+            cdp = await pg.context.new_cdp_session(pg)
+            async def touch(kind, pos=None): await cdp.send('Input.dispatchTouchEvent', {'type': kind, 'touchPoints': [{'x': pos['x'], 'y': pos['y']}] if pos else []})
+            pos = await pg.evaluate(ROAD); x0 = await pg.evaluate('__lt.P.x')
+            await touch('touchStart', pos); await pg.wait_for_timeout(80); await touch('touchEnd')
+            await pg.wait_for_timeout(1800); x1 = await pg.evaluate('__lt.P.x'); v1 = await pg.evaluate('__lt.P.vx')
+            print(mode, f'quick tap scoots a little and stops: moved {round(x1 - x0)}, still moving {round(v1)}', 'OK' if 100 < x1 - x0 < 600 and v1 == 0 else 'WRONG')
+            pos = await pg.evaluate(ROAD)
+            await touch('touchStart', pos); await pg.wait_for_timeout(1200); v2 = await pg.evaluate('__lt.P.vx'); await touch('touchEnd')
+            await pg.wait_for_timeout(1000); v3 = await pg.evaluate('__lt.P.vx')
+            print(mode, f'holding drives ({round(v2)}), letting go stops it ({round(v3)})', 'OK' if v2 > 200 and v3 == 0 else 'WRONG')
             await play(pg, mode, 2, tag)
             print(mode, 'run ended:', await T.wait_for(pg, '__lt.mode === "end"', 30000))
             print('errors', errs); await pg.close()

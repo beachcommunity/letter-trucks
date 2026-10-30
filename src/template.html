@@ -28,7 +28,7 @@ html, body { height: 100%; }
 body { background: var(--sky); color: var(--ink); font-family: var(--f-ui); overflow: hidden; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; touch-action: none; }
 button { font: inherit; color: inherit; cursor: pointer; }
 #app { position: relative; height: 100%; overflow: hidden; overflow: clip; }
-#world { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#world { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; -webkit-touch-callout: none; }
 .ov { position: absolute; inset: 0; z-index: 3; }
 /* taps on empty sky / road go through to the world so he can poke things */
 #ov-home, #ov-pick { pointer-events: none; }
@@ -812,7 +812,7 @@ function driveDir() {
   let d = (input.right ? 1 : 0) - (input.left ? 1 : 0);
   if (Math.abs(input.padX) > 0.25) d = input.padX;
   // touch: press and hold anywhere to drive
-  if (input.hold) d = 1;
+  if (input.hold || tNow < (input.pushUntil || 0)) d = 1;
   return clamp(d, -1, 1);
 }
 const G = 2300;
@@ -1826,7 +1826,7 @@ document.addEventListener("keyup", e => { const k = e.key; if (k === "ArrowLeft"
 addEventListener("blur", () => { input.left = input.right = input.hold = false; });
 document.addEventListener("pointerdown", e => { setPad(false); if (e.pointerType === "touch" || e.pointerType === "mouse") setTouch(true); }, true);
 // tap a box or trailer to pick it, the truck (or the box in it) to hand it over, the customer to hear
-// the order again; anything else pokes. Press and hold anywhere else to drive; a quick tap scoots ahead
+// the order again. Anywhere else, press and hold to drive (a quick tap scoots ahead); scenery there gets poked too
 let holdAt = 0;
 canvas.addEventListener("pointerdown", e => {
   if (!P || !inGame()) { if (P && (mode === "home" || mode === "pick")) { initAudio(); if (poke(e)) return; const w = toWorld(e.clientX, e.clientY); if (mode === "home" && Math.abs(w.x - P.x) < TW * 0.55) honk(); } return; }
@@ -1849,16 +1849,25 @@ canvas.addEventListener("pointerdown", e => {
     if (s.phase === "pick" && onCustomer) { if (!speaking) ask(s); return; }
   }
   if (onTruck) { honk(); return; }
-  if (poke(e)) return;
+  // scenery pokes and the truck still drives: wherever he presses, holding makes it go
+  poke(e);
   input.hold = true; holdAt = tNow;
+  try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
 });
-function endHold() {
+function releaseDrive() {
   if (!input.hold) return;
   input.hold = false;
-  // a quick tap still gets the truck rolling a little way
-  if (tNow - holdAt < 0.25 && P && !P.auto && locked <= 0) P.auto = { x: P.x + 320 };
+  // a quick tap still gets the truck rolling a little way: a short push, then it coasts to a stop
+  if (tNow - holdAt < 0.25 && P && !P.auto && locked <= 0) input.pushUntil = tNow + 0.35;
 }
-document.addEventListener("pointerup", endHold); document.addEventListener("pointercancel", endHold);
+// lifting the finger stops the truck. Phones can lose a pointerup (a scroll or gesture around the page
+// takes the touch), so the touch end, losing capture and leaving the page all count too
+for (const ev of ["pointerup", "pointercancel", "lostpointercapture"]) canvas.addEventListener(ev, releaseDrive);
+for (const ev of ["pointerup", "pointercancel", "touchcancel", "blur"]) addEventListener(ev, releaseDrive);
+addEventListener("touchend", e => { if (!e.touches || e.touches.length === 0) releaseDrive(); });
+document.addEventListener("visibilitychange", () => { if (document.hidden) releaseDrive(); });
+// stop iPhone from turning a press on the road into a scroll, zoom or long-press menu
+canvas.addEventListener("touchstart", e => { if (inGame()) e.preventDefault(); }, { passive: false });
 
 const pad = { prevBtn: {}, dir: null, next: 0 };
 function readPad() { try { const ps = navigator.getGamepads ? Array.from(navigator.getGamepads()) : []; return ps.find(p => p && p.connected) || null; } catch (e) { return null; } }

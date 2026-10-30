@@ -64,7 +64,7 @@ async def touch_drive(pg, cond, timeout=25000):
     t = 0
     while t < timeout:
         if await pg.evaluate(cond): return True
-        pos = await pg.evaluate('(() => { const x = __lt.P.x + 300; const q = __lt.screenOf(x, __lt.gy(x) + 10); q.x = Math.min(q.x, innerWidth - 20); return q; })()')
+        pos = await pg.evaluate('(() => { const x = __lt.P.x + 300; const q = __lt.screenOf(x, __lt.gy(x) + 120); q.x = Math.min(q.x, innerWidth - 20); return q; })()')
         await pg.mouse.move(pos['x'], pos['y']); await pg.mouse.down()
         for _ in range(10):
             await pg.wait_for_timeout(100); t += 100
